@@ -1,0 +1,29 @@
+## Code
+* 切换： Ctrl + Shift + DEFG(左) + MUY(下)， Ctrl+BJ F11
+* 导航： Ctrl + PT, Alt+左右键， F12+三控制键, F1F3F8
+* 选择： Alt+Shift+左右（扩框多）， Ctrl+D
+* 其它： F11全屏， Ctrl+KF format，Ctrl+Shift+R refactor
+
+## Chrome
+* 常规：F3F6F11, Ctrl+THJ, Alt+方向, Ctrl+Shift+O  
+* F12 全局： F1, Esc, Ctrl+123， Alt+方向  
+* F12 Elements：方向(看) H回车F2(改)  
+* F12 Debugger：Ctrl+B(&Shift), Ctrl+F8  
+
+## SQL
+Ctrl+K+(KCDW), F8, Alt+F1  
+
+## GitLab
+TFS, g+(fcmb)  
+
+## JIRA
+?/,.		g+(DPIA)        jkE  
+                
+## Win
+Win+ Tab,X,方向键  
+
+## Notepad++
+* language, encoding.  
+* View: symbol,clone window, F11全屏，Ctrl+123 Tab页面, F8, Alt+H, Alt+0, tail -f  
+* Edit: Ctrl +B 匹配括号， F4,F7.   
+* Alt+Mouse编辑 Ctrl  + CDIJQ  Case,blank paste  
