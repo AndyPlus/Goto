@@ -1,0 +1,16 @@
+{
+  "name": "npm-test",
+  "version": "1.0.0",
+  "description": "andy npm test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andy",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.5"
+  }
+}

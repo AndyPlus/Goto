@@ -1,0 +1,58 @@
+* CSS选择器： [], :before{content}, 空格，> +
+* 布局三种： 流（margin,display,align） ,浮动(float,clear,脱离普通流)，定位Position四种结合top四种和z-index.
+* 居中两种：本元素 margin:0 auto; 子元素： display: table-cell; v-align:mid;
+* JS数据类型： 字串，数字，数组，正则，Json,Date。
+* U-8用于Web,U-16用于操作系统，URL只能用ASCII(空格+) HTML（空格&nbsp;）
+* 1信息，2成功，3重定向(永久，临时，缓存304，代理)4客户端错误（400坏，401认证，403授权） 5服务端（502网关，503临时，504超时）
+
+================LINQ PAD========================================
+linq 有外键就用外键强引用， 否则可能就需要老式的join
+
+inject dump:
+new[] { 11, 5, 17, 7, 13 }	.Dump ("Prime numbers")
+.Where (n => n > 10)		.Dump ("Prime numbers > 10")
+
+Press Ctrl+, to locate by name             (Edit | Navigate to Query)
+Press Ctrl+Shift+F to search by content    (Edit | Search All Queries)
+
+F6 switches keyboard focus to the 'My Queries' (press again for Samples)
+F7 takes you to the code editor.
+Query Properties // dialog (F4)
+
+==================================================================
+
+
+* Just-In-Time debugging launches Visual Studio automatically when an exception or crash occurs in an application that is running outside Visual Studio.
+* Output window can display: Debug and Trace, dll load, exception, proc and threads exit.
+* dump: import and export
+* auto var window base line
+* local var window base method
+
+
+* C# interactive
+* imadatle window: is used at design time to debug and evaluate expressions, execute 
+* command window: > cmd, ? var, F1 on any debug window
+
+
+* diagnostic window
+* proformance profiler
+* application insight view
+* The Debug.Fail and Trace.Fail
+
+* stopwatch
+* diagnostic.trace
+* thread.sleep
+
+* Edit: paste json and xml
+* View: open with, format json xml and so on
+* keyword in bing: url decode, json format
+* class: PerformanceInfo, PerformanceCounter
+
+* ssh系列命令：
+* C:\Users\aan1\Desktop\Go\OpenSSH-Win64
+* https://www.openssh.com/
+
+C:\inetpub\logs\LogFiles\W3SVC2
+C:\LOGS\JF
+D:\LOGS\JF
+

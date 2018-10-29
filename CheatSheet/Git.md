@@ -1,0 +1,124 @@
+git log -5 -p 
+git log -p HEAD..FETCH_HEAD
+git log --name-status -- *proj* (-- can ignored, Can use Tab or Glob)
+
+git log master..     (example:head, JF-9991, v2.5, remotes/origin/Sprint16) ...
+git log --author=Andy (--since, --until,--no-merges,--first-parent) gitk图形化高级筛选
+
+-------(However, "diff" is about comparing two endpoints, not ranges)
+git diff    	  <commit>   (to be add)
+git diff --cached <commit>   (to be commit)
+git diff <commit> <commit>	 (=.. < ...)
+
+git diff  <blob>  <blob>
+git diff --path --path   
+ 
+git diff master --name-status
+git diff origin/master..master --stat 
+git diff ./JFAPI (diff in subtree)
+git diff v2.5:Makefile HEAD:Makefile.in
+git show master:JumpForward/Error.aspx
+
+==============================================================================
+git reset --hard HEAD^  (#配合使用 git reflog 和 git log)
+git reset origin/JF-9991
+git revert -n master~5..master~2
+git cherry-pick master
+git cherry-pick ..master  (= git cherry-pick ^HEAD master, NOT)
+git cherry-pick -n master~4 master~2
+
+Reset or revert a specific file to a specific revision using Git?
+git checkout c5f567~1 -- file1 file2
+git checkout develop -- file1
+
+------- GNU grep has the following options: "grep -E" for ERE, and "grep -G" for BRE (the default), and "grep -P" for Perl regexes.
+git grep -n "hello" v2.5
+git grep solution -- :^Documentation
+git grep -e '#define' --and -e SORT_DIRENT
+git grep -e "str1" --and --not -e "str2"
+git grep --name-only -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
+git grep -l CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
+
+git log --grep=JF-7813
+git log -L 15,23:filename.txt
+git log -L '/int main/',/^}/:main.c
+git blame -L 12,22 simple.rb
+git blame -L 10,+1 fe25b6d^ -- src/options.cpp
+
+--grep, --grep-reflog, --invert-grep, --perl-regexp (-P)
+
+git bisect (start,bad,good <revision>) 来启动二分查找。 然后build, mark(good or bad)循环，直到提示“is the first bad commit”，然后研究问题所在，之后执行git bisect reset.
+* The idea behind git bisect is to perform a binary search in the history to find a particular regression. 
+
+
+--------------------------------------
+git stash apply -h -m
+git checkout -b features/subFeature
+git checkout -- README.txt
+git pull, git rebase, git fetch 获取所有远程分支（不更新本地分支，另需merge） (而pull是包括merge操作的)
+merge conflict的时候,git checkout JF-9991 -- <filename>, git checkout --theirs -- <filename>
+
+git tag v2.5 1b2e1d63ff
+git push origin <tag_name>
+git push --tags 
+git config -l
+git config --global user.email <email>
+git help -g
+git help glossary
+git help revisions
+
+git remote -v
+git remote set-url origin git://new.url.here
+git remote show origin
+
+git update-index --skip-worktree
+git update-index --no-skip-worktree
+git update-index --assume-unchanged
+git status --ignored
+git ls-files --unmerged
+git ls-files -v |grep "^S"
+
+=======revisions:=====================
+Revisions:
+	ref log: master@{1}   @{1}  @{-1}   master@{yesterday},  HEAD@{5 minutes ago}
+	file path. HEAD:README, :README, master:./README, :0:README  (stage 1 is the common ancestor, stage 2 is the target branch’s version)
+
+Ranges:
+	time log: ^r1 r2 == r1..r2 <= r1...r2 (缺少r1或r2时默认为head)
+	switch merged parents:  HEAD^2 < HEAD^@ (= all parents)
+
+--------Branch Prune-------------------
+git gc
+git branch -v -m
+git branch --no-merged (lists branches that have not been merged into the current branch.)
+git branch --no-contains <commit> (branches that don’t contain the specified <commit>)
+git remote prune -n origin  (prunes tracking branches not on the remote.)
+* xargs git branch -d  (deletes branches listed on standard input.)
+* Be careful deleting branches listed by git branch --merged. The list could include master or other branches you'd prefer not to delete.
+
+--------------------Review changes from multiple commits-----------------
+
+$ git checkout a0^
+$ git cherry-pick a0{0,1,2,3,4} （按顺序）
+$ git diff master...  （或者直接 git diff a0^）
+$ git checkout master
+
+*重要论述就是不要用rebase 进行sqush在远程修改记录
+*减少来自master的merge commits，而是使用 cherry pick
+----------------------------------------------------------------
+
+
+Github flow 是Git flow的简化版，专门配合"持续发布"。
+它只有一个长期分支，就是master，因此用起来非常简单。
+
+
+分支的开发过程中，要经常与主干保持同步。
+$ git fetch origin
+$ git rebase origin/master
+$ git rebase -i origin/master
+
+
+Pony Foo提出另外一种合并commit的简便方法，就是先撤销过去5个commit，然后再建一个新的。
+$ git reset HEAD~5
+$ git commit -am "Here's the bug fix that closes #28"
+$ git push --force
