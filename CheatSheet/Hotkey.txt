@@ -12,6 +12,7 @@
 
 ## SQL
 Ctrl+K+(KCDW), F8, Alt+F1  
+Alt + F1= sp_help, sp_who2, sp_rename  
 
 ## GitLab
 TFS, g+(fcmb)  

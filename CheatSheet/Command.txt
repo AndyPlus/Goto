@@ -1,15 +1,11 @@
-sp_who2
-sp_rename
-sp_help = Alt + F1
-
 vim  filename +546
-vim  filename +/killproc
+vim  filename +/main
 notepad++ filename -n1500
 
 =============  CMD: =================  
 cipher /?  Robocopy /?
 dir | clip
-color title fc diff
+color title label fc diff
 
 sc query
 tasklist /SVC

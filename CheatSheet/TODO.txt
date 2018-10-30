@@ -1,15 +1,18 @@
-[master 9bb84de] first add files
- Committer: An <aan1@activenetwork.com>
-Your name and email address were configured automatically based
-on your username and hostname. Please check that they are accurate.
-You can suppress this message by setting them explicitly. Run the
-following command and follow the instructions in your editor to edit
-your configuration file:
-
-    git config --global --edit
-
-After doing this, you may fix the identity used for this commit with:
-
-    git commit --amend --reset-author
-	
 充分利用NotePad++的搜索标记功能 dnSpy了解一下。
+理解业务逻辑：尽量从正向  宏观需求 -> 功能概览 -> 数据架构 -> 代码反推
+学习如何学习业务，举一反三的业务逻辑，其实就是理解管理，理解社会，从无意义中寻找意义。
+
+
+早起的最大好处是 让你拥有更多时间
+看Wiki上有关架构的文档。
+多用GitLab搜，比本地搜索管用
+多从业务测试入手，不熟悉业务走多少弯路。
+VS CODE HELP PlayGround
+
+Staging数据库每周二还原
+Int数据库每个月第一天还原
+如何阅读源码
+
+
+JumpForward.Services/Data/DataModels.edmx
+JFData/JumpForwardTwo.dbml

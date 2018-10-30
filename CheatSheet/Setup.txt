@@ -2,7 +2,8 @@ Path
 ---------------------
 set path subst /?  
 setx PATH=%ConEmuBaseDir%\Scripts;%PATH%  
-net use * \\hostname\E$\test\  
+net use * \\hostname\E$\test\ 
+subst F: C:\Test 
 
 C:\Program Files\Git\usr\bin\  
 C:\Windows\System32\inetsrv  

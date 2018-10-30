@@ -122,3 +122,14 @@ Pony Foo提出另外一种合并commit的简便方法，就是先撤销过去5�
 $ git reset HEAD~5
 $ git commit -am "Here's the bug fix that closes #28"
 $ git push --force
+
+Github Setup
+-------------------------
+git config user.name "AndyPlus"
+git config user.email "andymore@live.com"
+git config --global --edit
+
+
+git rebase -i origin/master (pick->edit)
+git commit --amend --reset-author
+git rebase --continue
