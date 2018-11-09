@@ -14,5 +14,19 @@ Int数据库每个月第一天还原
 如何阅读源码
 
 
-JumpForward.Services/Data/DataModels.edmx
-JFData/JumpForwardTwo.dbml
+
+
+TODO:
+Practice Linq.
+https://pages.github.com/
+https://guanpengchn.github.io
+
+https://stackoverflow.com/questions/10126871/entity-framework-generating-classes
+https://stackoverflow.com/questions/10119744/using-of-entity-framework-t4-poco
+
+Link-Reff
+Link-Tool
+
+Google.txt
+
+WinDbg Notes in paper

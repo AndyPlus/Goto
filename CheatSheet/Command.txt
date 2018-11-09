@@ -1,10 +1,9 @@
-vim  filename +546
-vim  filename +/main
-notepad++ filename -n1500
+
 
 =============  CMD: =================  
 cipher /?  Robocopy /?
 dir | clip
+echo content>>file
 color title label fc diff
 
 sc query
@@ -19,6 +18,17 @@ qwinsta
 appcmd list site
 appcmd list trace
 net helpmsg 64
+
+--------Net-----
+Curl:  最常用参数： -Hiv X d
+ipconfig 
+net helpmsg 64
+netsh http add urlacl ...
+
+
+-------- System ------
+chkdsk mmc perfmon
+
 
 ================== PowerShell ==============
 
@@ -37,44 +47,7 @@ gsv gps |gm
 ps|sort -p ws|select -last 5 -prop id,name,ws|ft
 gcm gal gdr, ii, ?=where, %=foreach
 
-=========== Search ==================
-搜命令：
-which {command}
-where /R {path} {pattern}
 
-搜文件:
-find -name "query"
-dir /s *.xls 
-
-搜字串：
-grep -R  "what" "where"
-findstr(find) "what" "where" 
-
-
-搜库(比普通grep更快)：
-git log --author=Jon
-git log --grep=JF-7813
-
-git ls-files "*middleware*"
-git ls-files -v |grep "^S"
-
-git grep -n "hello" v2.5
-git grep solution -- :^Documentation
-
-=====================================
-VIM:
-By words: web
-By paragraph: {}
-By marker: mx   'x   
-By last: ''	  '.  
-other: gg G %
-
-* Edit: dxyp u. > o 3x dw
-* Search: /?  *#   nN  (:set hlsearch)
-* Replace: :%s/foo/bar/g
-
-* gd & gD  - go to definition of local(global) symbol under cursor;
-* ^N (in insert mode) automatic word completion
 
 =========Develop=======================
 msbuild nuget code dotnet ef
@@ -88,10 +61,10 @@ console.warn('%chello world','font-size:25px;color:red;');
 var data =[{a:1,b:2},{a:2,b:1}]    console.table(data);
 console.assert    console.count    console.log(document.body);
 
-Command Line API
-* $$('body')
+Command Line API (Chrome控制台)
+* $(selector) = document.querySelector() = first dom
+* $$(selector) = document.querySelectorAll() = all doms
 * monitor & unmonitor - monitor("resize")
 * debug & undebug - debug("resize") debugger
-
 
 

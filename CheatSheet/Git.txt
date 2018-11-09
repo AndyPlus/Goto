@@ -40,6 +40,10 @@ git grep --name-only -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
 git grep -l CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
 
 git log --grep=JF-7813
+git log -Sword
+git log -Gword   (use regex search both message and content)
+git log -S "string" --source --all (search on all branch, -G regex)
+
 git log -L 15,23:filename.txt
 git log -L '/int main/',/^}/:main.c
 git blame -L 12,22 simple.rb
@@ -130,6 +134,17 @@ git config user.email "andymore@live.com"
 git config --global --edit
 
 
-git rebase -i origin/master (pick->edit)
+git rebase -i origin/master (pick->edit)  (or HEAD^^^)
 git commit --amend --reset-author
 git rebase --continue
+
+------------------
+git config merge.tool vimdiff
+git mergetool
+shortcuts: ]c and [c
+:diffg LO BA RE
+:wqa
+
+----------------
+git add mv rm
+glob模式匹配，比如"file[ab]"

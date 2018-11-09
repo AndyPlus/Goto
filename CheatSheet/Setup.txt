@@ -10,6 +10,7 @@ C:\Windows\System32\inetsrv
 C:\Program Files (x86)\MSBuild\14.0\Bin  
 C:\Windows\System32\drivers\etc\hosts  
 C:\inetpub\logs\LogFiles\W3SVC2  
+C:\Users\Andymore\.gitconfig
 
 Powershell
 -------------------

@@ -89,3 +89,8 @@ windbg命令分为标准命令，元命令和扩展命令。
 
 SOS.dll MSCOREE.dll
 Son of Strike, COM COR EE
+
+-----------
+* 加载托管的命令：  .loadby sos coreclr
+* !Threads    ~2s   .help  !help g  .dump
+* 打断点不能打在某一行，只能打在程序加载或方法入口。
