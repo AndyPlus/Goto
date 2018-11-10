@@ -1,0 +1,36 @@
+choco install nodejs cmder 7zip googlechrome 
+choco install dotnetcore-sdk vscode  notepadplusplus vim poshgit
+choco install docker docker-for-windows winscp putty powershell-core
+
+choco install visualstudio2017-workload-netweb  sql-server-management-studio
+choco install resharper webpi heidisql golang postgresql teamcity
+choco install windbg dnspy linqpad
+
+choco install sysinternals (tcpview procexp procmon procdump dbgview autoruns bginfo du handle zoomit whois diskmon portmon rdcman)
+
+choco install regjump lockhunter ollydbg ida-free nmap grepwin
+choco install cpu-z hwinfo crystaldiskinfo
+choco install curl postman fiddler wireshark
+
+choco install vlc mpv potplayer emule tor
+choco install onenote adobereader foxitreader pdfcreator goldendict
+choco install lightshot greenshot screentogif jpegview xnview pencil paint.net
+
+====================
+It's a package manager manager
+Get-PackageProvider
+Get-Package
+get-packageprovider -name chocolatey
+install-package vlc
+find-package -name zoomit
+
+============
+search install upgrade info uninstall list outdated pin
+refreshenv
+
+choco upgrade chocolatey
+choco upgrade all -y
+choco list -l
+
+See the troubleshooting page if choco <tab> doesn't work for you when you are using PowerShell.
+That would be https://chocolatey.org/api/v2/ aka the Community Package Repository
