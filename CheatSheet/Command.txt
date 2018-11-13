@@ -1,34 +1,23 @@
-
-
 =============  CMD: =================  
-cipher /?  Robocopy /?
-dir | clip
-echo content>>file
+cipher /?  robocopy /?
+dir|clip, echo content>>file
 color title label fc diff
 
-sc query
-tasklist /SVC
-net start
-netstat -anop
-
-whoami /all
-quser /SERVER:myserver
-qwinsta
+sc query, net start, tasklist /svc
+quser, qwinsta, whoami /all
 
 appcmd list site
 appcmd list trace
 net helpmsg 64
 
 --------Net-----
-Curl:  最常用参数： -Hiv X d
-ipconfig 
-net helpmsg 64
+Curl  -Hiv X d
+ipconfig /all
 netsh http add urlacl ...
-
+netstat -ano
 
 -------- System ------
 chkdsk mmc perfmon
-
 
 ================== PowerShell ==============
 
@@ -67,4 +56,4 @@ Command Line API (Chrome控制台)
 * monitor & unmonitor - monitor("resize")
 * debug & undebug - debug("resize") debugger
 
-
+=========Google Command=============

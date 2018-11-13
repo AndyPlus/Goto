@@ -1,3 +1,7 @@
+=== Go Go Go ===
+
+
+
 === WinDbg Help ===
 
 WinDbg can access symbol or variable from a module that has symbol files(Windows .dbg) for source-level debugging
@@ -9,16 +13,14 @@ WinDbg can access symbol or variable from a module that has symbol files(Windows
 * source code (Source Path)
 
 #Help
-* .help /D a* (a list of all meta-commands)
-* .hh [key] (index html help)
-* ? (list of all commands and operators)
+* .help a* (list of meta-commands)
+* .hh [key] (index chm)
+* ? (list of commands)
 * !help (list of managed code SOS.dll help)
-* Open chm use Index to search keywords
 
 #Start 1: 调试notepad
-Open: WinDbg: help chm (.hh notepad) File -> Open notepad
-Prepare: .sympath srv*, .reload (cache*; srv* 特殊变量key)
-Symbols: x notepad!*main* (x {module}!{symbol}) 列出：开始地址，结束地址，符号名称。
+Prepare: File -> Open notepad,   .sympath srv*,   .reload
+Symbols: x notepad!*main*  (x {module}!{symbol})
 Break: bu notepad!WinMain, bl, ~,~s,~0s(看右下角得知线程id)  g q (也可随时操作Debug菜单停止和继续),   [bp, bu, bm (.hh bp详细了解)]
 View: lm, x notepad!*, ~, k 列出： 模块，符号，线程，堆栈。
 

@@ -47,22 +47,17 @@ other: gg G %  0$%
 
 * gd & gD  - go to definition of local(global) symbol under cursor;
 * ^N (in insert mode) automatic word completion   Ctrl+P  Ctrl+N
-==========================================
 
 vim  filename +546
 vim  filename +/main
 notepad++ filename -n1500
-Open URL in NotePad++: dobule click
-
 ========================================
 AWK
-awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
+awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。
+简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
 
 awk '{pattern + action}' {filenames}
-
-# awk -F: '/root/{print $7"\t"}' /etc/passwd    
+awk -F: '/root/{print $7"\t"}' /etc/passwd    
 指定分隔符， 指定正则，指定动作，指定路径
+花括号里面其实是C语言,printf可以用awk内置变量
 
-花括号里面其实是C语言。
-awk内置变量
-Printf

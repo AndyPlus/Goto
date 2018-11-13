@@ -44,6 +44,10 @@ Win+ Tab,X,方向键  (BT)
 * 调试：Ctrl+D+BI, Ctrl+F10(+Shift)
 
 ## Code Ext
+
 ## Cmder
+Ctrl + rs : History search
+Ctrl + cvz: and Tab
+VS Code Integration
 
 
