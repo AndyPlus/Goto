@@ -14,11 +14,6 @@ Int数据库每个月第一天还原
 如何阅读源码
 
 
-
-
-TODO:
-Practice Linq.
-https://stackoverflow.com/questions/10126871/entity-framework-generating-classes
-https://stackoverflow.com/questions/10119744/using-of-entity-framework-t4-poco
-
-WinDbg Notes in paper
+思维切换不要怕麻烦，比如测试前的造数据和做完后的自测。
+用高阶函数降维打击，往往比面向对象更犀利。
+代码有时候不能太抽象，拷贝粘贴才是大数据多样化的途径，不是所有复杂度都能抽象

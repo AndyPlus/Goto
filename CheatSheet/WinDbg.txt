@@ -1,125 +1,93 @@
-=== Go Go Go ===
+# 操作
+* 准备：path windbgPath;%PATH%  (64位，setx PATH=procdumpPath;%PATH% )   code Debugger.Break()
+* 工具：ProcessExplorer, TcpView, DebugView, PerfView
+* 视图: (ALT+1   ALT+SHIFT+1)  (ALT+N ALT+5 ALT+6)
+* 热键：直接回车可重复执行上一条命令， Tab键进行命令补全， ;分隔符输入多条命令，  Ctrl + Break来终止， Ctrl+Alt+V切换 verbose Output
+* 远程：1.从服务端机器  .server tcp:port=5005(自己在服务器上指定个端口)		2.从客户端机器  File menu ->  "Connect to Remote Session"  ->  tcp:Port=5005,Server=YourHostComputer
 
+# 命令
+* 命令-帮助：三种列表： ?	 .help	!help (a*)    两种细节：.hh [key]     command /?
+* 元命-加载：.exepath .sympath .srcpath  .symfix (but save) .sympath+ (File Menu) 			.reload, .load, .loadby, .chain
+* 标准-静态：模块：lm(ft)	lmvm clr	符号：x*!* 		变量: ?,dv,dt(Alt+23)
+* 标准-动态: ~*, ~*k, ~*e!clrstack	~s, ~2s			g,q,bl,bp,bu 	 |~k 的类似扩展： ~,Alt+9,!threads 		k,Alt+6,!clrstack
+* 命令-检查：标准：x,?,dv,dt,Alt+3, 	扩展：dump(mt,md,do,da,heap -stat -strings -thinlock -type -min)
+* 扩展-分析：!pe !gcroot !lno !symnoisy !analyze -v 		其它类似：!nametoee !eestack 		lm ln
 
+# 实例：
+!dumpheap -mt MTAddress  可以知道在MethodTable中相关联的所有instance。
+!dumpheap -mt 00007ffdb9386948 -min 200 //查看200byte以上的string
+ 
+!DumpArray 	/d 0000021975972b48  //查看数组对象元素
+!DumpObj 	/d 0000021975972a08  //查看元素中的String, !do 查看对象内容
 
-=== WinDbg Help ===
+!dumpdomain,显示所有域里的程序集，或者根据参数获取指定域。
+!dso命令打印出栈上对应的Objects.
+!gcroot 0000021bcbaf5158 //使用!gcroot 查看一个对象的gc根
 
-WinDbg can access symbol or variable from a module that has symbol files(Windows .dbg) for source-level debugging
+=================================================================
 
-#Debugger Prepare:
+# 概念
+* WinDbg can access symbol or variable from a module that has symbol files(Windows .dbg) for source-level debugging
+* The copy of the executable file in memory is called the executable image or the image.
+* SOS.dll MSCOREE.dll, 概念：COM COR EE  概念：windbg命令分为标准命令，元命令和扩展命令。左下角显示 进程:线程。
+
+# Debugger Prepare:
 * host and target computers.(user-mode and kernel-mode)  (WinDbg and VS debugger)
 * Symbol Files (.pdb on Windows, 2 versions min)
 * Dump files (Userdump.exe or .dump /?, 2 versions min)
-* source code (Source Path)
 
-#Help
-* .help a* (list of meta-commands)
-* .hh [key] (index chm)
-* ? (list of commands)
-* !help (list of managed code SOS.dll help)
+#Debugging Techniques:  - Topic (TO READ)
+* Using the Debugger Command Window 
+* Methods of Controlling Breakpoints
+* Standard Debugging Techniques
+* Debugger Commands
 
-#Start 1: 调试notepad
-Prepare: File -> Open notepad,   .sympath srv*,   .reload
-Symbols: x notepad!*main*  (x {module}!{symbol})
-Break: bu notepad!WinMain, bl, ~,~s,~0s(看右下角得知线程id)  g q (也可随时操作Debug菜单停止和继续),   [bp, bu, bm (.hh bp详细了解)]
-View: lm, x notepad!*, ~, k 列出： 模块，符号，线程，堆栈。
+====================================================================
 
+# 打断点：
+0. 断点除了在first chance外，可以在方法入口(!Name2EE abc.dll 然后!dumpmt查询对象的MethodTable能够获取函数详细信息，然后根据函数名打断点)，或反编译后的代码地址行
+1. 打断点1： !dumpmt -md 0x06847e78,	bp 0x0687e6c0,	g,	!clrstack
+2. 打断点2： !u eip,   					bp 0687e6e1,	g, 	!dso, !dc 0x1210e90
+3. Edit menu or by pressing ALT+F9.
 
-#Start 2: 调试自己的C程序异常
-.sympath srv*
-.sympath+ C:\MyApp\x64\Debug
-.srcpath C:\MyApp\MyApp
+# NotePad:
+0.准备: x64, 	File Menu,		windbg my.exe		.attach -v  .create (附加线程，启动线程) .opendump  .dump   
+1.加载：.sympath srv*, (.sympath+ C:\MyApp\x64\Debug  .srcpath C:\MyApp\MyApp) .reload			.exepath .sympath .srcpath  .symfix (but save)
+2.符号: x notepad!*main*  (x {module}!{symbol}) x*
+3.断点: bu notepad!WinMain (bu MyApp!main), bl, ~,~s,~0s(看右下角得知线程id)  g(然后用Debug菜单和源码窗口) q (也可随时操作Debug菜单停止和继续),   [bp, bu, bm (.hh bp详细了解)]
+4.检查: lm, x notepad!*, ~, k 列出： 模块，符号，线程，堆栈。   !analyze -v  （用来分析当前异常）
+5.变量：? dv dt  Watch ALT+2 ALT+3  (eval expr, dump var, dump type)
 
-.reload
-bu MyApp!main
-g(然后用Debug菜单和源码窗口)
-!analyze -v  （用来分析当前异常）
-
-x (Examine Symbols) 
-x [Options] Module!Symbol 
-x [Options] *
-~s (Set Current Thread) (.hh ~s详细了解)
-
-========================================================================
-#Debugger Operation:
-.attach -v  .create (附加线程，启动线程) .opendump 
-? dv dt  Watch ALT+2 ALT+3  (eval expr, dump var, dump type)
-
-The copy of the executable file in memory is called the executable image or the image.
-.exepath .sympath .srcpath
-the .symfix (Set Symbol Store Path) command is similar to .sympath but save
-
-
-#Debugging Techniques:
-- Topic (TO READ)
-Using the Debugger Command Window 
-Methods of Controlling Breakpoints
-Standard Debugging Techniques
-Debugger Commands
-
-Debugging Managed Code 
-	.loadby sos clr  (Use the .load (Load Extension DLL) command to load a new DLL.) (SOS.dll provide  (CLR) environment )
-	![command] [options]    
-	To verify that the SOS debugging extension loaded correctly, enter the .chain command.
-	To test the SOS debugging extension, enter !sos.help.
-Remote Debugging Using WinDbg
-	.server tcp:port=5005(自己在服务器上指定个端口)
-	从客户端机器  choose Connect to Remote Session from the File menu.   tcp:Port=5005,Server=YourHostComputer
- 
-#Views:
-Debugger Command window:  ALT+1   ALT+SHIFT+1 
-Command Browser: CTRL+N   ALT+SHIFT+N 
-choosing Breakpoints from the Edit menu or by pressing ALT+F9.
-As an alternative to the k command, you can choose Call Stack from the View menu. 
-Memory from the View menu. (You can also press ALT+5 ALT+SHIFT+5)
-
-===============================
-
-procdump w3wp -ma -m 8000 -o D:\Dumps （当内存超过8000M时抓取一个w3wp进程的完整Dump，并输出到D:\Dumps文件夹）
-!dumpheap -stat //检查当前所有托管类型的统计信息
-!dumpheap -mt 00007ffdb9386948 -min 200 //查看200byte以上的string
-!do     0000021bcbaf5158 //使用!do命令查看一个对象的内容
-!gcroot 0000021bcbaf5158 //使用!gcroot 查看一个对象的gc根
-!DumpObj   	/d 0000021975972b48  //查看第一个JSONArray
-!DumpArray 	/d 0000021975972b48  //查看数组对象元素
-!DumpObj 	/d 0000021975972a08  //查看元素中的String
-
-~* e!clrstack 	来看看所有线程的调用堆栈吧。
-
-PrefView 
-
-======================
-.NET Core and WinDbg
-0. dotnet new
-1. path windbgPath;%PATH%
-2. code System.Diagnostics.Debugger.Break()  (F6 attach when console.readkey()) 
-3. windbg dotnet path\to\Your.dll  (first chance)
+# .NET Core：
+1. path windbgPath;%PATH%  (64位，setx PATH=procdumpPath;%PATH% )
+3. windbg dotnet path\to\Your.dll  (first chance, code Debugger.Break(), F6 attach when readkey())
 4. Enter g to go to your first breakpoint
-5. .loadby sos coreclr  (!help)
+5. .loadby sos coreclr  (!help)  (lm v m coreclr, .loadby sos clr, .load <otherPath>\sos.dll, .chain)
 6. Verbose symbol loading in WinDbg (via !sym noisy)    add <DebugSymbols>true</DebugSymbols> and <DebugType>pdbonly</DebugType>
 7. !name2ee Sample.dll Sample.Program.SlowMultiply
 
-# Native threads & stacks
-~*  - shows little more information like the top method currently executing .* means all the threads
-~*k - shows all the threads along with the stack
-~<threadnum>s - will switch to thread number threadnum you specifiy
-Now We can check how the native stack will look like by running k
+# High CPU
+1. 执行 procdump -c 50 -s 4 -ma -n 3 w3wp    命令含义为:当w3wp.exe  cpu超过50%,并且持续4秒，抓取3个dump文件存储起来，存储位置默认为procdump文件所在的目录。
+2. !threadpool  查看线程池CPU使用量
+3. !runaway 命令  看线程占用CPU时间
+4. ~线程IDs 跳转到那个线程
+5. !clrstack 看看这个线程再干嘛 执行那些方法
 
-# Managed Threads and Stacks
-!threads !CLRStack and !dumpheap .
+# Memory Leak：
+0. 执行 procdump w3wp -ma -m 8000 -o D:\Dumps （当内存超过8000M时抓取一个w3wp进程的完整Dump，并输出到D:\Dumps文件夹）
+1. !eeheap，查看托管堆的总信息,看来大对象堆占用最多内存
+2. !dumpheap -min 200 -stat 获取占用堆内存的各对象的统计信息, 查看堆中信息，一般带-min,-stat,-type等参数。看来Byte数组类型占用最多内存
+3. !dumpheap -type Byte[] -min 200 看各Byte数组占用堆内存的详细信息
+4. !gcroot <Byte数组对象地址> 看对象引用关系，跟踪到Program类的List类型成员了
+5. !do <Program对象地址> 查看对象的详细信息。 就是_list了。有源代码文件的话这一步其实就可以略过，就算没有源代码文件也可以利用!dumpdomain与!SaveModule命令导出模块，然后使用Reflector进行反编译。
 
+# Thread Lock:
+1. 使用“!clrstack”命令输出当前线程的调用堆栈，发现存在“System.Threading.Monitor.Enter(System.Object)”，表明线程正在请求一个锁。由于得不到锁，因此线程卡死
+2. 使用“!syncblk”命令列出所有正在使用的锁，其中MonitorHeld与Recursion列表示了请求锁的线程数量情况，Info列表示哪个线程拥有了锁，SyncBlock列表示锁对象的地址。
+3. 使用“!clrstack -l”命令列出当前线程的调用堆栈及其使用的局部变量
+4. 字典类不是线程安全的，导致CPU100%，使用了.net4.0提供的线程安全的字典类 ConcurrentDictionary  也可以使用lock解决~
 
-# We can use DumpHeap command to look for memory leak issues in our application
-
- !dumpheap -strings
- !dumpheap -min 85000
- !dumpheap -thinlock
- !dumpheap -type Console
- !do 0000000002355260
  
- You can do this with lm v m coreclr. Check that sos.dll exists also exists at the path. 
- If so, then a simple .loadby sos coreclr will work. 
- If your sos.dll is located in a different location, you'll need to specify it manually: .load <path>\sos.dll. 
  
 
 

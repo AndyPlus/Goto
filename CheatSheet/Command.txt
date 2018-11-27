@@ -56,4 +56,13 @@ Command Line API (Chrome控制台)
 * monitor & unmonitor - monitor("resize")
 * debug & undebug - debug("resize") debugger
 
-=========Google Command=============
+=========Bing Command=============
+-+|  ()  ""
+inanchor  inbody  intitle
+ip:217  loc:US
+
+tennis contains:gif
+tennis filetype:pdf
+
+tennis prefer:history
+tennis site:zhihu.com

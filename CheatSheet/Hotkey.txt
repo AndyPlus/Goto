@@ -31,23 +31,18 @@ Win+ Tab,X,方向键  (BT)
 
 
 ## VS: 
-* 在解决方案中定位： Ctrl+;   Ctrl+,
-* 查看代码定义：Alt+F11   Alt+F12
-* 在搜索结果中搜索： Ctrl+F
-* 多个搜索结果中导航：F8, Shift F8
-* 菜单中可以选择全局Undo
-* 命令窗口中可以执行Tools.DiffFiles a,b
+* 在解决方案中定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]  
+* 查看代码定义：F12+(三控制)   Ctrl+W+CDJK(结构分析)
+* 搜中搜: Ctrl+F F3 F8, Shift F8
 * 两次Home键走到行首
-* 导航：Ctrl+I   Ctrl+T  Ctrl+,  Ctrl+.  Ctrl+-   Ctrl+]  F3 F8
-* 编辑：Ctrl+K+  CFU(格式化),LPI(提示)  Alt+上下
-* 视图：Ctrl+W+  SC(右侧视图) TB,EO(下侧视图) CKDJ(结构分析)
-* 调试：Ctrl+D+BI, Ctrl+F10(+Shift)
+* Edit: Ctrl+E+  CFU(格式化),LPI(提示)  Alt+上下
+* Window: Ctrl+W+  SC(右侧视图) TB,EO(下侧视图)
+* Debug: Ctrl+D+BI, Ctrl+F10(+Shift)
 
 ## Code Ext
 
 ## Cmder
-Ctrl + rs : History search
-Ctrl + cvz: and Tab
+Ctrl + rs, cvz, tl
 VS Code Integration
 
 
