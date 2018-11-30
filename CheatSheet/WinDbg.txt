@@ -1,17 +1,19 @@
 # 操作
-* 准备：path windbgPath;%PATH%  (64位，setx PATH=procdumpPath;%PATH% )   code Debugger.Break()
-* 工具：ProcessExplorer, TcpView, DebugView, PerfView
+* 准备: path %PATH%;windbgX64Path;procDumpPath;    code Debugger.Break()	--- path %PATH%;C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\;D:\Software\Soft\Procdump\
+* 工具: ProcessExplorer, TcpView, DebugView, PerfView
 * 视图: (ALT+1   ALT+SHIFT+1)  (ALT+N ALT+5 ALT+6)
-* 热键：直接回车可重复执行上一条命令， Tab键进行命令补全， ;分隔符输入多条命令，  Ctrl + Break来终止， Ctrl+Alt+V切换 verbose Output
-* 远程：1.从服务端机器  .server tcp:port=5005(自己在服务器上指定个端口)		2.从客户端机器  File menu ->  "Connect to Remote Session"  ->  tcp:Port=5005,Server=YourHostComputer
+* 热键: 直接回车可重复执行上一条命令， Tab键进行命令补全， ;分隔符输入多条命令，  Ctrl + Break来终止， Ctrl+Alt+V切换 verbose Output
+* 远程: 1.从服务端机器  .server tcp:port=5005(自己在服务器上指定个端口)		2.从客户端机器  File menu ->  "Connect to Remote Session"  ->  tcp:Port=5005,Server=YourHostComputer
 
 # 命令
 * 命令-帮助：三种列表： ?	 .help	!help (a*)    两种细节：.hh [key]     command /?
 * 元命-加载：.exepath .sympath .srcpath  .symfix (but save) .sympath+ (File Menu) 			.reload, .load, .loadby, .chain
-* 标准-静态：模块：lm(ft)	lmvm clr	符号：x*!* 		变量: ?,dv,dt(Alt+23)
-* 标准-动态: ~*, ~*k, ~*e!clrstack	~s, ~2s			g,q,bl,bp,bu 	 |~k 的类似扩展： ~,Alt+9,!threads 		k,Alt+6,!clrstack
-* 命令-检查：标准：x,?,dv,dt,Alt+3, 	扩展：dump(mt,md,do,da,heap -stat -strings -thinlock -type -min)
-* 扩展-分析：!pe !gcroot !lno !symnoisy !analyze -v 		其它类似：!nametoee !eestack 		lm ln
+* 命令-静态：模块：lm(ftv)	m <patten> 	附近: ln	符号: x*!*	变量: ?,dv,dt,Alt+23,	
+* 命令-动态: ~*, ~*k, ~*e!clrstack	~s, ~2s			|~k 的类似扩展： (~,Alt+9,!threads 和 k,Alt+6,!clrstack)	g,q,bl,bp,bu 	 
+* 扩展-查看： 	扩展： !dumpheap (mt,md,do,da,heap -stat -strings -thinlock -type -min)
+* 扩展-分析：!pe !gcroot !lno !symnoisy !analyze -v 		其它类似：!Name2EE !EEStack 	!CLRStack !dso	 !bpmd -md 009d37a4  !name2ee *!System.String.Contains
+
+!EEVersion !DumpDomain !DumpAssembly
 
 # 实例：
 !dumpheap -mt MTAddress  可以知道在MethodTable中相关联的所有instance。
@@ -51,31 +53,30 @@
 3. Edit menu or by pressing ALT+F9.
 
 # NotePad:
-0.准备: x64, 	File Menu,		windbg my.exe		.attach -v  .create (附加线程，启动线程) .opendump  .dump   
-1.加载：.sympath srv*, (.sympath+ C:\MyApp\x64\Debug  .srcpath C:\MyApp\MyApp) .reload			.exepath .sympath .srcpath  .symfix (but save)
+0.准备: x64, 	File Menu,		windbg my.exe		.attach -v  .create (附加线程，启动线程) .opendump  .dump   procdump
+1.加载：.sympath cache*;srv*, (.sympath+ C:\MyApp\x64\Debug  .srcpath C:\MyApp\MyApp) .reload			.exepath .sympath .srcpath  .symfix (but save)
 2.符号: x notepad!*main*  (x {module}!{symbol}) x*
 3.断点: bu notepad!WinMain (bu MyApp!main), bl, ~,~s,~0s(看右下角得知线程id)  g(然后用Debug菜单和源码窗口) q (也可随时操作Debug菜单停止和继续),   [bp, bu, bm (.hh bp详细了解)]
 4.检查: lm, x notepad!*, ~, k 列出： 模块，符号，线程，堆栈。   !analyze -v  （用来分析当前异常）
 5.变量：? dv dt  Watch ALT+2 ALT+3  (eval expr, dump var, dump type)
 
 # .NET Core：
-1. path windbgPath;%PATH%  (64位，setx PATH=procdumpPath;%PATH% )
-3. windbg dotnet path\to\Your.dll  (first chance, code Debugger.Break(), F6 attach when readkey())
-4. Enter g to go to your first breakpoint
-5. .loadby sos coreclr  (!help)  (lm v m coreclr, .loadby sos clr, .load <otherPath>\sos.dll, .chain)
-6. Verbose symbol loading in WinDbg (via !sym noisy)    add <DebugSymbols>true</DebugSymbols> and <DebugType>pdbonly</DebugType>
-7. !name2ee Sample.dll Sample.Program.SlowMultiply
+1. windbg dotnet path\to\Your.dll  (first chance, code Debugger.Break(), F6 attach when readkey(), dump from TaskManager)
+2. Enter g to go to your first breakpoint
+3. .loadby sos coreclr  (!help)  (lm v m coreclr, .loadby sos clr, .load <otherPath>\sos.dll, .chain)
+4. Verbose symbol loading in WinDbg (via !sym noisy)    add <DebugSymbols>true</DebugSymbols> and <DebugType>pdbonly</DebugType>
+5. !name2ee Sample.dll Sample.Program.SlowMultiply
 
 # High CPU
 1. 执行 procdump -c 50 -s 4 -ma -n 3 w3wp    命令含义为:当w3wp.exe  cpu超过50%,并且持续4秒，抓取3个dump文件存储起来，存储位置默认为procdump文件所在的目录。
 2. !threadpool  查看线程池CPU使用量
 3. !runaway 命令  看线程占用CPU时间
 4. ~线程IDs 跳转到那个线程
-5. !clrstack 看看这个线程再干嘛 执行那些方法
+5. !clrstack 看看这个线程在干嘛 执行那些方法
 
 # Memory Leak：
 0. 执行 procdump w3wp -ma -m 8000 -o D:\Dumps （当内存超过8000M时抓取一个w3wp进程的完整Dump，并输出到D:\Dumps文件夹）
-1. !eeheap，查看托管堆的总信息,看来大对象堆占用最多内存
+1. !eeheap,查看托管堆的总信息,看来大对象堆占用最多内存
 2. !dumpheap -min 200 -stat 获取占用堆内存的各对象的统计信息, 查看堆中信息，一般带-min,-stat,-type等参数。看来Byte数组类型占用最多内存
 3. !dumpheap -type Byte[] -min 200 看各Byte数组占用堆内存的详细信息
 4. !gcroot <Byte数组对象地址> 看对象引用关系，跟踪到Program类的List类型成员了

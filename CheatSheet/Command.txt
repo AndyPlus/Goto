@@ -1,6 +1,5 @@
 =============  CMD: =================  
 cipher /?  robocopy /?
-dir|clip, echo content>>file
 color title label fc diff
 
 sc query, net start, tasklist /svc
@@ -18,6 +17,7 @@ netstat -ano
 
 -------- System ------
 chkdsk mmc perfmon
+netplwiz eventvwr compmgmt.msc appwiz.cpl
 
 ================== PowerShell ==============
 
@@ -36,8 +36,6 @@ gsv gps |gm
 ps|sort -p ws|select -last 5 -prop id,name,ws|ft
 gcm gal gdr, ii, ?=where, %=foreach
 
-
-
 =========Develop=======================
 msbuild nuget code dotnet ef
 Procdump  VsDevCmd.bat clrver -all
@@ -46,9 +44,9 @@ npm -v -i -g npm@latest, npm init. npm publish, npm config ls, exports.
 
 
 ============Chrome Console API==========
-console.warn('%chello world','font-size:25px;color:red;');
-var data =[{a:1,b:2},{a:2,b:1}]    console.table(data);
-console.assert    console.count    console.log(document.body);
+* console.warn('%chello world','font-size:25px;color:red;');
+* var data =[{a:1,b:2},{a:2,b:1}]    console.table(data);
+* console.assert    console.count    console.log(document.body);
 
 Command Line API (Chrome控制台)
 * $(selector) = document.querySelector() = first dom
@@ -66,3 +64,4 @@ tennis filetype:pdf
 
 tennis prefer:history
 tennis site:zhihu.com
+

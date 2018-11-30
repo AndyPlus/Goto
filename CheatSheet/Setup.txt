@@ -1,13 +1,15 @@
 Path
 ---------------------
-set path subst /?  
-setx PATH=%ConEmuBaseDir%\Scripts;%PATH%  
+path %PATH%;myPath;
+set  PATH=%PATH%;myPath;
+
 net use * \\hostname\E$\test\ 
 subst F: C:\Test 
 
 C:\Program Files\Git\usr\bin\  
 C:\Windows\System32\inetsrv  
-C:\Program Files (x86)\MSBuild\14.0\Bin  
+C:\Program Files (x86)\MSBuild\14.0\Bin
+
 C:\Windows\System32\drivers\etc\hosts  
 C:\inetpub\logs\LogFiles\W3SVC2  
 C:\Users\Andymore\.gitconfig
@@ -28,9 +30,6 @@ alias gt=pushd D:\Test\ $T ls
 ------------------
 * 其它：bookmark,link,hotkey, path,alias  
 * 扩展: JsonViewer, XmlTree, Dict, 拼写检查， markdown  
-* 运行: netplwiz eventvwr compmgmt.msc appwiz.cpl  
-
-------------------
 * SqlDev.lnk   "\Ssms.exe" -S xxx -U xxx -P xxx -d xxx
 * SqlTan.lnk   runas.exe /netonly /user:xxx\xxx "ssms -E -S xxxx"
 * Jump.rdg  OpenSSH  WinTools

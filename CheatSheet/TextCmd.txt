@@ -10,6 +10,12 @@
 * 版本：{color}{quote}
 
 =========== Search ==================
+dir|clip, md, rd,	 rm, mv
+
+建文件：
+touch file1 file2
+echo .>file, type nul>>file, echo string>>file, type con>file, copy nul file
+
 搜命令：
 which {command}
 where /R {path} {pattern}
@@ -35,22 +41,31 @@ git grep solution -- :^Documentation
 
 =====================================
 VIM:
-By words: web
-By paragraph: {}
-By marker: mx   'x   
-By last: ''	  '.  
-other: gg G %  0$%
+By words: web 9jk
+By paragraph: {} % (match brackets)
+By marker:  ''	  '.	'x (mx)
+By end: gg G  0^$ :n
 
-* Edit: dxyp  u. > o 3x 3p 3dd 3. dw
-* Search: /?  *#   nN  (:set hlsearch)
-* Replace: :%s/foo/bar/g
+* Edit: dxyp  uU.  	3p 3. 	dw yw	dd yy
+* Search: /?  *#   nN  (:set hlsearch   :set noh	:set ignorecase)   /<text> to search text, among others.
+* Replace: :s/old/new	:%s/old/new/g		:2,35s/old/new/giw (v-mode substitute)
+
+* Mode: V(vV^) I(io) >缩进  	Windows: ^=^Shift.  ^=^^
+* Window: HML 	^W jk hl tb
+* Buffer:	:e.  :ls	:b  np fl w n 
 
 * gd & gD  - go to definition of local(global) symbol under cursor;
-* ^N (in insert mode) automatic word completion   Ctrl+P  Ctrl+N
+* ^N (in insert mode) automatic word completion   ^P  ^N
 
 vim  filename +546
 vim  filename +/main
+
+vim foo.txt bar.txt
+vim -p /directory/*
+
+set number: vi ~/.vimrc :set nonumber :set  :syntax on
 notepad++ filename -n1500
+
 ========================================
 AWK
 awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。

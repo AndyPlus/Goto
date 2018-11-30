@@ -41,8 +41,8 @@ git checkout --theirs -- <filename>
 git grep -n "hello" v2.5
 git grep solution -- :^Documentation
 git grep -e "str1" --and --not -e "str2"
-git grep --name-only -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
-git grep -l CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
+git grep -l -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
+git grep -l -P CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
 
 git log --grep=JF-7813
 git log -Sword
@@ -142,3 +142,5 @@ shortcuts: ]c and [c
 :wqa
 
 ----------------
+git worktree add ..\LinkWorkTree [<commit-ish>]
+git worktree list prune
