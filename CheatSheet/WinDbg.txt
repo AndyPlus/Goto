@@ -6,7 +6,7 @@
 * 远程: 1.从服务端机器  .server tcp:port=5005(自己在服务器上指定个端口)		2.从客户端机器  File menu ->  "Connect to Remote Session"  ->  tcp:Port=5005,Server=YourHostComputer
 
 # 命令
-* 命令-帮助：三种列表： ?	 .help	!help (a*)    两种细节：.hh [key]     command /?
+* 命令-帮助：三种列表： ?	 .help	!help (a*)    两种细节：.hh [key]     用Tab键提示命令， 多用鼠标点链接
 * 元命-加载：.exepath .sympath .srcpath  .symfix (but save) .sympath+ (File Menu) 			.reload, .load, .loadby, .chain
 * 命令-静态：模块：lm(ftv)	m <patten> 	附近: ln	符号: x*!*	变量: ?,dv,dt,Alt+23,	
 * 命令-动态: ~*, ~*k, ~*e!clrstack	~s, ~2s			|~k 的类似扩展： (~,Alt+9,!threads 和 k,Alt+6,!clrstack)	g,q,bl,bp,bu 	 
@@ -66,6 +66,7 @@
 3. .loadby sos coreclr  (!help)  (lm v m coreclr, .loadby sos clr, .load <otherPath>\sos.dll, .chain)
 4. Verbose symbol loading in WinDbg (via !sym noisy)    add <DebugSymbols>true</DebugSymbols> and <DebugType>pdbonly</DebugType>
 5. !name2ee Sample.dll Sample.Program.SlowMultiply
+!mbp myapp.cs 10 (Use !sosex.mbp to set bp to line 10)
 
 # High CPU
 1. 执行 procdump -c 50 -s 4 -ma -n 3 w3wp    命令含义为:当w3wp.exe  cpu超过50%,并且持续4秒，抓取3个dump文件存储起来，存储位置默认为procdump文件所在的目录。

@@ -1,4 +1,6 @@
 =============  CMD: =================  
+https://ss64.com
+
 cipher /?  robocopy /?
 color title label fc diff
 
@@ -8,6 +10,7 @@ quser, qwinsta, whoami /all
 appcmd list site
 appcmd list trace
 net helpmsg 64
+ls -t -a -l
 
 --------Net-----
 Curl  -Hiv X d

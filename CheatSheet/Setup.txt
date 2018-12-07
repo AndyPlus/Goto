@@ -2,11 +2,14 @@ Path
 ---------------------
 path %PATH%;myPath;
 set  PATH=%PATH%;myPath;
+setx PATH %PATH%;myPath;
+env export echo $PATH
 
 net use * \\hostname\E$\test\ 
 subst F: C:\Test 
 
-C:\Program Files\Git\usr\bin\  
+C:\Program Files\Git\usr\bin\  (vim and other)
+C:\Program Files\Git\mingw64\bin\  (curl)
 C:\Windows\System32\inetsrv  
 C:\Program Files (x86)\MSBuild\14.0\Bin
 
@@ -27,9 +30,17 @@ alias gj=pushd D:\JumpForward\codebase\
 alias gjf=pushd D:\JumpForward\jfui\ $T ls  
 alias gt=pushd D:\Test\ $T ls  
 
+doskey note=notepad++ -n $1
+cmdkey /list
+
 ------------------
 * 其它：bookmark,link,hotkey, path,alias  
 * 扩展: JsonViewer, XmlTree, Dict, 拼写检查， markdown  
 * SqlDev.lnk   "\Ssms.exe" -S xxx -U xxx -P xxx -d xxx
 * SqlTan.lnk   runas.exe /netonly /user:xxx\xxx "ssms -E -S xxxx"
 * Jump.rdg  OpenSSH  WinTools
+
+-------------------
+Other:
+curl -o .gitignore  https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore
+nuget sources Add -Name "MyDll" -Source C:\mydll

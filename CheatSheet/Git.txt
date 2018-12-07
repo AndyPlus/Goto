@@ -135,7 +135,7 @@ $ git push --force
 * 减少来自master的merge commits，而是使用 cherry pick
 
 -------- Merge Conflict ---
-git config merge.tool vimdiff
+git config merge.tool vimdiff (忘记吧，一点不好用，还是VScode好用)
 git mergetool
 shortcuts: ]c and [c
 :diffg LO BA RE

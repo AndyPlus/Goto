@@ -67,12 +67,19 @@ set number: vi ~/.vimrc :set nonumber :set  :syntax on
 notepad++ filename -n1500
 
 ========================================
-AWK
-awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。
-简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
+grep的查找，sed的编辑，awk分析
+sed 代表 "stream editor"   s: 代表 "substitution".
+awk 就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
 
+grep -R  'what' filenames
+sed 's/old/new/' filenames
 awk '{pattern + action}' {filenames}
+
 awk -F: '/root/{print $7"\t"}' /etc/passwd    
 指定分隔符， 指定正则，指定动作，指定路径
 花括号里面其实是C语言,printf可以用awk内置变量
+
+
+
+
 
