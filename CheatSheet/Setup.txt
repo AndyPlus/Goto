@@ -44,3 +44,13 @@ cmdkey /list
 Other:
 curl -o .gitignore  https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore
 nuget sources Add -Name "MyDll" -Source C:\mydll
+code --install-extension myextension.vsix
+
+
+npm install -g yo
+npm install -g generator-aspnet
+yo aspnet
+
+schtasks ftype assoc
+&& || 都包含短路逻辑  | more
+延时逻辑 ping localhost -n 3

@@ -50,17 +50,18 @@ By end: gg G  0^$ :n
 * Search: /?  *#   nN  (:set hlsearch   :set noh	:set ignorecase)   /<text> to search text, among others.
 * Replace: :s/old/new	:%s/old/new/g		:2,35s/old/new/giw (v-mode substitute)
 
-* Mode: V(vV^) I(io) >缩进  	Windows: ^=^Shift.  ^=^^
-* Window: HML 	^W jk hl tb
+* Mode: V(vV^) I(io) >>缩进 ~uU大小写 	Windows: ^=^Shift.  ^=^^
+* Window: HML 	^W jk hl tb 	:sp	
 * Buffer:	:e.  :ls	:b  np fl w n 
 
-* gd & gD  - go to definition of local(global) symbol under cursor;
-* ^N (in insert mode) automatic word completion   ^P  ^N
+* 编程跳转：gd gD  g; g,	[[ ]]		变量定义，修改过的地方， 函数块开始
+* ^N 自动完成及其翻页   ^P  ^N
 
 vim  filename +546
 vim  filename +/main
 
-vim foo.txt bar.txt
+vim    a.txt b.txt
+vim -o a.txt b.txt
 vim -p /directory/*
 
 set number: vi ~/.vimrc :set nonumber :set  :syntax on
@@ -68,8 +69,10 @@ notepad++ filename -n1500
 
 ========================================
 grep的查找，sed的编辑，awk分析
-sed 代表 "stream editor"   s: 代表 "substitution".
-awk 就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
+
+grep 代表全局正则，-nil -cvr
+sed  代表 "stream editor"   s: 代表 "substitution". -ir
+awk  就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
 
 grep -R  'what' filenames
 sed 's/old/new/' filenames

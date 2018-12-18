@@ -1,17 +1,19 @@
 ## Code
 * 切换： Ctrl + Shift + DEFG(左) + MUY(下)， Ctrl+BJ F11
-* 导航： Alt+左右键， F12+三控制键, F1F3F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:
-* 选择： Alt+Shift+左右（扩框多）， Ctrl+D
+* 导航： Alt+左右键， F12+三控制键, F1F3F7F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:
+* 选择： Alt+Shift+左右（扩框多）， Ctrl+D	Ctrl+Shift+\
 * 窗口： Ctrl+PgUp Tab  	Ctrl+\, Ctrl+123,拖动，Ctrl+W
-* 其它： F11全屏， Ctrl+KF format，Ctrl+Shift+R refactor
-* 文件： Ctrl+KS KU KW K回  全保存，关保存，关所有，保持。
+* 其它： F11全屏， Ctrl+KF format，Ctrl+Shift+R refactor Ctrl+.
+* 文件： Ctrl+KS KU KW K回  对应：全保存，关保存，关所有，保持。
 
-高级断点： (Shift+F9) 功能：保存当前WorkSpace.
-react redux snippets plugin help
-XML: Ctrl+N, 右下角选XML, Shift+Alt+F
-Ctrl+Alt+M for JSON pretty.  Alt+M for JSON minify.
+* 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
+* XML: Ctrl+N, 右下角选XML, Shift+Alt+F	Json: Ctrl+Alt+M   Alt+M 	MarkDown: Ctrl+Shift+V  Ctrl+KV
+* Folding: Ctrl+Shift+[]	Ctrl+K+0987654321
+* code -h -v --list-extensions  --add(multi-root workspace)
+* 左下角git状态，左侧行号颜色三种状态。F7下一个不同	注意左下角选择工程，右下角选择文件类型。plugin help
+* C# Snippets: attribute exception indexer interface invoke iterator lock propg tryf
 
-
+---------------------------------------
 
 ## Chrome
 * 常规：F3F6F11, Ctrl+THJ, Alt+方向, Ctrl+Shift+O  
@@ -21,7 +23,8 @@ Ctrl+Alt+M for JSON pretty.  Alt+M for JSON minify.
 
 ## SQL
 Ctrl+K+(KCDW), F8, Alt+F1  
-Alt + F1= sp_help, sp_who2, sp_rename  
+Alt + F1= sp_help, sp_who2, sp_rename  print
+Perf: F4 Ctrl+LM  Ctrl+Alt+P
 
 ## GitLab
 TFS, g+(fcmb)  
@@ -30,7 +33,7 @@ TFS, g+(fcmb)
 ?/,.		g+(DPIA)        jkE  
                 
 ## Win
-Win+ Tab,X,方向键  (BT)
+窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏) Tab,DBTW
 
 ## Notepad++
 * language, encoding.  
@@ -41,13 +44,13 @@ Win+ Tab,X,方向键  (BT)
 
 ## VS: 
 * 在解决方案中定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]  
-* 查看代码定义：F12+(三控制)   Ctrl+W+CDJK(结构分析)
+* 查看代码定义：F12+(三控制)   Ctrl+K+T(结构分析) Ctrl+W+K 结构视图放在另一个屏幕比较好。
 * 搜中搜: Ctrl+F F3 F8, Shift F8
 * 两次Home键走到行首
 * Edit: Ctrl+E+  CFU(格式化),LPI(提示)  Alt+上下
-* Window: Ctrl+W+  SC(右侧视图) TB,EO(下侧视图)
+* Window: Ctrl+W+  SC(右侧视图) TB,EO(下侧视图) CJ(类和对象)
 * Debug: Ctrl+D+BI, Ctrl+F10(+Shift)
-* Ctrl+Q search everything
+* Ctrl+Q search everything 也就是VS Code 的F1功能。
 
 ## Code Ext
 
