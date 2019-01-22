@@ -1,0 +1,260 @@
+{
+  "id": "f1c74fef-65cb-4aa4-82ab-59ba7fee579d",
+  "name": "My Visual Studio extensions",
+  "description": "A collection of my Visual Studio extensions",
+  "version": "1.0",
+  "extensions": [
+    {
+      "name": "Assembly Load Debugger",
+      "vsixId": "34f00824-cb6a-4bc1-a27d-7375239cdd2f"
+    },
+    {
+      "name": "Async Method Name Fixer",
+      "vsixId": "3f1bd9bf-d048-4430-8705-1a26a4819614"
+    },
+    {
+      "name": "AsyncFixer",
+      "vsixId": "AsyncFixer.Vsix..edab5fce-e3aa-4fea-9d60-a07bc11d493b"
+    },
+    {
+      "name": "Audit.Net",
+      "vsixId": "Audit.Net.VörSecurity.747b4e5e-2181-432b-bc9c-5f196551e328"
+    },
+    {
+      "name": "AxoCover",
+      "vsixId": "26901782-38e1-48d4-94e9-557d44db052e"
+    },
+    {
+      "name": "Azure Functions and Web Jobs Tools",
+      "vsixId": "Microsoft.VisualStudio.Web.AzureFunctions"
+    },
+    {
+      "name": "Browse in remote Git repository",
+      "vsixId": "Konamiman.BrowseInRemoteGitRepo.34224d0e-a924-4690-844d-f2385996b08c"
+    },
+    {
+      "name": "C# Code Analyzer (Roslyn)",
+      "vsixId": "97EC8C98-7AC1-4C1D-9733-804229DA4A62"
+    },
+    {
+      "name": "C# Console App Boilerplate",
+      "vsixId": "d48265e8-c755-4ad7-a031-634941108e8a"
+    },
+    {
+      "name": "C# Methods Code Snippets",
+      "vsixId": "e2abe71c-24a4-4e59-8cc1-8c7805afe23f"
+    },
+    {
+      "name": "C# Var Type CodeLens",
+      "vsixId": "VsVarAdornment.dff56f8c-1aa3-4ece-989f-d7d7c292b775"
+    },
+    {
+      "name": "Cloud Explorer for VS 2017",
+      "vsixId": "Microsoft.VisualStudio.CloudExplorer"
+    },
+    {
+      "name": "Code Converter C# to/from VB.NET",
+      "vsixId": "7e2a69d6-193b-4cdf-878d-3370d5931942"
+    },
+    {
+      "name": "Code Cracker for C#",
+      "vsixId": "CodeCracker.Vsix..5b99e64c-1418-4a06-990c-fd4cf01f4f63"
+    },
+    {
+      "name": "CodeRush",
+      "vsixId": "81b8f465-6112-407e-a05a-44e3188746af"
+    },
+    {
+      "name": "Debug Time Search",
+      "vsixId": "5AA02891-7F8E-433D-9281-EF92F0934D45"
+    },
+    {
+      "name": "DependencyInjectionToolset",
+      "vsixId": "DependencyInjectionToolset.Akos Nagy.1ad465e3-e1b2-46ae-82ff-e2d2163fba74"
+    },
+    {
+      "name": "Designite",
+      "vsixId": "DesigniteVS.6fcb5177-509a-4fd0-a4a0-6c847892a8c0"
+    },
+    {
+      "name": "DiConstructorGeneratorExtension",
+      "vsixId": "DiConstructorGeneratorExtension..ff7f9a37-eccc-432b-9d10-debc302ab7f7"
+    },
+    {
+      "name": "EntityFramework Reverse POCO Generator",
+      "vsixId": "EntityFramework_Reverse_POCO_Generator..d542a934-8bd6-4136-b490-5f0049d62033"
+    },
+    {
+      "name": "Extension Manager",
+      "vsixId": "e83d71b8-8bfc-4e06-b145-b0388910c016"
+    },
+    {
+      "name": "Fortify on Demand Extension for Visual Studio",
+      "vsixId": "1a15336d-8d50-45f3-a5fe-2c107d49f14e"
+    },
+    {
+      "name": "Git Diff Margin",
+      "vsixId": "GitDiffMargin..5ef9f816-d9ce-45cd-a8fa-cd67a807df0e"
+    },
+    {
+      "name": "Git Ignore File",
+      "vsixId": "GitIgnoreVSIXPackage.7b4d9a5a-e692-4eaf-a47f-b9c61f7842b4"
+    },
+    {
+      "name": "GitBlamer",
+      "vsixId": "GitBlamer.b52a4741-0e59-49d0-bb93-8f6ea76f3248"
+    },
+    {
+      "name": "GitHub Extension for Visual Studio",
+      "vsixId": "c3d3dc68-c977-411f-b3e8-03b0dccf7dfc"
+    },
+    {
+      "name": "GitLab Extension for Visual Studio",
+      "vsixId": "54803a44-49e0-4935-bba4-7d7d91682273"
+    },
+    {
+      "name": "Harurow MultipleSelection",
+      "vsixId": "Harurow.Extensions.MultipleSelection.da8dbee7-f793-410b-b7f0-2d0563066453"
+    },
+    {
+      "name": "ILSpy",
+      "vsixId": "a9120dbe-164a-4891-842f-fb7829273838"
+    },
+    {
+      "name": "JSON Viewer",
+      "vsixId": "c21a2a7b-7b1c-45c9-bee3-3bdc0715bdc9"
+    },
+    {
+      "name": "LINQBridgeVs - Debugger Visualizers",
+      "vsixId": "BridgeVS.Coding Adventures.93d93bed-e4dc-42a8-bfe2-a0b7676a45b2"
+    },
+    {
+      "name": "Markdown Editor",
+      "vsixId": "9ca64947-e9ca-4543-bfb8-6cce9be19fd6"
+    },
+    {
+      "name": "Microsoft Code Analysis 2017",
+      "vsixId": "4db2d63d-3320-4fbd-bf80-07f8d1500bd3"
+    },
+    {
+      "name": "Microsoft DevSkim",
+      "vsixId": "DevSkim"
+    },
+    {
+      "name": "NUnit 2 Test Adapter",
+      "vsixId": "NUnitTestAdapterInstall..7c53286e-ac4f-485f-915c-5ec5a4c47b0c"
+    },
+    {
+      "name": "NUnit 3 Test Adapter",
+      "vsixId": "NUnit.NUnit3TestAdapter"
+    },
+    {
+      "name": "NUnit Migrator",
+      "vsixId": "nunit-migrator-mw"
+    },
+    {
+      "name": "NUnit VS Templates",
+      "vsixId": "nunit.templates.b29e95b8-bf26-4f03-983d-f1d0f21ad6ef"
+    },
+    {
+      "name": "NuPack-NuGet Packager",
+      "vsixId": "NuPack.CnSharp.969b0d0e-e751-4464-b958-c1896bfeb363"
+    },
+    {
+      "name": "Open in Notepad++",
+      "vsixId": "E476F42B-1D6C-4C78-B56B-42CF7366D5E0"
+    },
+    {
+      "name": "Open in Visual Studio Code",
+      "vsixId": "e99dde0e-e023-410d-bc5d-3f76db71e3f0"
+    },
+    {
+      "name": "Output enhancer",
+      "vsixId": "VSOutputEnhancer.Nikolay Balakin.a06be4c3-f97e-425c-8a0d-bdef08ac2abb"
+    },
+    {
+      "name": "Project File Tools",
+      "vsixId": "e22f3d7e-6b01-4ef8-b3cb-ea293a87b00e"
+    },
+    {
+      "name": "Quick Diagram Tool for C#",
+      "vsixId": "7481ead5-87e4-4ac0-86d1-317e7adab60c"
+    },
+    {
+      "name": "Razor Language Services",
+      "vsixId": "Microsoft.VisualStudio.RazorExtension"
+    },
+    {
+      "name": "Redgate SQL Change Automation Core",
+      "vsixId": "ReadyRoll.Redgate.C6DA5CFB-AF31-4107-8E82-522EE0B39886"
+    },
+    {
+      "name": "RevDeBug",
+      "vsixId": "10924bad-7b78-4bbc-a897-c84acc70fa6f"
+    },
+    {
+      "name": "Roslynator 2017",
+      "vsixId": "9289a8ab-1bb6-496b-9992-9f7ea27f66a8"
+    },
+    {
+      "name": "Sharpen",
+      "vsixId": "Ironcev.Sharpen"
+    },
+    {
+      "name": "Smart Attach",
+      "vsixId": "c6176957-c61c-4beb-8dd8-e7c0170b0bf5"
+    },
+    {
+      "name": "SmartTests.Extension",
+      "vsixId": "SmartTestsExtension.b14ea0e3-351e-4f51-bee3-3b32cab5a1fd"
+    },
+    {
+      "name": "SonarLint for Visual Studio 2017",
+      "vsixId": "SonarLint.36871a7b-4853-481f-bb52-1835a874e81b"
+    },
+    {
+      "name": "SQL Prompt Core",
+      "vsixId": "885df752-601a-4f20-8c50-338753b267b0"
+    },
+    {
+      "name": "SQL Search",
+      "vsixId": "Redgate.SQLSearch.VSExtension.9BD7AEDA-C291-4702-8191-4189B099F3A9"
+    },
+    {
+      "name": "StyleCop",
+      "vsixId": "StyleCop.629EB7CC-69C2-43AC-9BC9-482B0F810C4E"
+    },
+    {
+      "name": "StyleCop Check-in Policy 2017",
+      "vsixId": "StyleCop.CheckinPolicy.07de449e-fa6e-4831-9f65-cef882ffb4a1"
+    },
+    {
+      "name": "Test Generator NUnit extension",
+      "vsixId": "TestGeneration.Extensions.NUnit.113f61ed-a246-4431-809d-bcd393642599"
+    },
+    {
+      "name": "Tidy C#",
+      "vsixId": "c6176957-c61c-4beb-8dd8-e7c0170b0bf3"
+    },
+    {
+      "name": "Unit Test Boilerplate Generator",
+      "vsixId": "UnitTestBoilerplate.RandomEngy.ca0bb824-eb5a-41a8-ab39-3b81f03ba3fe"
+    },
+    {
+      "name": "Var Replacer C#",
+      "vsixId": "VarReplacer..8947c111-320d-47c5-aafc-f230edd29872"
+    },
+    {
+      "name": "Visual Studio Spell Checker (VS2017 and Later)",
+      "vsixId": "43EA967E-0DE2-4136-8E52-C6DCFB5C2748"
+    },
+    {
+      "name": "VisualSOS.Extension",
+      "vsixId": "VisualSOS.Extension.9c8ec28b-499a-4ce6-9445-e83c3a95b082"
+    },
+    {
+      "name": "VisualStudio.GitStashExtension",
+      "vsixId": "VisualStudio.GitStashExtension.867bf2a4-6229-4a1d-bbf4-a380e7b8527d"
+    }
+  ]
+}

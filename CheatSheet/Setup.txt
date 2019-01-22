@@ -35,7 +35,7 @@ cmdkey /list
 
 ------------------
 * 其它：bookmark,link,hotkey, path,alias  
-* 扩展: JsonViewer, XmlTree, Dict, 拼写检查， markdown  
+* 扩展: JsonViewer, XmlTree, Dict, 拼写检查, Tab Search
 * SqlDev.lnk   "\Ssms.exe" -S xxx -U xxx -P xxx -d xxx
 * SqlTan.lnk   runas.exe /netonly /user:xxx\xxx "ssms -E -S xxxx"
 * Jump.rdg  OpenSSH  WinTools

@@ -43,7 +43,7 @@ TFS, g+(fcmb)
 
 
 ## VS: 
-* 在解决方案中定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]  
+* 在解决方案中定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]  Ctrl+T  Alt+PgUp
 * 查看代码定义：F12+(三控制)   Ctrl+K+T(结构分析) Ctrl+W+K 结构视图放在另一个屏幕比较好。
 * 搜中搜: Ctrl+F F3 F8, Shift F8
 * 两次Home键走到行首
@@ -57,5 +57,13 @@ TFS, g+(fcmb)
 ## Cmder
 Ctrl + rs, cvz, tl
 VS Code Integration
+
+## GitLab: 
+Snippets, MR: Search My, TODO notify, Key: AREL, click "Done" one by one. filter AndyStar,
+
+## RayGun:
+Filter: Host&Machine = WL00070207,1Week 1Day
+View: User&URL, Tabs Collapse, View Next and All
+Edit: On Title, Status, Comments
 
 

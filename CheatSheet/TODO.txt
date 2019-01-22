@@ -1,27 +1,19 @@
-充分利用NotePad++的搜索标记功能 dnSpy了解一下。
-理解业务逻辑：尽量从正向  宏观需求 -> 功能概览 -> 数据架构 -> 代码反推
-学习如何学习业务，举一反三的业务逻辑，其实就是理解管理，理解社会，从无意义中寻找意义。
-
-
-早起的最大好处是 让你拥有更多时间
-看Wiki上有关架构的文档。
-多用GitLab搜，比本地搜索管用
-多从业务测试入手，不熟悉业务走多少弯路。
-VS CODE HELP PlayGround
-
 Staging数据库每周二还原
 Int数据库每个月第一天还原
-如何阅读源码
 
 
-思维切换不要怕麻烦，比如测试前的造数据和做完后的自测。
+思维切换不要怕麻烦，比如测试前的造数据和做完后的自测。多从业务测试入手
 用高阶函数降维打击，往往比面向对象更犀利。
 代码有时候不能太抽象，拷贝粘贴才是大数据多样化的途径，不是所有复杂度都能抽象
+理解业务逻辑：尽量从正向  宏观需求 -> 功能概览 -> 数据架构 -> 代码反推
+学习如何学习业务，举一反三的业务逻辑，其实就是理解社会。
 
+多用GitLab搜，比本地搜索管用
+充分利用NotePad++的搜索标记功能 dnSpy了解一下。
+关于分支管理：从协作的基线来，到集成的节点去。少无谓同步，多摘草莓。
 
 * JFUI入口： package.json -> webpack.config -> entry_list_template.html -> src/entry/*index.js
 * 注意： 入口：require()		出口：module.exports =  WebPack中的Entry和Plugins中的Config
-* 关于分支管理：从协作的基线来，到集成的节点去。少无谓同步，多摘草莓。
 
 DebugView tool to Get Sql
 
@@ -29,3 +21,19 @@ Try:
 procDump for w3wp
 VS open dump
 WinDbg Source-level debug for JF.
+Live UT Hello World.
+LiveUT,IntelligeUt
+
+
+* CodeMap: documents and try to C/E rule Notification.
+* EF-POCO: link and try
+* Report Perf measure
+
+
+get Snippets from MR and WorkSpace and Jira
+
+Change Dependence Sequence
+
+Good Ext List for team setup
+CodeRush, sql, NDepend, Linq: RevDebug, OzCode
+AddUserRequest

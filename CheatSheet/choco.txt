@@ -4,7 +4,7 @@ choco install docker docker-for-windows winscp putty powershell-core
 
 choco install visualstudio2017-workload-netweb  sql-server-management-studio
 choco install resharper webpi heidisql golang postgresql teamcity
-choco install windbg dnspy linqpad
+choco install windbg dnspy linqpad perfview
 
 choco install sysinternals (tcpview procexp procmon procdump dbgview autoruns bginfo du handle zoomit whois diskmon portmon rdcman)
 
@@ -15,6 +15,10 @@ choco install curl postman fiddler wireshark
 choco install vlc mpv potplayer emule tor
 choco install onenote adobereader foxitreader pdfcreator goldendict
 choco install lightshot greenshot screentogif jpegview xnview pencil paint.net
+
+
+Launchy Executor
+
 
 ====================
 It's a package manager manager

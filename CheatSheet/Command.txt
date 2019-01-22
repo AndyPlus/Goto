@@ -9,6 +9,7 @@ quser, qwinsta, whoami /all
 
 appcmd list site
 appcmd list trace
+AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
 net helpmsg 64
 ls -t -a -l
 
@@ -40,7 +41,7 @@ ps|sort -p ws|select -last 5 -prop id,name,ws|ft
 gcm gal gdr, ii, ?=where, %=foreach
 
 =========Develop=======================
-msbuild nuget code dotnet ef
+devenv msbuild nuget code dotnet ef
 Procdump  VsDevCmd.bat clrver -all
 node debug index.js
 npm -v -i -g npm@latest, npm init. npm publish, npm config ls, exports.
@@ -64,4 +65,29 @@ inanchor  inbody  intitle
 tennis contains:gif
 tennis filetype:pdf
 tennis site:zhihu.com
+
+==========WSL===========
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
+
+lxrun /install /y
+apt-get update
+	sudo apt update && sudo apt upgrade
+apt install docker.io
+	sudo usermod -aG docker $USER
+cgroupfs-mount
+service docker start
+docker version
+
+ubuntu,bash,wsl
+wslconfig /list, exit
+
+wsl ls -la
+wsl sudo apt-get update
+/mnt/c/Windows/System32/notepad.exe
+
+==============
+find app by port:
+netstat -ano | findstr "80"
+
 

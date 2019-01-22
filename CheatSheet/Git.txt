@@ -40,7 +40,7 @@ git checkout --theirs -- <filename>
 ---------- Grep --------------------
 git grep -n "hello" v2.5
 git grep solution -- :^Documentation
-git grep -e "str1" --and --not -e "str2"
+git grep -e "str1" --and --not -e "str2"  (-v)
 git grep -l -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
 git grep -l -P CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
 
@@ -61,7 +61,11 @@ glob模式匹配，比如"file[ab]"
 ---------- Other -----------
 git branch -v -m
 git add mv rm
+
 git stash apply -h -m
+git stash list
+git stash apply stash@{0}
+
 git checkout -b features/subFeature
 git checkout -- README.txt
 

@@ -65,7 +65,10 @@ vim -o a.txt b.txt
 vim -p /directory/*
 
 set number: vi ~/.vimrc :set nonumber :set  :syntax on
+
 notepad++ filename -n1500
+code -g JumpForward.sln:100
+code -h d r
 
 ========================================
 grep的查找，sed的编辑，awk分析
