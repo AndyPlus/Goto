@@ -1,27 +1,28 @@
-=============  CMD: =================  
-https://ss64.com
+=== Go Go Go ===
 
-cipher /?  robocopy /?
-color title label fc diff
 
-sc query, net start, tasklist /svc
-quser, qwinsta, whoami /all
+================  CMD: =================  
 
-appcmd list site
-appcmd list trace
-AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
-net helpmsg 64
-ls -t -a -l
+-----Config -------
+path %PATH%;myPath;
+subst F: C:\Test 
+doskey note=notepad++ -n $1
+alias gj=pushd D:\JumpForward\codebase\  
+&& || 都包含短路逻辑
 
 --------Net-----
 Curl  -Hiv X d
-ipconfig /all
 netsh http add urlacl ...
-netstat -ano
+netstat -ano | findstr "80" (find app by port)
+net user,start,share helpmsg 64
+ping, tracert, pathping, telnet,ipconfig, nslookup
 
 -------- System ------
-chkdsk mmc perfmon
-netplwiz eventvwr compmgmt.msc appwiz.cpl
+color title label
+chkdsk robocopy cipher, sc query, tasklist /svc
+quser, qwinsta, whoami /all
+appcmd list wp,request,site,trace
+mmc: perfmon netplwiz eventvwr compmgmt.msc appwiz.cpl
 
 ================== PowerShell ==============
 
@@ -40,23 +41,38 @@ gsv gps |gm
 ps|sort -p ws|select -last 5 -prop id,name,ws|ft
 gcm gal gdr, ii, ?=where, %=foreach
 
+
+====================Bash=====================
+bash,wsl
+wslconfig /list, exit
+
+wsl ls -la
+wsl sudo apt-get update
+/mnt/c/Windows/System32/notepad.exe
+
+sudo mkdir /c
+sudo mount --bind /mnt/c /c
+
+bash和sshd配置文件路径 (apt-get i openssh-server) (putty,winscp, xshell xftp)
+常用目录: /bin /sbin, /usr ~, /var/log /mnt/c /ect/configs
+
+==========Docker===========
+sudo service docker start  (cgroupfs-mount)
+docker version (docker-compose)
+docker run --rm hello-world
+	
+docker run -it ubuntu bash (bin/bash)
+docker run -e MYSQLPWD=12345 mysql
+docker run --name myserver -p 8080:80  -v ~/path:path myapp
+
+docker exec -it some-mysql bash
+docker logs cp rm rmi (save/load镜像, export/import容器, pull tag -p -v)
+docker rm $(docker ps -aq)
+
 =========Develop=======================
-devenv msbuild nuget code dotnet ef
 Procdump  VsDevCmd.bat clrver -all
-node debug index.js
-npm -v -i -g npm@latest, npm init. npm publish, npm config ls, exports.
 
-
-============Chrome Console API==========
-* console.warn('%chello world','font-size:25px;color:red;');
-* var data =[{a:1,b:2},{a:2,b:1}]    console.table(data);
-* console.assert    console.count    console.log(document.body);
-
-Command Line API (Chrome控制台)
-* $(selector) = document.querySelector() = first dom
-* $$(selector) = document.querySelectorAll() = all doms
-* monitor & unmonitor - monitor("resize")
-* debug & undebug - debug("resize") debugger
+inetsrv,inetmgr,inetcpl.cpl, MsVsMon, iisreset
 
 =========Bing Command=============
 -+|  ()  ""
@@ -65,29 +81,4 @@ inanchor  inbody  intitle
 tennis contains:gif
 tennis filetype:pdf
 tennis site:zhihu.com
-
-==========WSL===========
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
-
-lxrun /install /y
-apt-get update
-	sudo apt update && sudo apt upgrade
-apt install docker.io
-	sudo usermod -aG docker $USER
-cgroupfs-mount
-service docker start
-docker version
-
-ubuntu,bash,wsl
-wslconfig /list, exit
-
-wsl ls -la
-wsl sudo apt-get update
-/mnt/c/Windows/System32/notepad.exe
-
-==============
-find app by port:
-netstat -ano | findstr "80"
-
 

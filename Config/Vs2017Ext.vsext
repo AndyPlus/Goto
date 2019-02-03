@@ -9,28 +9,12 @@
       "vsixId": "34f00824-cb6a-4bc1-a27d-7375239cdd2f"
     },
     {
-      "name": "Async Method Name Fixer",
-      "vsixId": "3f1bd9bf-d048-4430-8705-1a26a4819614"
-    },
-    {
       "name": "AsyncFixer",
       "vsixId": "AsyncFixer.Vsix..edab5fce-e3aa-4fea-9d60-a07bc11d493b"
     },
     {
-      "name": "Audit.Net",
-      "vsixId": "Audit.Net.VörSecurity.747b4e5e-2181-432b-bc9c-5f196551e328"
-    },
-    {
       "name": "AxoCover",
       "vsixId": "26901782-38e1-48d4-94e9-557d44db052e"
-    },
-    {
-      "name": "Azure Functions and Web Jobs Tools",
-      "vsixId": "Microsoft.VisualStudio.Web.AzureFunctions"
-    },
-    {
-      "name": "Browse in remote Git repository",
-      "vsixId": "Konamiman.BrowseInRemoteGitRepo.34224d0e-a924-4690-844d-f2385996b08c"
     },
     {
       "name": "C# Code Analyzer (Roslyn)",
@@ -49,20 +33,12 @@
       "vsixId": "VsVarAdornment.dff56f8c-1aa3-4ece-989f-d7d7c292b775"
     },
     {
-      "name": "Cloud Explorer for VS 2017",
-      "vsixId": "Microsoft.VisualStudio.CloudExplorer"
-    },
-    {
       "name": "Code Converter C# to/from VB.NET",
       "vsixId": "7e2a69d6-193b-4cdf-878d-3370d5931942"
     },
     {
       "name": "Code Cracker for C#",
       "vsixId": "CodeCracker.Vsix..5b99e64c-1418-4a06-990c-fd4cf01f4f63"
-    },
-    {
-      "name": "CodeRush",
-      "vsixId": "81b8f465-6112-407e-a05a-44e3188746af"
     },
     {
       "name": "Debug Time Search",
@@ -95,10 +71,6 @@
     {
       "name": "Git Diff Margin",
       "vsixId": "GitDiffMargin..5ef9f816-d9ce-45cd-a8fa-cd67a807df0e"
-    },
-    {
-      "name": "Git Ignore File",
-      "vsixId": "GitIgnoreVSIXPackage.7b4d9a5a-e692-4eaf-a47f-b9c61f7842b4"
     },
     {
       "name": "GitBlamer",
@@ -141,32 +113,8 @@
       "vsixId": "DevSkim"
     },
     {
-      "name": "NUnit 2 Test Adapter",
-      "vsixId": "NUnitTestAdapterInstall..7c53286e-ac4f-485f-915c-5ec5a4c47b0c"
-    },
-    {
-      "name": "NUnit 3 Test Adapter",
-      "vsixId": "NUnit.NUnit3TestAdapter"
-    },
-    {
-      "name": "NUnit Migrator",
-      "vsixId": "nunit-migrator-mw"
-    },
-    {
-      "name": "NUnit VS Templates",
-      "vsixId": "nunit.templates.b29e95b8-bf26-4f03-983d-f1d0f21ad6ef"
-    },
-    {
       "name": "NuPack-NuGet Packager",
       "vsixId": "NuPack.CnSharp.969b0d0e-e751-4464-b958-c1896bfeb363"
-    },
-    {
-      "name": "Open in Notepad++",
-      "vsixId": "E476F42B-1D6C-4C78-B56B-42CF7366D5E0"
-    },
-    {
-      "name": "Open in Visual Studio Code",
-      "vsixId": "e99dde0e-e023-410d-bc5d-3f76db71e3f0"
     },
     {
       "name": "Output enhancer",
@@ -185,14 +133,6 @@
       "vsixId": "Microsoft.VisualStudio.RazorExtension"
     },
     {
-      "name": "Redgate SQL Change Automation Core",
-      "vsixId": "ReadyRoll.Redgate.C6DA5CFB-AF31-4107-8E82-522EE0B39886"
-    },
-    {
-      "name": "RevDeBug",
-      "vsixId": "10924bad-7b78-4bbc-a897-c84acc70fa6f"
-    },
-    {
       "name": "Roslynator 2017",
       "vsixId": "9289a8ab-1bb6-496b-9992-9f7ea27f66a8"
     },
@@ -205,44 +145,16 @@
       "vsixId": "c6176957-c61c-4beb-8dd8-e7c0170b0bf5"
     },
     {
-      "name": "SmartTests.Extension",
-      "vsixId": "SmartTestsExtension.b14ea0e3-351e-4f51-bee3-3b32cab5a1fd"
-    },
-    {
       "name": "SonarLint for Visual Studio 2017",
       "vsixId": "SonarLint.36871a7b-4853-481f-bb52-1835a874e81b"
-    },
-    {
-      "name": "SQL Prompt Core",
-      "vsixId": "885df752-601a-4f20-8c50-338753b267b0"
-    },
-    {
-      "name": "SQL Search",
-      "vsixId": "Redgate.SQLSearch.VSExtension.9BD7AEDA-C291-4702-8191-4189B099F3A9"
     },
     {
       "name": "StyleCop",
       "vsixId": "StyleCop.629EB7CC-69C2-43AC-9BC9-482B0F810C4E"
     },
     {
-      "name": "StyleCop Check-in Policy 2017",
-      "vsixId": "StyleCop.CheckinPolicy.07de449e-fa6e-4831-9f65-cef882ffb4a1"
-    },
-    {
-      "name": "Test Generator NUnit extension",
-      "vsixId": "TestGeneration.Extensions.NUnit.113f61ed-a246-4431-809d-bcd393642599"
-    },
-    {
-      "name": "Tidy C#",
-      "vsixId": "c6176957-c61c-4beb-8dd8-e7c0170b0bf3"
-    },
-    {
       "name": "Unit Test Boilerplate Generator",
       "vsixId": "UnitTestBoilerplate.RandomEngy.ca0bb824-eb5a-41a8-ab39-3b81f03ba3fe"
-    },
-    {
-      "name": "Var Replacer C#",
-      "vsixId": "VarReplacer..8947c111-320d-47c5-aafc-f230edd29872"
     },
     {
       "name": "Visual Studio Spell Checker (VS2017 and Later)",

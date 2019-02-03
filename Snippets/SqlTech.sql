@@ -1,10 +1,10 @@
-Audit: and ct.CreateBy=10979270 and ct.CreateDt> '2015-04-08 16:00'  order by id desc
-Find: select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME like 'CARAPracticeLog%' and COLUMN_NAME like '%Deadline%'
-T-SQL: Merge Truncate Print,With cte as (...), If not exists(...), If object_id() is not null, begin end,
-Select: Like Between,  a not in (b,c,null),  having count(*)>1,  %_[^] ESCAPE
-Func: Row_Number() Max() CAST() CONVERT () STUFF COALESCE , ViewList from LeftPanel
-Vars: Declare @var1 @table1(a,b,c),  set @var1=1, select @@rowcount
-Perf: SET STATISTICS [TIME,IO,PROFILE] ON
+* Audit: and ct.CreateBy=10979270 and ct.CreateDt> '2015-04-08 16:00'  order by id desc
+* Find: select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME like 'CARAPracticeLog%' and COLUMN_NAME like '%Deadline%'
+* T-SQL: Merge Truncate Print,With cte as (...), If not exists(...), If object_id() is not null, begin end,  FOR JSON Auto
+* Select: Like Between,  a not in (b,c,null),  having count(*)>1,  %_[^] ESCAPE
+* Func: Row_Number() Max() CAST() CONVERT () STUFF COALESCE , ViewList from LeftPanel
+* Vars: Declare @var1 @table1(a,b,c),  set @var1=1, select @@rowcount
+* Perf: SET STATISTICS [TIME,IO,PROFILE] ON
 
 Tran: Begin tran,  commit Tran, rollback Tran (if @@ error>0)
 IF: Case When, Then, Else End,

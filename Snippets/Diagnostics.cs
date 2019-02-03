@@ -1,3 +1,6 @@
+﻿#define RELEASE
+#undef DEBUG
+
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -9,16 +12,19 @@ namespace DbgTest
     {
         static void Main(string[] args)
         {
+#if DEBUG
+            Console.WriteLine("DEBUG");
+#endif
             int x = 1, y = 2;
             var result = Add(x, y);
-            Console.WriteLine("result:{0}",result);
+            Console.WriteLine("result:{0}", result);
         }
         static int Add(int x, int y)
         {
             System.Diagnostics.Debugger.Break();
             System.Diagnostics.Debug.WriteLine("This is log Debug");
             System.Diagnostics.Trace.WriteLine("This is log Trace");
-            System.Diagnostics.Trace.Assert(true,"Must Assert true");
+            System.Diagnostics.Trace.Assert(true, "Must Assert true");
             System.Diagnostics.Contracts.Contract.Ensures(true, "Must Ensure true");
             return x + y;
             throw new NotImplementedException("just a test");

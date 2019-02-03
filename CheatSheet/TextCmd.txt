@@ -9,13 +9,19 @@
 * 其它：转义，注释，制表
 * 版本：{color}{quote}
 
-=========== Search ==================
-dir|clip, md, rd,	 rm, mv
+=========== File ==================
+看文件：
+ls -alt    cat,head,tail,more,less,vim filename +546 (+/main)
+dir tree   type,more,code -gr filename:100
 
 建文件：
-touch file1 file2
+md a/b/c, touch a b      md, (rd,rm,mv,cp -ri)file tar -cvf xvf
 echo .>file, type nul>>file, echo string>>file, type con>file, copy nul file
 
+比文件：
+fc diff
+
+=========== Search ==================
 搜命令：
 which {command}
 where /R {path} {pattern}
@@ -28,16 +34,10 @@ dir /s *.xls
 grep -R  "what" "where"
 findstr(find) "what" "where" 
 
-
 搜库(比普通grep更快)：
-git log --author=Jon
-git log --grep=JF-7813
-
+git log --grep,-S -G
 git ls-files "*middleware*"
-git ls-files -v |grep "^S"
-
-git grep -n "hello" v2.5
-git grep solution -- :^Documentation
+git grep -nlP "hello" v2.5 -- path
 
 =====================================
 VIM:
@@ -51,27 +51,14 @@ By end: gg G  0^$ :n
 * Replace: :s/old/new	:%s/old/new/g		:2,35s/old/new/giw (v-mode substitute)
 
 * Mode: V(vV^) I(io) >>缩进 ~uU大小写 	Windows: ^=^Shift.  ^=^^
-* Window: HML 	^W jk hl tb 	:sp	
+* Window: HML 	^W jk hl tb 	:sp	  (vim -op /directory/*)
 * Buffer:	:e.  :ls	:b  np fl w n 
+* Config: set number: vi ~/.vimrc :set nonumber :set  :syntax on
 
 * 编程跳转：gd gD  g; g,	[[ ]]		变量定义，修改过的地方， 函数块开始
 * ^N 自动完成及其翻页   ^P  ^N
-
-vim  filename +546
-vim  filename +/main
-
-vim    a.txt b.txt
-vim -o a.txt b.txt
-vim -p /directory/*
-
-set number: vi ~/.vimrc :set nonumber :set  :syntax on
-
-notepad++ filename -n1500
-code -g JumpForward.sln:100
-code -h d r
-
 ========================================
-grep的查找，sed的编辑，awk分析
+grep的查找，sed的编辑，awk分析   wc=word count
 
 grep 代表全局正则，-nil -cvr
 sed  代表 "stream editor"   s: 代表 "substitution". -ir
@@ -84,6 +71,15 @@ awk '{pattern + action}' {filenames}
 awk -F: '/root/{print $7"\t"}' /etc/passwd    
 指定分隔符， 指定正则，指定动作，指定路径
 花括号里面其实是C语言,printf可以用awk内置变量
+
+=======Regex================
+匹配： ^$ \d\w\s\b
+预查： 分组例子： (ABC)(?:ABC)     预查符号(不捕获):    ?=, ?!,   ?<=,?<!
+替换： $&  $`  $' $1
+
+?的用法有：数量，贪婪，预查5种
+$的用法有：结尾，转义，替换5种
+
 
 
 

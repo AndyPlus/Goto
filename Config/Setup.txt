@@ -1,0 +1,80 @@
+#Path
+---------------------
+path %PATH%;myPath;
+set  PATH=%PATH%;myPath;
+setx PATH %PATH%;myPath;
+env export echo $PATH
+
+net use * \\hostname\E$\test\ 
+subst F: C:\Test 
+
+C:\Program Files\Git\usr\bin\  (vim and other)
+C:\Program Files\Git\mingw64\bin\  (curl)
+C:\Windows\System32\inetsrv  
+C:\Program Files (x86)\MSBuild\14.0\Bin
+
+C:\Windows\System32\drivers\etc\hosts  
+C:\inetpub\logs\LogFiles\W3SVC2  
+C:\Users\Andymore\.gitconfig
+
+#Powershell
+-------------------
+New-Alias vs "\IDE\devenv.exe"  
+function gj {pushd D:\JumpForward\codebase\}  
+function ge {taskkill /f /im devenv.exe}  
+
+#Cmder
+--------------------
+alias ge=taskkill /f /im devenv.exe  
+alias gj=pushd D:\JumpForward\codebase\  
+alias gjf=pushd D:\JumpForward\jfui\ $T ls  
+alias gt=pushd D:\Test\ $T ls  
+
+doskey note=notepad++ -n $1
+cmdkey /list
+
+------------------
+* UserFolder: .ssh .gitconfig
+* SqlDev.lnk   "\Ssms.exe" -S xxx -U xxx -P xxx -d xxx
+* SqlTan.lnk   runas.exe /netonly /user:xxx\xxx "ssms -E -S xxxx"
+
+* VsCode: code --list-extensions | xargs -L 1 echo code --install-extension
+* Chrome: Bookmark, extensions: chrome://system/ 
+* Vs2017: Extension Manager: Vs2017Ext.vsext
+
+
+#WSL
+==========WSL===========
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
+
+lxrun /install /y
+apt-get update
+	sudo apt update && sudo apt upgrade
+apt install docker.io  (docker-ce, docker-compose)
+	sudo usermod -aG docker $(whoami)
+cgroupfs-mount
+service docker start
+	docker version (docker-compose)
+	docker run --rm hello-world
+
+export DOCKER_HOST=tcp://127.0.0.1:2375
+永久在主目录的.bash_profile或者 .bashrc 文件中设置该变量。
+
+---------------
+sudo apt-get install zsh
+zsh --version
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+vi ~/.zshrc
+ZSH_THEME="random" 
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "avit" "refined")
+echo $ZSH_THEME  $RANDOM_THEME
+
+ba-sh,z-sh,ohmy-zsh
+/icon "%USERPROFILE%\AppData\Local\lxss\bash.ico"
+%windir%\system32\bash.exe ~ -cur_console:p
+%windir%\system32\bash.exe ~ -c zsh -cur_console:p
+
+
+

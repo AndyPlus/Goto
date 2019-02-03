@@ -1,5 +1,6 @@
 === Go Go Go ===
-
+Show: git status, branch -v,tag, stash list, config -l --global, show, gc, help
+Alias: alias glm=git log --no-merges --name-status --author=Andy, gl, gitk (--since, --until)
 
 ============ Show Diff Log =============
 git show master:JumpForward/Error.aspx
@@ -25,7 +26,7 @@ git log --author=Andy (--since, --until,--no-merges,--first-parent) gitk图形�
 git reset --hard HEAD^  (#配合使用 git reflog 和 git log)
 git reset origin/JF-9991
 git revert -n master~5..master~2
-git cherry-pick master
+git cherry-pick master (-n)
 git cherry-pick ..master  (= git cherry-pick ^HEAD master, NOT)
 git cherry-pick -n master~4 master~2
 
@@ -43,6 +44,7 @@ git grep solution -- :^Documentation
 git grep -e "str1" --and --not -e "str2"  (-v)
 git grep -l -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
 git grep -l -P CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
+git ls-files "*middleware*"
 
 git log --grep=JF-7813
 git log -Sword
@@ -69,12 +71,17 @@ git stash apply stash@{0}
 git checkout -b features/subFeature
 git checkout -- README.txt
 
-git tag v2.5 1b2e1d63ff
-git push origin <tag_name>
+
+git tag -l v2018*
+git tag v1 1b2e1d63ff (-m)
+git tag -d
+git show v1
+git checkout -b newbranchname tagname
+git push tagname (-d)
 git push --tags 
 
 =========== Config ===========
-git config -l
+git config -l (~/.gitconfig   .git/config)
 git config --global user.email <email>
 git help -g
 git help glossary
@@ -104,15 +111,12 @@ Ranges:
 git gc
 git remote prune -n origin
 git branch --merged | xargs git branch -d
+git branch | grep -v "master" | xargs git branch -D
+git pull --tags --prune
 
 git branch --no-merged 
 git branch --no-contains <commit>
 
---------- Review changes from multiple commits --------
-$ git checkout a0^
-$ git cherry-pick a0{0,1,2,3,4} （按顺序）
-$ git diff master...  （或者直接 git diff a0^）
-$ git checkout master
 
 ---------- Github Setup ---------------
 git config user.name "AndyPlus"
@@ -124,27 +128,23 @@ git commit --amend --reset-author
 git rebase --continue
 
 
-分支的开发过程中，要经常与主干保持同步。
-$ git fetch origin
-$ git rebase origin/master
-$ git rebase -i origin/master
-
-Pony Foo提出另外一种合并commit的简便方法:
+简便合并多个commits:
 $ git reset HEAD~5
 $ git commit -am "Here's the bug fix that closes #28"
 $ git push --force
+
+简便查看多个commits:
+$ git checkout a0^
+$ git cherry-pick a0{0,1,2,3,4} （按顺序）
+$ git diff master...  （或者直接 git diff a0^）
+$ git checkout master
 
 * Github flow 是Git flow的简化版，专门配合"持续发布"。
 * GitLab flow 重要论述是不要用rebase 进行sqush在远程修改记录
 * 减少来自master的merge commits，而是使用 cherry pick
 
--------- Merge Conflict ---
-git config merge.tool vimdiff (忘记吧，一点不好用，还是VScode好用)
-git mergetool
-shortcuts: ]c and [c
-:diffg LO BA RE
-:wqa
-
 ----------------
 git worktree add ..\LinkWorkTree [<commit-ish>]
 git worktree list prune
+git commit --amend -m "New commit message"
+

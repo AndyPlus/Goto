@@ -1,0 +1,29 @@
+概念术语
+
+Flux VS MVC 架构 (a unidirectional data flow)
+
+
+1.View： 视图层
+2.Action（动作）：视图层发出的消息（比如mouseClick）
+3.Dispatcher（派发器）：用来接收Actions、执行回调函数
+4.Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒Views要更新页面
+
+1.MyButton是一个纯组件（即不含有任何状态），从而方便了测试和复用。
+
+2.每个Action都是一个对象，包含一个actionType属性（说明动作的类型）和一些其他属性（用来传递数据）。
+View 要发送多少种消息，就会有多少种 Action。如果都手写，会很麻烦。可以定义一个函数来生成 Action，这个函数就叫 Action Creator。
+可以这样理解，Action 描述当前发生的事情。改变 State 的唯一办法，就是使用 Action。它会运送数据到 Store。
+
+3.Dispatcher 的作用是将 Action 派发到 Store、。你可以把它看作一个路由器，负责在 View 和 Store 之间，建立 Action 的正确传递路线。注意，Dispatcher 只能有一个，而且是全局的。
+记住，Dispatcher 只用来派发 Action，不应该有其他逻辑。
+
+
+4.Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。
+Reducer 是一个函数，它接受 Action 和当前 State 作为参数，返回一个新的 State。
+什么这个函数叫做 Reducer 呢？因为它可以作为数组的reduce方法的参数。 Array.Reduce()传入函数，将数组批量执行。
+
+* connectJs连接三个  state(reducer) + action(logic api) + module(view react)
+这三者都分为Setup阶段和Execute阶段：
+* 其中Reducer方法传入当前状态和持续的Action对象，然后根据Action的type和payload来产生一个新的状态。
+* 其中Action类中的方法有两种ActionCreator和Dispatcher,前者负责创建Action对象，后者负责路由通知Reducer.
+* 其中Compnents类中，首先执行底部的方法ConnnectJs进行相关设置，然后构造器方法和初始化方法，最后执行Render方法。

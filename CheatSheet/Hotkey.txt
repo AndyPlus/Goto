@@ -7,39 +7,11 @@
 * 文件： Ctrl+KS KU KW K回  对应：全保存，关保存，关所有，保持。
 
 * 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
-* XML: Ctrl+N, 右下角选XML, Shift+Alt+F	Json: Ctrl+Alt+M   Alt+M 	MarkDown: Ctrl+Shift+V  Ctrl+KV
+* XML:  Ctrl+N, 右下角选XML, Shift+Alt+F	Json: Ctrl+Alt+M   Alt+M 	MarkDown: Ctrl+Shift+V  Ctrl+KV
 * Folding: Ctrl+Shift+[]	Ctrl+K+0987654321
-* code -h -v --list-extensions  --add(multi-root workspace)
-* 左下角git状态，左侧行号颜色三种状态。F7下一个不同	注意左下角选择工程，右下角选择文件类型。plugin help
+* code -hvd -gr --list-extensions  --add(multi-root workspace)
+* 左下角git状态，左侧行号颜色三种状态。F7下一个不同	注意左下角选择工程，右下角选择文件类型
 * C# Snippets: attribute exception indexer interface invoke iterator lock propg tryf
-
----------------------------------------
-
-## Chrome
-* 常规：F3F6F11, Ctrl+THJ, Alt+方向, Ctrl+Shift+O  
-* F12 全局： F1, Esc, Ctrl+123， Alt+方向  
-* F12 Elements：方向(看) H回车F2(改)  
-* F12 Debugger：Ctrl+B(&Shift), Ctrl+F8  
-
-## SQL
-Ctrl+K+(KCDW), F8, Alt+F1  
-Alt + F1= sp_help, sp_who2, sp_rename  print
-Perf: F4 Ctrl+LM  Ctrl+Alt+P
-
-## GitLab
-TFS, g+(fcmb)  
-
-## JIRA
-?/,.		g+(DPIA)        jkE  
-                
-## Win
-窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏) Tab,DBTW
-
-## Notepad++
-* language, encoding.  
-* View: symbol,clone window, F11全屏，Ctrl+123 Tab页面, F8, Alt+H, Alt+0, tail -f  
-* Edit: Ctrl +B 匹配括号， F4,F7.   
-* Alt+Mouse编辑 Ctrl  + CDIJQ  Case,blank paste  
 
 
 ## VS: 
@@ -52,18 +24,46 @@ TFS, g+(fcmb)
 * Debug: Ctrl+D+BI, Ctrl+F10(+Shift)
 * Ctrl+Q search everything 也就是VS Code 的F1功能。
 
-## Code Ext
 
-## Cmder
-Ctrl + rs, cvz, tl
-VS Code Integration
+## Notepad++
+* language, encoding.  
+* View: symbol,clone window, F11全屏，Ctrl+123 Tab页面, F8, Alt+H, Alt+0, tail -f  
+* Edit: Ctrl +B 匹配括号， F4,F7.   
+* Alt+Mouse编辑 Ctrl  + CDIJQ  Case,blank paste  
 
-## GitLab: 
+## SQL
+Ctrl+K+(KCDW), F8, Alt+F1  
+Alt + F1= sp_help, sp_who2, sp_rename  print
+Perf: F4 Ctrl+LM  Ctrl+Alt+P
+
+------------------
+
+## Chrome
+* 常规：F3F6F11, Ctrl+THJ, Alt+方向, Ctrl+Shift+O  
+* F12 全局： F1, Esc, Ctrl+123， Alt+方向  
+* F12 Elements：方向(看) H回车F2(改)  
+* F12 Debugger：Ctrl+B(&Shift), Ctrl+F8  
+
+## GitLab
+TFS, g+(fcmb)  
 Snippets, MR: Search My, TODO notify, Key: AREL, click "Done" one by one. filter AndyStar,
+
+## JIRA
+?/,.		g+(DPIA)        jkE  
 
 ## RayGun:
 Filter: Host&Machine = WL00070207,1Week 1Day
 View: User&URL, Tabs Collapse, View Next and All
 Edit: On Title, Status, Comments
+ 
+---------------------- 
+## Win
+窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏) Tab,DBTW
+
+## Cmder
+Ctrl + rs, cvz, tl
+VS Code Integration
+
+
 
 
