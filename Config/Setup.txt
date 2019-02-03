@@ -39,7 +39,7 @@ cmdkey /list
 * SqlTan.lnk   runas.exe /netonly /user:xxx\xxx "ssms -E -S xxxx"
 
 * VsCode: code --list-extensions | xargs -L 1 echo code --install-extension
-* Chrome: Bookmark, extensions: chrome://system/ 
+* Chrome: Bookmark, extensions: XML Tree,JSON Viewer,Bing New Tab,QR URL,Tab Search 
 * Vs2017: Extension Manager: Vs2017Ext.vsext
 
 
