@@ -1,69 +1,85 @@
 React:
 
-React 的核心思想是：封装组件。
+* React 的核心思想是：封装组件。
+* JSX 语法：   < 开头  { 开头
 
-
-JSX 语法：   < 开头  { 开头）
 React组件：   
-
-组件的用法与原生的 HTML 标签完全一致， 
-组件的属性可以在组件类的 this.props 对象上获取（class = className ，for = htmlFor） 
-React 提供一个工具方法 React.Children 来处理 this.props.children
-组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求
-有时需要从组件获取真实 DOM 的节点，这时就要用到 ref 属性
-this.state： 将组件看成是一个状态机，一开始有一个初始状态，然后用户互动 ，由于 this.props状态不变化  和 this.state 状态变化后自动调用this.render()
-
-表单内容： 文本输入框的值，不能用 this.props.value 读取，而要定义一个 onChange 事件的回调函数，通过 event.target.value 读取用户输入的值
+* 组件的用法与原生的 HTML 标签完全一致， 
+* 组件的属性可以在组件类的 this.props 对象上获取（class = className ，for = htmlFor） 
+* React 提供一个工具方法 React.Children 来处理 this.props.children
+* 组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求
+* 有时需要从组件获取真实 DOM 的节点，这时就要用到 ref 属性
 
 组件生命周期：
+* Mounting：已插入真实 DOM
+* Updating：正在被重新渲染
+* Unmounting：已移出真实 DOM
 
-Mounting：已插入真实 DOM
-Updating：正在被重新渲染
-Unmounting：已移出真实 DOM
-
-style={{opacity: this.state.opacity}}：   这是因为 React 组件样式是一个对象，所以第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象。
-
-Ajax: 组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI 
-
-
+* this.state： 将组件看成是一个状态机，一开始有一个初始状态，然后用户互动 ，由于 this.props状态不变化  和 this.state 状态变化后自动调用this.render()
+* style={{opacity: this.state.opacity}}：   这是因为 React 组件样式是一个对象，所以第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象。
+* Ajax: 组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI 
+* 表单内容： 文本输入框的值，不能用 this.props.value 读取，而要定义一个 onChange 事件的回调函数，通过 event.target.value 读取用户输入的值
 
 ================
 
-Redux:
-核心思想： 整个Web应用是一个状态机，所有状态保存在一个Store里。
-State是Store的时间轴快照，View是State的表象，Action是改变State的唯一方法。
+React API参考:
+https://www.reactjscn.com/docs/react-component.html
 
-Action 是一个对象。其中的type属性是必须的， 它是对象。
-Action Creator是用来返回各种type的Action对象的方法，他是方法。
-store.dispatch()是 View 发出 Action 的唯一方法。
+##基本原理
+JSX js扩展语法，混合babel
+React.createElement("h1", props:{className: 're-add'}, "Hello", name);
+ReactDOM.render(element, container);
 
+## this.props & this.state
+* state = {open: false};
+* this.setState({ value: true })
+* this.setState(prevState => ({newState}));
+* handleChange(e) {this.setState({ value: e.target.value });}
 
-Reducer 是一个函数，它接受 Action 和当前 State 作为参数，返回一个新的 State。
-const store = createStore(reducer);
-Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
-
-
-
-上一节介绍了 Redux 涉及的基本概念，可以发现 Store 提供了三个方法。
-
-store.getState()
-store.dispatch()
-store.subscribe()
+* this.interval = setInterval(() => this.tick(), 1000);
+* <div dangerouslySetInnerHTML={__html: 'abcd'}/>
+* key 是 React 当中使用的一种特殊的属性（除此之外还有 ref 属性）, 组件的 keys 值只需要在当前的节点里保证唯一即可。默认可以用index i.
 
 
-=======React-Redux ========================
+## immutable
+React 元素都是immutable 不可变的。所有的React组件必须像纯函数那样使用它们的props。更新界面的唯一办法是创建一个新的元素，然后将它传入 ReactDOM.render() 方法：	
+* player.score = 2;  //可变写法
+* var newPlayer = Object.assign({}, player, {score: 2});  //不可变写法
+* var newPlayer = {...player, score: 2};  // 或使用对象分隔符语法
 
-React-Redux 将所有组件分成两大类：UI 组件（presentational component）和容器组件（container component）。
 
- UI组件是纯组件，完全由参数决定，没有使用this.state,所有数据由参数this.props提供，不用任何reduxAPI，无任何业务逻辑。
- 
- 容器组件的特征恰恰相反。
- 
- React-Redux 规定，所有的 UI 组件都由用户提供，容器组件则是由 React-Redux 自动生成。
- 
- 
- React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connect的意思，就是将这两种组件连起来。
- mapStateToProps是一个函数。它的作用就是像它的名字那样，建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
- mapDispatchToProps是connect函数的第二个参数，用来建立 UI 组件的参数到store.dispatch方法的映射。
- 
- React-Redux 提供Provider组件，可以让容器组件拿到state。
+## 定义组件：用ES6 class或者 传统 function
+* 在使用 JavaScript classes 时，你必须调用 super(); 方法才能在继承父类的子类中正确获取到类型的 this
+* 函数定义组件: 只有render方法的组件,以下 changeItem实际就是render方法。function changeItem(props){return ()}  可以加前缀 export default
+* 定义时：删除 constructor(因为不需要state了),把 this.props 替换为 props， 注意 onClick={props.onClick} 不能写成 onClick={props.onClick()}   
+
+
+## handleClick
+* 采用 JSX 的语法你需要传入一个函数作为事件处理函数<button onClick={activateLasers}>，而不是一个字符串<button onclick="activateLasers()">
+* 使用时：如果你没有在方法后面添加 () ，例如 onClick={this.handleClick}，你应该为这个方法绑定 this。例如：onClick={this.deleteRow.bind(this, id)}
+* 参数 e 作为 React 事件对象将会被作为第二个参数进行隐形传递， 事件取值：e.target.value,name,type   阻止冒泡和默认事件： e.stopPropagation() e.preventDefault()
+
+
+
+## 高级：
+* 受控组件 和 非受控组件，受控组件要注意处理多个表单元素提交，还要解决ECHO问题，考虑使用非受控组件
+* 状态提升，自上到下的数据流，你可以使用 React 开发者工具来检查props属性
+* 组合由于继承(FaceBook几乎从来不用继承)，一些组件不能提前知道它们的子组件是什么，如Dialog: <div className={'dialog'}>{props.children}</div>
+
+## FAQ:
+https://www.reactjscn.com/docs/faq-structure.html
+https://www.reactjscn.com/docs/faq-functions.html
+https://www.reactjscn.com/docs/faq-ajax.html
+https://www.reactjscn.com/docs/faq-state.html
+
+
+## 设计理念: 
+https://www.reactjscn.com/docs/thinking-in-react.html
+https://www.reactjscn.com/docs/react-component.html
+https://www.reactjscn.com/community/debugging-tools.html
+http://www.ruanyifeng.com/blog/2015/03/react.html
+
+
+
+
+

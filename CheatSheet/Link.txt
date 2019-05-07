@@ -1,80 +1,87 @@
 C#
-https://github.com/dotnet/try
-https://roslynpad.net/
-https://typing.io/lessons
+https://docs.microsoft.com/en-us/dotnet/api/
+https://docs.microsoft.com/en-us/dotnet/core
+https://docs.microsoft.com/en-us/aspnet/core
+https://docs.microsoft.com/zh-cn/dotnet/csharp/
 https://referencesource.microsoft.com/
-https://dotnet.github.io/
 
 
 JS:
-https://jsfiddle.net/
+http://mdn.io
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
 http://javascript.ruanyifeng.com/
-
-VS:
-https://mva.microsoft.com/en-US/training-courses/getting-started-with-visual-studio-2017-17798?l=9oIw0FD6D_3611787171
-https://marketplace.visualstudio.com/items?itemName=RiSEResearchinSoftwareEngineering.MicrosoftCodeDigger
-https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/
+https://jsfiddle.net/
+http://jshint.com/
+https://jsbin.com/?html,output
 
 
 SQL:
-https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/join-clause
+http://poorsql.com/
+http://www.sqlfiddle.com/
 http://www.cnblogs.com/fish-li/archive/2011/06/06/2073626.html
 
-Debug:
-https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
-http://www.cnblogs.com/gaochundong/p/windbg_sos_cheat_sheet.html
-http://www.cnblogs.com/wangiqngpei557/p/4027413.html
-
-Online Judge
-https://www.microsoft.com/en-us/research/project/code-hunt/
-https://leetcode-cn.com/
-https://leetcode.com/problemset/all/
-http://acm.timus.ru/
+Regex:
+https://regexr.com/
+https://regex101.com/  
+https://www.regexpal.com/ 
 
 
-https://typing.io/lessons
-http://jsfiddle.net/
-https://referencesource.microsoft.com/
-https://www.zoomeye.org/
-https://www.file.net/
-https://www.openssh.com/
-https://github.com/QuantConnect
+Command:
+https://tldr.sh/   https://tldr.ostera.io/  
+https://ss64.com/
+https://explainshell.com/
+http://www.cheat-sheets.org/
 
-Tools:
+
+Discovery:
+https://stackshare.io/
+
+
+CDN:
+https://www.bootcdn.cn/
+
+==================================================================================================
+Blog:
+https://www.gitbook.com
 https://pages.github.com/
 https://guanpengchn.github.io
 
-Try.NET https://github.com/dotnet/try
-Decode https://evilcos.me/lab/xssee/
-SQL http://poorsql.com/
-Regex https://regex101.com/  https://www.regexpal.com/
 
-http://jshint.com/
+Online Judge:
+https://www.microsoft.com/en-us/research/project/code-hunt/
+https://leetcode-cn.com/
+http://acm.timus.ru/
+https://typing.io/lessons
+
+Hacker:
+https://www.zoomeye.org/
 https://builtwith.com/
-https://explainshell.com/
-http://codesector.com/teracopy
-https://www.chocolatey.org/
-https://pixlr.com/
-https://regexr.com/
-http://www.cheat-sheets.org/
+https://evilcos.me/lab/xssee/
 https://www.browserling.com/tools
 https://www.tutorialspoint.com/online_dev_tools.htm
-https://www.gitbook.com
-https://stackshare.io/
-https://jsfiddle.net/
-https://jsbin.com/?html,output
-http://www.sqlfiddle.com/
-https://www.bootcdn.cn/
-https://explainshell.com/
-https://builtwith.com/
-https://jshint.com/
-https://ss64.com/
-https://dotnetfiddle.net/
-https://www.webpagetest.org/
-https://evilcos.me/lab/xssee/
-https://sharplab.io/
 
-Link-Reff:
+
+Down:
+https://www.chocolatey.org/
 https://docs.microsoft.com/en-us/sysinternals/downloads/
+TeraCopy 
+
+https://www.webpagetest.org/
+https://pixlr.com/
+https://www.file.net/
+https://www.openssh.com/
+https://github.com/QuantConnect
+https://zipkin.io/
+http://nclass.sourceforge.net/
+
+Debug:
+http://www.cnblogs.com/gaochundong/p/windbg_sos_cheat_sheet.html
+http://www.cnblogs.com/wangiqngpei557/p/4027413.html
+
+https://sharplab.io/
+https://roslynpad.net/
+https://dotnetfiddle.net/
+https://github.com/dotnet/try
+http://converter.telerik.com/
+
 

@@ -10,6 +10,13 @@ doskey note=notepad++ -n $1
 alias gj=pushd D:\JumpForward\codebase\  
 && || 都包含短路逻辑
 
+npm config get prefix
+path %PATH%;C:\Users\aan1\AppData\Roaming\npm
+npm install -g tldr
+tldr tar
+C:\Users\aan1\AppData\Roaming\npm\node_modules\tldr\config.json
+"theme": "ocean"
+
 --------Net-----
 Curl  -Hiv X d
 netsh http add urlacl ...

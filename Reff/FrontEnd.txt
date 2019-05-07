@@ -1,0 +1,32 @@
+SASS：
+
+* 主要特性： 变量替换 和 嵌套展开。后缀名可以是scss用类似css语法写。
+* 定义变量   $width: 100px; 它会覆盖前边的值，!default 对立于 !important
+* 普通嵌套： css直接用空格分隔, sass可以用花括号嵌套。border-color也可以拆分嵌套起来
+* 父选择器： 是&符号  注意伪类嵌套，  &:hover { color: red } 表示不加空格直接展开
+* 组选择器： 是逗号，注意不是默认的空格的子嵌套。其它选择器：>+~ 子们，弟，弟们
+
+
+
+
+
+混合和继承：
+==========================
+混合：@mixin{} @include error 
+继承：@extend .error;
+
+混合器定义:
+@mixin link-colors($normal, $hover, $visited) {
+  color: $normal;
+  &:hover { color: $hover; }
+  &:visited { color: $visited; }
+}
+
+混合器使用:
+
+a {
+  @include link-colors(blue, red, green);
+}
+===================================
+防抖动：延时和节流：用lodash _的.debounce和.throttle
+提高性能：immutable-js PureComponet 

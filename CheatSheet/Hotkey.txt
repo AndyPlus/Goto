@@ -1,15 +1,15 @@
 ## Code
-* 切换： Ctrl + Shift + DEFG(左) + MUY(下)， Ctrl+BJ F11
+* 切换： Ctrl + Shift + DEFG(左) + MUY(下)， 全屏：Ctrl+BJ F11
 * 导航： Alt+左右键， F12+三控制键, F1F3F7F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:
-* 选择： Alt+Shift+左右（扩框多）， Ctrl+D	Ctrl+Shift+\
+* 选择： Alt+Shift+左右（扩框多）， Ctrl+D	Ctrl+Shift+\(括号)
 * 窗口： Ctrl+PgUp Tab  	Ctrl+\, Ctrl+123,拖动，Ctrl+W
-* 其它： F11全屏， Ctrl+KF format，Ctrl+Shift+R refactor Ctrl+.
-* 文件： Ctrl+KS KU KW K回  对应：全保存，关保存，关所有，保持。
+* 其它： F11全屏， Ctrl+KF格式，Ctrl+Shift+R refactor Ctrl+.
+* 文件： Ctrl+K+SUW回  对应：全保存，关保存，关所有，保持。
 
 * 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
-* XML:  Ctrl+N, 右下角选XML, Shift+Alt+F	Json: Ctrl+Alt+M   Alt+M 	MarkDown: Ctrl+Shift+V  Ctrl+KV
-* Folding: Ctrl+Shift+[]	Ctrl+K+0987654321
-* code -hvd -gr --list-extensions  --add(multi-root workspace)
+* 语言:  Ctrl+N, 右下角选XML, Shift+Alt+F	Json: Ctrl+Alt+M   Alt+M 	MarkDown: Ctrl+Shift+V  Ctrl+KV
+* 折叠:  Ctrl+Shift+[]	Ctrl+K+0987654321
+* 参数： code -hvd -gr --list-extensions  --add(multi-root workspace)
 * 左下角git状态，左侧行号颜色三种状态。F7下一个不同	注意左下角选择工程，右下角选择文件类型
 * C# Snippets: attribute exception indexer interface invoke iterator lock propg tryf
 
@@ -46,7 +46,7 @@ Perf: F4 Ctrl+LM  Ctrl+Alt+P
 
 ## GitLab
 TFS, g+(fcmb)  
-Snippets, MR: Search My, TODO notify, Key: AREL, click "Done" one by one. filter AndyStar,
+Snippets, MR: Search My, TODO notify, Key: AREL
 
 ## JIRA
 ?/,.		g+(DPIA)        jkE  
@@ -61,9 +61,13 @@ Edit: On Title, Status, Comments
 窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏) Tab,DBTW
 
 ## Cmder
-Ctrl + rs, cvz, tl
+Ctrl + rs(cg), cvz, tl
+Ctrl+Shift+V 粘贴多行
 VS Code Integration
 
+## MS Teams:
+Ctrl+ EGN,234
+Message: CR  Alt+UpDn
 
 
 

@@ -13,7 +13,8 @@ git diff --path --path
 git diff master --name-status
 git diff origin/master..master --stat 
 git diff ./JFAPI (diff in subtree)
-git diff v2.5:Makefile HEAD:Makefile.in
+git diff branch1:file branch2:file
+git diff v1..master -- JumpForward\Web.config
 
 git log -5 -p 
 git log -p HEAD..FETCH_HEAD
@@ -51,10 +52,9 @@ git log -Sword
 git log -Gword   (use regex search both message and content)
 git log -S "string" --source --all (search on all branch, -G regex)
 
-git log -L 15,23:filename.txt
-git log -L '/int main/',/^}/:main.c
-git blame -L 12,22 simple.rb
-git blame -L 10,+1 fe25b6d^ -- src/options.cpp
+git log -L 15,23:filename
+git blame -L 12,22 filename
+git blame -L 10,+1 fe25b6d^ -- filename
 
 --grep, --grep-reflog, --invert-grep, --perl-regexp (-P)
 git bisect (start,bad,good <revision>) 来启动二分查找。 然后build, mark(good or bad)循环，直到提示“is the first bad commit”，然后研究问题所在，之后执行git bisect reset.
@@ -93,7 +93,6 @@ git remote show origin
 
 git update-index --skip-worktree
 git update-index --no-skip-worktree
-git update-index --assume-unchanged
 git status --ignored
 git ls-files --unmerged
 git ls-files -v |grep "^S"
