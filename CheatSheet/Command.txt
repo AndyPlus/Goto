@@ -34,12 +34,12 @@ mmc: perfmon netplwiz eventvwr compmgmt.msc appwiz.cpl
 ================== PowerShell ==============
 
 help *key*
-help gwmi -e (-s -o)
+help gal -e -o
 
 gcm *key*
 gcm get-*
 
-gal *alias*
+gal g*
 gal -d *Command*
 
 gi * = gci = dir = ls 

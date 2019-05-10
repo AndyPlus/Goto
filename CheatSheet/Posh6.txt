@@ -1,0 +1,97 @@
+### Help
+gal g*
+gal -d object*
+
+gcm get*
+gcm |gm
+
+help get*
+help gal -e -o
+
+### Go
+gcm gal gdr
+
+gcm: Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
+gsv: Get-Service | Where-Object {$_.status -eq "stopped"} | select -First 5
+gps: ps|sort -p ws|select -last 5 -prop id,name,ws|ft
+gci: dir -r | ? { $_.LastWriteTime -ge (Get-Date).AddDays(-7) } | select -first 5
+
+=====================================================================
+### Setup
+$PSVersionTable
+Get-ExecutionPolicy
+$profile | Get-Member -Type NoteProperty
+
+Set-PSDebug -Trace 0
+$env:path += ";c:\posh"
+
+Set-Alias np c:\windows\notepad.exe
+New-Alias vs "devenv.exe"
+function gj {pushd D:\JumpForward\codebase\}
+function SayHello ($name){echo "hello $name"}
+
+
+
+### 单行命令
+"A","B","C" | % {$_}
+1,2,3,4 | ? {$_ -lt 3}
+Stop-Process -processname note*
+Clear-History -Command *help*, *command
+get-alias | ConvertTo-HTML > aliases.htm
+cd \\servername\C$\Path\To\File
+
+### 文本处理
+Select-String.
+* Use the -match and -replace operators:
+grep: cat somefile.txt | where { $_ -match "expression"}
+sed: cat somefile.txt | %{$_ -replace "expression","replace"}
+
+(Get-Content somefile.txt).replace('expression', 'replace') | Set-Content somefile.txt
+(Get-Content somefile.txt) | % {$_ -replace 'expression','replace'}  | Out-File somefile.txt
+
+=================================================================
+
+### 变量：
+$var="abc"
+$var -like "*b*" 
+
+$files = dir
+$files[3]
+
+$program = "notepad"
+& $program
+
+$B = 5..8    数组还支持+=运算符和+运算符
+$a[-3..-1]   读取最后三个元素
+$a[0,2+4..6] 读取在索引位置 0,2 和 4-6 的元素
+
+$stu=@{ Name = "小明";Age="12";sex="男";Books="三国演义","围城","哈姆雷特" }
+
+比较：
+$set1 = "A","B","C"
+$set2 = "C","D","E"
+Compare-Object $set1 $set2
+
+
+### 静态方法：
+[System.Environment] | Get-Member -Static
+[System.Environment]::OSVersion  
+[System.Math]::Min(2,7)
+([System.DateTime]::Now).ToString().substring(0,10)
+
+$ie = New-Object -ComObject InternetExplorer.Application
+$ie.Visible = $true
+
+
+
+* cmdlet通用参数：包括 WhatIf、Confirm、Verbose、Debug、Warn、ErrorAction、ErrorVariable、OutVariable 和 OutBuffer。
+* 引号： 双引号允许：变量替换和转义支持。  反引号：是转义符号和命令换行。  单引号表示原始字串。 分号来分隔语句  Other: ii, ?=where, %=foreach
+* -Object: foreach, where, select, sort, format, group
+* -Class: Get- Show- New- Remove- Start- Stop- Copy- Import- Export-
+* PSSnapin or module是基本分发单元：import-module <module-name>  
+* CMD参数：当 Windows 命令或工具带有参数时，如 Shutdown 的“-r”（重新启动）参数，请用引号将参数括起来，以指示PowerShell 将参数传递给该工具而不解释它们。
+* 远程处理：（无需进行配置，使用cmdlet的ComputerName 参数即可，远程处理使用 WS-Management 协议，若要与一台远程计算机开始交互式会话，请使用 Enter-PSSession cmdlet）
+* 关于数据结构和ISE环境，请参见ONENOTE
+
+
+
