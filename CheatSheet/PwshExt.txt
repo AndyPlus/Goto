@@ -1,0 +1,129 @@
+Get-Module -ListAvailable
+
+Install-Module posh-git
+Import-Module posh-git
+Add-PoshGitToProfile
+
+git ch
+[{HEAD-name} S +A ~B -C !D | +E ~F -G !H W]
+remote, index, workDir, overall    
+https://github.com/dahlbyk/posh-git#git-status-summary-information
+
+cmd pwsh bash
+==============
+Install-Module PSReadLine
+Import-Module PSReadLine
+
+Get-Process <Tab>
+Get-Process <Shift+Tab>
+
+Get-Process –<Ctrl+Space>
+Get-Process i<Ctrl+Space>
+[System.Math]::<Ctrl+Space>
+
+help about_PSReadline
+Notice the red “>” in prompt, a syntax error in this 
+
+3+?
+Alt+?
+Ctrl+LGSR
+F78
+Shift+Enter
+
+=======================
+Install-Module ZLocation
+Import-Module ZLocation  ($profile)
+
+z
+z -l
+z jf de
+z -  (popd)
+
+cd -
+cd --
+=====================================
+Install-Module JiraPS -Scope CurrentUser
+Import-Module JiraPS
+
+Set-JiraConfigServer https://jirafnd.dev.activenetwork.com
+New-JiraSession -Credential $cred
+
+Get-JiraIssue JF-6818
+
+Get-Help about_JiraPS
+Get-Command -Module JiraPS
+Get-Help Get-JiraIssue -Full # or any other command
+======================================
+Install-module GitLab-API
+Add-GitLabToken -GitLabURI https://gitlab.dev.activenetwork.com -Token s9HC9uzWfSRotQ8sjbfP
+Get-GitLabProject -projectid 20
+help *gitlab*
+gcm  *gitlab*
+============================
+Install-Module Get-ChildItemColor
+Import-Module Get-ChildItemColor
+
+Set-Alias l Get-ChildItemColor -option AllScope  #($profile)
+Set-Alias ls Get-ChildItemColorFormatWide -option AllScope  #(Format-Wide not support pipeline)
+
+ls Bug: use Tee-Object Fix
+
+Get-Module -ListAvailable
+Import-Module Get-ChildItemColor -Force
+
+----------
+Alter: ls --color=auto
+function Search-Text{& c:\Windows\system32\findstr.exe /A:F0 $Args}
+Set-Alias grep Search-Text
+
+===================
+## VS code
+"powershell.powerShellExePath": "C:\Program Files\PowerShell\6\pwsh.exe"
+"files.autoGuessEncoding": true
+"files.encoding": "utf8bom"
+
+
+============================
+## Pipeline：
+* 传统管道传String:
+dir *.ps1|xargs notepad++
+
+* PS管道传对象：  Method #1: Command substitution 命令替换
+notepad++ (dir *.ps1)
+&"notepad++" $(dir *.ps1)
+
+* PS管道编程：    Method #2: True piping 方法#2：真正的管道
+dir *.ps1|%{notepad++ $_}
+,@(dir *.ps1)|%{&"notepad++" $_}
+
+* PS转换字串处理法：
+Invoke-Expression("notepad++ " + (dir *.ps1) -join ' ')
+
+* 管道的注意事项：传递的是对象，不是字串！ 圈子不同，不要强融。git管道还是适合用bash. Windows下适合用Pwsh.
+* 管道的操作思路：Get, Select, Change, Format, Out.
+
+* git branch --merged|xargs git branch -d 的两种PS方法：
+* git branch -d $(git branch --format "%(refname:short)" --merged)
+* (git branch --merged).replace( '*', ' ').trim()|%{echo git branch -d $_} 
+
+* ConvertFrom-String   Out-String
+* ConvertFrom-StringData: Use ConvertFrom-StringData to convert a string containing one or more value pairs to a hash table. 
+
+## Object:
+$ourObject = New-Object -TypeName psobject
+$ourObject | Add-Member -MemberType NoteProperty -Name ComputerName -Value $computerInfo.Name
+
+
+## ASync Job:
+ForEach($Computer in $Computers){Start-Job -FilePath c:ScriptGet-OperatingSystem.ps1 -ArgumentList $Computer}
+Get-Job | Wait-Job
+Get-Job | Receive-Job | Out-GridView
+
+$job=gps &
+Receive-Job $job
+
+## PowerShell Debug:
+* https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell/debugging-from-commandline.md
+* Test-Path works with variables, certificates, aliases, and functions. Check out this post from TechNet for more details (@MS_ITPro).
+* Debug-Process, Disable-PSBreakpoint, Get-Counter, Measure-Command, Measure-Object, Start-Sleep, Tee-Object, Trace-Command, Write-Debug, Write-Progress
+* Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }

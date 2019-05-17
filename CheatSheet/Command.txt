@@ -43,6 +43,7 @@ gal g*
 gal -d *Command*
 
 gi * = gci = dir = ls 
+sls = Select-String = grep
 dir -r  vs dir /s
 gsv gps |gm
 ps|sort -p ws|select -last 5 -prop id,name,ws|ft

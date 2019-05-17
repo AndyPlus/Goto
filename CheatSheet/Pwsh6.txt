@@ -18,12 +18,16 @@ gci: dir -r | ? { $_.LastWriteTime -ge (Get-Date).AddDays(-7) } | select -first 
 
 =====================================================================
 ### Setup
+pwsh -Version
 $PSVersionTable
 Get-ExecutionPolicy
 $profile | Get-Member -Type NoteProperty
+docker pull mcr.microsoft.com/powershell
 
 Set-PSDebug -Trace 0
 $env:path += ";c:\posh"
+subst p: $env:programfiles
+New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\..."
 
 Set-Alias np c:\windows\notepad.exe
 New-Alias vs "devenv.exe"
@@ -80,7 +84,15 @@ Compare-Object $set1 $set2
 ([System.DateTime]::Now).ToString().substring(0,10)
 
 $ie = New-Object -ComObject InternetExplorer.Application
+$excel = New-Object -com "Excel.Application"
 $ie.Visible = $true
+
+gwmi -list | ?{ $_.Name -cmatch "COM" }
+gwmi Win32_COMSetting | ?{ $_.ProgId -match "Excel" }
+gci HKLM:\Software\Classes -ea 0| ? {$_.PSChildName -match '^\w+\.\w+$' -and (gp "$($_.PSPath)\CLSID" -ea 0)} | ft PSChildName
+
+Get-Process | Where-Object {$_.MainWindowTitle -like "*Message*"}
+$processId = (Get-Process | ? ProcessName -eq explorer | select * | where {$_.mainwindowtitle -match "pattern"}
 
 
 
@@ -91,7 +103,38 @@ $ie.Visible = $true
 * PSSnapin or module是基本分发单元：import-module <module-name>  
 * CMD参数：当 Windows 命令或工具带有参数时，如 Shutdown 的“-r”（重新启动）参数，请用引号将参数括起来，以指示PowerShell 将参数传递给该工具而不解释它们。
 * 远程处理：（无需进行配置，使用cmdlet的ComputerName 参数即可，远程处理使用 WS-Management 协议，若要与一台远程计算机开始交互式会话，请使用 Enter-PSSession cmdlet）
-* 关于数据结构和ISE环境，请参见ONENOTE
+* 关于数据结构和ISE环境，请参见ONENOTE.  curl如果被别名占用，那么要输入curl.exe. 三者不同： date, Date, date.exe
 
 
+=========================================================
+### Other:
+
+$PSCustomObject = [PSCustomObject]@{foo = 1}
+$PSCustomObject.Length
+
+Get-Random -InputObject $NameList
+try {dir c:\Foo -ErrorAction stop} catch [System.Management.Automation.ItemNotFoundException]{}
+
+Test-Connection,  Invoke-RestMethod
+Get-CimInstance -ClassName Win32_Desktop 
+vs Get-WmiObject
+
+
+Stop-Computer -WhatIf #run dry
+cd .. -PassThru #VS Tee
+-lp alias for all -LiteralPath parameters
+
+
+# 缩略动词，缩略参数剩余字母
+Command=Get-Command 
+Alias=Get-Alias
+Get-Random -Mi 1 = Get-Random -Min 1
+
+dir -Name | ? {$_ -match "(?<num>.).*(\k<num>)"} 
+可以显示出当前目录下文件名有重复字符的文件。比如abcda.efg，而abcd.efg则不会显示出来。
+（确切的说严格的正则表达式 已经无法实现这样的效果，需要上下文无关文法 才能够支持。）
+
+$rssUrl = "http://blogs.msdn.com/powershell/feed" 
+$blog = [xml](new-object System.Net.WebClient).DownloadString($rssUrl)
+$blog.rss.channel.item | select title -first 8
 
