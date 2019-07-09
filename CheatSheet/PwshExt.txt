@@ -1,15 +1,16 @@
 Get-Module -ListAvailable
 
+cmd pwsh bash
+cd - ~ --
+===========================
 Install-Module posh-git
 Import-Module posh-git
 Add-PoshGitToProfile
 
-git ch
 [{HEAD-name} S +A ~B -C !D | +E ~F -G !H W]
 remote, index, workDir, overall    
 https://github.com/dahlbyk/posh-git#git-status-summary-information
 
-cmd pwsh bash
 ==============
 Install-Module PSReadLine
 Import-Module PSReadLine
@@ -23,14 +24,8 @@ Get-Process i<Ctrl+Space>
 
 help about_PSReadline
 Notice the red “>” in prompt, a syntax error in this 
-
-3+?
-Alt+?
-Ctrl+LGSR
-F78
-Shift+Enter
-
-=======================
+3+?   Ctrl+LGSR   Shift+Enter
+========================
 Install-Module ZLocation
 Import-Module ZLocation  ($profile)
 
@@ -38,9 +33,6 @@ z
 z -l
 z jf de
 z -  (popd)
-
-cd -
-cd --
 =====================================
 Install-Module JiraPS -Scope CurrentUser
 Import-Module JiraPS
@@ -52,7 +44,7 @@ Get-JiraIssue JF-6818
 
 Get-Help about_JiraPS
 Get-Command -Module JiraPS
-Get-Help Get-JiraIssue -Full # or any other command
+Get-Help Get-JiraIssue -Full
 ======================================
 Install-module GitLab-API
 Add-GitLabToken -GitLabURI https://gitlab.dev.activenetwork.com -Token s9HC9uzWfSRotQ8sjbfP
@@ -82,7 +74,7 @@ Set-Alias grep Search-Text
 "files.autoGuessEncoding": true
 "files.encoding": "utf8bom"
 
-
+Powershell WASP Autoit.
 ============================
 ## Pipeline：
 * 传统管道传String:
@@ -113,14 +105,20 @@ Invoke-Expression("notepad++ " + (dir *.ps1) -join ' ')
 $ourObject = New-Object -TypeName psobject
 $ourObject | Add-Member -MemberType NoteProperty -Name ComputerName -Value $computerInfo.Name
 
+$PSCustomObject = [PSCustomObject]@{foo = 1}
+$PSCustomObject.Length
+
 
 ## ASync Job:
 ForEach($Computer in $Computers){Start-Job -FilePath c:ScriptGet-OperatingSystem.ps1 -ArgumentList $Computer}
 Get-Job | Wait-Job
 Get-Job | Receive-Job | Out-GridView
 
+$job=dir -r *ConnectionStrings.config &
+$files=(Receive-Job -Wait $job|select FullName)
+
 $job=gps &
-Receive-Job $job
+Receive-Job $job -Wait
 
 ## PowerShell Debug:
 * https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell/debugging-from-commandline.md

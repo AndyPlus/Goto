@@ -108,11 +108,6 @@ $processId = (Get-Process | ? ProcessName -eq explorer | select * | where {$_.ma
 
 =========================================================
 ### Other:
-
-$PSCustomObject = [PSCustomObject]@{foo = 1}
-$PSCustomObject.Length
-
-Get-Random -InputObject $NameList
 try {dir c:\Foo -ErrorAction stop} catch [System.Management.Automation.ItemNotFoundException]{}
 
 Test-Connection,  Invoke-RestMethod

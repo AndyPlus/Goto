@@ -83,9 +83,7 @@ Procdump  VsDevCmd.bat clrver -all
 inetsrv,inetmgr,inetcpl.cpl, MsVsMon, iisreset
 
 =========Bing Command=============
--+|  ()  ""
-inanchor  inbody  intitle
-
+- ""
 tennis contains:gif
 tennis filetype:pdf
 tennis site:zhihu.com

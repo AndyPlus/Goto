@@ -13,7 +13,7 @@ db.getCollection('user').update({query},{update},{"multi" : true,"upsert" : true
 
 db.user.find(query, projection)
 db.user.find({name:/^古天乐$/})
-db.user.find({$or:[{"addr":"ShenZhen"},{"age":{$gte:30}}]},{"_id":0})  .sort({age:1}).pretty()   //找深圳人或30岁以上人，不现实id，年龄排序，格式化。
+db.user.find({$or:[{"addr":"ShenZhen"},{"age":{$gte:30}}]},{"_id":0})  .sort({age:1}).pretty()   //找深圳人或30岁以上人，不显示id，年龄排序，格式化。
 db.user.aggregate([{$group:{_id:{userAddr:'$addr'},totalCount:{$sum:1}}}])   //GroupBy 地址， 统计人数
 
 

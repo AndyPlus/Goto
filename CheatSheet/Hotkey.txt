@@ -3,49 +3,55 @@
 * 导航： Alt+左右键， F12+三控制键, F1F3F7F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:
 * 选择： Alt+Shift+左右（扩框多）， Ctrl+D	Ctrl+Shift+\(括号)
 * 窗口： Ctrl+PgUp Tab  	Ctrl+\, Ctrl+123,拖动，Ctrl+W
-* 其它： F11全屏， Ctrl+KF格式，Ctrl+Shift+R refactor Ctrl+.
+* 其它： Shift+Alt+F, Ctrl+Shift+R, Ctrl+.
 * 文件： Ctrl+K+SUW回  对应：全保存，关保存，关所有，保持。
+* 操作： F1, Ctrl+K+S, Ctrl+P >pluginName
 
 * 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
-* 语言:  Ctrl+N, 右下角选XML, Shift+Alt+F	Json: Ctrl+Alt+M   Alt+M 	MarkDown: Ctrl+Shift+V  Ctrl+KV
 * 折叠:  Ctrl+Shift+[]	Ctrl+K+0987654321
 * 参数： code -hvd -gr --list-extensions  --add(multi-root workspace)
-* 左下角git状态，左侧行号颜色三种状态。F7下一个不同	注意左下角选择工程，右下角选择文件类型
 * C# Snippets: attribute exception indexer interface invoke iterator lock propg tryf
 
 
 ## VS: 
-* 在解决方案中定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]  Ctrl+T  Alt+PgUp
-* 查看代码定义：F12+(三控制)   Ctrl+K+T(结构分析) Ctrl+W+K 结构视图放在另一个屏幕比较好。
-* 搜中搜: Ctrl+F F3 F8, Shift F8
-* 两次Home键走到行首
-* Edit: Ctrl+E+  CFU(格式化),LPI(提示)  Alt+上下
-* Window: Ctrl+W+  SC(右侧视图) TB,EO(下侧视图) CJ(类和对象)
-* Debug: Ctrl+D+BI, Ctrl+F10(+Shift)
-* Ctrl+Q search everything 也就是VS Code 的F1功能。
+* 定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]   Ctrl+T   Ctrl+N
+* 结构： F12+(三控制)   Ctrl+K+T(结构分析) Ctrl+W+K（结构视图）  Ctrl+M+(ML)大纲显示
+* 搜中搜:  Ctrl+F F3 F8, Shift F8
+* Edit:   Ctrl+K(E)+  CDF(格式化)  ILP(提示)  XS（代码段）
+* 书签：   Ctrl+K(B) +KTNP
+* Window: Ctrl+W+  SCJ(右侧视图) TB,EO(下侧视图)  Ctrl+[+SOP(右侧Filter)
+* Debug:  Ctrl+D+BI, Ctrl+F10(+Shift)
+* Other:  Ctrl+Q = F1功能。两次Home键走到行首
+* 光标： Shift+Alt+.,;]  Alt+上下 Alt+8
+* 代码质量: F6 或 Alt+F11 然后从左下角选Filter到当前文档   类库浏览：Ctrl+W+J   看右键GitLab提交记录来学习。
 
 
 ## Notepad++
 * language, encoding.  
-* View: symbol,clone window, F11全屏，Ctrl+123 Tab页面, F8, Alt+H, Alt+0, tail -f  
-* Edit: Ctrl +B 匹配括号， F4,F7.   
-* Alt+Mouse编辑 Ctrl  + CDIJQ  Case,blank paste  
+* View: symbol, F11全屏，Ctrl+PgUp
+* Search: Ctrl+B 匹配括号， F3,F4,F7,F8  
+* Edit: Ctrl+CD IJQ
 
 ## SQL
-Ctrl+K+(KCDW), F8, Alt+F1  
-Alt + F1= sp_help, sp_who2, sp_rename  print
-Perf: F4 Ctrl+LM  Ctrl+Alt+P
+编辑： Ctrl+K+(KW CU DF XS) F2=sp_rename
+分析： F12+(三控制)   F8   Alt+F1   Ctrl+F5  
+光标： Shift+Alt+.;]  Alt+UpDn
+窗口： 数据窗格右键,全屏，Ctrl+Q Ctrl+- Alt+Z
+性能: F4 Ctrl+LM  Ctrl+Alt+P  sp_who2
 
 ------------------
 
 ## Chrome
-* 常规：F3F6F11, Ctrl+THJ, Alt+方向, Ctrl+Shift+O  
+* 常规：F3F6F11, Ctrl+THJL, Alt+方向, Ctrl+Shift+ON
 * F12 全局： F1, Esc, Ctrl+123， Alt+方向  
 * F12 Elements：方向(看) H回车F2(改)  
-* F12 Debugger：Ctrl+B(&Shift), Ctrl+F8  
+* F12 Debugger：Ctrl+B(&Shift), Ctrl+F8
+
+URL complete: Input and go once, Shift+Del, 顺序会根据频次自动调整。
+
 
 ## GitLab
-TFS, g+(fcmb)  
+FTS, g+(fcmb)  
 Snippets, MR: Search My, TODO notify, Key: AREL
 
 ## JIRA
@@ -55,19 +61,34 @@ Snippets, MR: Search My, TODO notify, Key: AREL
 Filter: Host&Machine = WL00070207,1Week 1Day
 View: User&URL, Tabs Collapse, View Next and All
 Edit: On Title, Status, Comments
+Search:"" *? 
+* NOT OR AND()
+* Search On User Page.
+* customdata: foo
+* errorgroupid: {{id}}
+/crashreporting/{{appid}}/errors/{{errorgroupid}}
  
 ---------------------- 
 ## Win
-窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏) Tab,DBTW
+窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab,XTNW
+中英符号:Ctrl+. Ctrl+Backspace Ctrl+Del
 
 ## Cmder
 Ctrl + rs(cg), cvz, tl
-Ctrl+Shift+V 粘贴多行
-VS Code Integration
+自定义：F2 Ctrl+F Ctrl+Shift+T App+Right(Enter)
 
 ## MS Teams:
-Ctrl+ EGN,234
-Message: CR  Alt+UpDn
+Ctrl+E,234, Alt+Up
+Message: Esc CR Ctrl+O(attach file)
+
+## OneNote
+Ctrl+ 10 TN ./ EG
+
+## OutLook 
+F3467 搜，查，切，检
+Ctrl + ON FR UY BE
+Nav: Ctrl+Tab Space Esc     Ctrl+<> Ctrl+D 阅读视图中
+Alt+Q Today
 
 
 
