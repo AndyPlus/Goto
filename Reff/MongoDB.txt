@@ -11,6 +11,9 @@ db.getCollection('user').find({"key" : "value"})
 db.getCollection('user').remove({query}，{options})   //insert save remove  inserOne() inserMany()
 db.getCollection('user').update({query},{update},{"multi" : true,"upsert" : true})
 
+db.getCollection('ProspectiveStudentAthletes').find({"InstitutionId" : 1588, "SportId" : 3, "AcademicYears":{$elemMatch: {"AcademicYearId": 122, "UserId": 7100364}}})
+db.getCollection('ProspectiveStudentAthletes').distinct("SortCriteria.RecCoach",{"InstitutionId" : 1588,"SportId" : 3} )
+
 db.user.find(query, projection)
 db.user.find({name:/^古天乐$/})
 db.user.find({$or:[{"addr":"ShenZhen"},{"age":{$gte:30}}]},{"_id":0})  .sort({age:1}).pretty()   //找深圳人或30岁以上人，不显示id，年龄排序，格式化。
