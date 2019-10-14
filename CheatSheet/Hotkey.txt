@@ -1,11 +1,8 @@
 ## Code
 * 切换： Ctrl + Shift + DEFG(左) + MUY(下)， 全屏：Ctrl+BJ F11
-* 导航： Alt+左右键， F12+三控制键, F1F3F7F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:
-* 选择： Alt+Shift+左右（扩框多）， Ctrl+D	Ctrl+Shift+\(括号)
-* 窗口： Ctrl+PgUp Tab  	Ctrl+\, Ctrl+123, Ctrl+W
-* 其它： Shift+Alt+F, Ctrl+Shift+R, Ctrl+.   折叠： Ctrl+K0  Ctrl+Shift+[]	
-* 文件： Ctrl+K+SUW回  对应：全保存，关保存，关所有，保持。
-* 操作： F1, Ctrl+K+S, Ctrl+P >pluginName
+* 导航： 方向+三控制键, Ctrl+D,  F1F3F7F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:	
+* 文件： Ctrl+PgUp,Tab  	Ctrl+\,123,W    Ctrl+K+SUW回
+* 高级： F12+三控制键, Shift+Alt+F（格式）  Ctrl+.（重构）  Ctrl+K0 (折叠) Ctrl+Shift+\(括号)
 
 * 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
 * 参数： code -hvd -gr --list-extensions  --add(multi-root workspace)
