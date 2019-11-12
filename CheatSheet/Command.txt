@@ -64,19 +64,6 @@ sudo mount --bind /mnt/c /c
 bash和sshd配置文件路径 (apt-get i openssh-server) (putty,winscp, xshell xftp)
 常用目录: /bin /sbin, /usr ~, /var/log /mnt/c /ect/configs
 
-==========Docker===========
-sudo service docker start  (cgroupfs-mount)
-docker version (docker-compose)
-docker run --rm hello-world
-	
-docker run -it ubuntu bash (bin/bash)
-docker run -e MYSQLPWD=12345 mysql
-docker run --name myserver -p 8080:80  -v ~/path:path myapp
-
-docker exec -it some-mysql bash
-docker logs cp rm rmi (save/load镜像, export/import容器, pull tag -p -v)
-docker rm $(docker ps -aq)
-
 =========Develop=======================
 Procdump  VsDevCmd.bat clrver -all
 

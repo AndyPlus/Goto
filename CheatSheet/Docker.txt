@@ -1,0 +1,93 @@
+Setup Docker Desktop:
+* export DOCKER_HOST=tcp://127.0.0.1:2375
+* Enable Kubernetes
+* Switch Win/Linux Container
+
+* KiteMatic = GUI (right-menu: Document)
+* WSL: aan1/2016!  Docker: andymore/16!
+
+==========Docker===========
+docker run -it ubuntu bash (bin/bash, env, echo "Hello")
+docker run --detach --publish 85:80 --name webserver nginx
+docker run -e MYSQLPWD=12345 -P mysql
+docker run --name myServer -p 8080:80  -v ~/path:path myApp:1.0
+
+docker exec -it some-mysql bash
+docker logs cp stop rm rmi (save/load镜像, export/import容器, pull tag -p -v)
+docker rm $(docker ps -aq)
+
+=======Docker WSL ==========
+apt install docker.io  (docker-ce, docker-compose)
+	sudo usermod -aG docker $(whoami)
+sudo service docker start  (cgroupfs-mount)
+	docker version (docker-compose)
+	docker run --rm hello-world
+
+export DOCKER_HOST=tcp://127.0.0.1:2375
+永久在主目录的.bash_profile或者 .bashrc 文件中设置该变量。
+
+========Win Container ================
+ducker run docker.io/microsoft/nanoserver (< Win Sever Core)
+docker run mcr.microsoft.com/windows/nanoserver myWin
+docker run microsoft/nanoserver powershell Write-Output Hello (Get-WindowsFeature)
+
+docker login <docker-id>  ($dockerId = '<docker-id>')
+"FROM microsoft/nanoserver `n CMD echo Hello World!" | docker build -t <docker-id>/my-image .
+docker push <docker-id>/my-image
+
+https://github.com/dockersamples/dotnet-album-viewer/blob/master/docker/app/Dockerfile
+https://github.com/dockersamples/dotnet-album-viewer/blob/master/docker-compose.yml
+docker-compose build .
+docker-compose up -d
+
+=======================================================================================
+Docker相关： VS,VS Code,Azure Container, Azure K8S
+https://code.visualstudio.com/docs/azure/docker
+https://docs.docker.com/develop/dev-best-practices/
+https://docs.docker.com/engine/examples/dotnetcore/
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+
+
+https://docs.docker.com/get-started/
+
+1.=======================
+pod.yaml:
+
+apiVersion: v1
+ kind: Pod
+ metadata:
+   name: demo
+ spec:
+   containers:
+   - name: testpod
+     image: alpine:3.5
+     command: ["ping", "8.8.8.8"]
+	 
+---------------------
+kubectl config get-contexts
+kubectl apply -f pod.yaml
+kubectl get pods (deployments,services)
+kubectl logs demo
+kubectl delete -f pod.yaml
+
+
+2.========================
+Dockerfile:
+FROM node:6.11.5    
+
+WORKDIR /usr/src/app
+COPY package.json .
+RUN npm install    
+COPY . .
+
+CMD [ "npm", "start" ]    
+
+--------------------------
+docker  build -t bulletinboard:1.0 .
+docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+--detach asks Docker to run this container in the background.
+
+docker volume ls (--mount as service)
+docker volume create my-vol
+docker volume inspect my-vol
+docker volume prune

@@ -69,16 +69,6 @@ bash.exe
 passwd username
 lxrun.exe /setdefaultuser username
 
-# Docker WSL
-apt install docker.io  (docker-ce, docker-compose)
-	sudo usermod -aG docker $(whoami)
-cgroupfs-mount
-service docker start
-	docker version (docker-compose)
-	docker run --rm hello-world
-
-export DOCKER_HOST=tcp://127.0.0.1:2375
-永久在主目录的.bash_profile或者 .bashrc 文件中设置该变量。
 
 ---------------
 sudo apt-get install zsh

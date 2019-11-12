@@ -62,22 +62,20 @@ Search:"" *?
  
 ---------------------- 
 ## Win
-窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab,XTNW
-中英符号:Ctrl+. Ctrl+Backspace Ctrl+Del
+窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab
+中英符号:Ctrl+.   Ctrl+ XTNW
 
 ## Cmder
-Ctrl + rs(cg), cvz, tl
-自定义：F2 Ctrl+F Ctrl+Shift+T App+Right(Enter)
+Ctrl + rs, cz, tf
 
 ## MS Teams:
 Ctrl+E,234, Alt+Up     MSG: Esc CR
 
 ## OneNote
-Ctrl+ 10 TN ./ EG
+Ctrl+ ./ 10 TNEG
 
-## OutLook 
-F3467 搜，查，切，检
-Ctrl + NFR UYE 
+## OutLook
+Ctrl + NE 
 Nav: Ctrl+Tab Space Esc
 Alt+Q Today
 

@@ -1,6 +1,7 @@
 choco install nodejs cmder 7zip googlechrome 
 choco install dotnetcore-sdk vscode notepadplusplus vim poshgit
 choco install docker docker-for-windows winscp putty powershell-core
+choco install microsoft-windows-terminal
 
 choco install visualstudio2017-workload-netweb  sql-server-management-studio
 choco install resharper webpi heidisql golang postgresql teamcity

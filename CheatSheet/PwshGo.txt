@@ -1,0 +1,85 @@
+Note: hotkey,config,bookmark,snippets,checklist
+
+基本命令：
+cmd pwsh bash
+gcm gal gdr
+
+gal: -d object*
+gcm: gcm |gm | ConvertTo-HTML > aliases.htm
+help gal -e -o
+
+gsv: Get-Service | Where-Object {$_.status -eq "stopped"} | select -First 5
+gps: ps|sort -p ws|select -last 5 -prop id,name,ws|ft
+gci: dir -r | ? { $_.LastWriteTime -ge (Get-Date).AddDays(-7) } | select -first 5
+
+grep: cat somefile.txt | where { $_ -match "expression"}   (| Select-String)
+sed:  cat somefile.txt | %{$_ -replace "expression","replace"} | Set-Content $file
+diff: diff $set1 $set2
+
+
+cd - ~ --
+cd \\servername\C$\Path\To\File
+z -l   z jf de
+
+Get-Process <Tab>
+Get-Process –<Ctrl+Space>
+Get-Process i<Ctrl+Space>
+[System.Math]::<Ctrl+Space>
+3+?   Ctrl+LGSR   Shift+Enter  red “>” in prompt
+========================
+
+管道：
+1,2,3,4 |?{$_ -lt 3} |% {$_+1}
+&"notepad++" $(dir *.ps1)
+dir *.ps1|%{notepad++ $_}
+Receive-Job $(gps&) -Wait
+
+
+别名：
+New-Alias vs "devenv.exe"
+function SayHello ($name){echo "hello $name"}
+param([Nullable[boolean]]$enable)
+
+
+版本：
+Set-PSDebug -Trace 0
+$PSVersionTable
+$profile | gm 
+
+
+数据结构：
+-------------------------------------------
+$var="abc"
+$var -like "*b*" 
+
+$files = dir
+$files[3]
+
+$program = "notepad"
+& $program
+
+$B = 5..8    数组还支持+=运算符和+运算符
+$a[-3..-1]   读取最后三个元素
+$a[0,2+4..6] 读取在索引位置 0,2 和 4-6 的元素
+
+$stu=@{ Name = "小明";Age="12";sex="男";Books="三国演义","围城","哈姆雷特" }
+([System.DateTime]::Now).ToString().substring(0,10)
+
+其它规律：
+------------------------------------------------
+
+* 引号： 双引号允许：变量替换和转义支持。  反引号：是转义符号和命令换行。  单引号表示原始字串。 分号来分隔语句  Other: ii, ?=where, %=foreach
+* cmdlet通用参数：包括 WhatIf、Confirm、Verbose、Debug、Warn、ErrorAction、ErrorVariable、OutVariable 和 OutBuffer。
+* -Object: foreach, where, select, sort, format, group
+* -Class: Get- Show- New- Remove- Start- Stop- Copy- Import- Export-
+
+# 缩略动词，缩略参数剩余字母
+Command=Get-Command 
+e.g. module, package, alias
+Get-Random -Mi 1 = Get-Random -Min 1
+
+Test-Connection,  Invoke-RestMethod, Invoke-WebRequest, Start-Sleep, Set-ItemProperty 
+select -unique -ExpandProperty FullName
+
+==================================================
+
