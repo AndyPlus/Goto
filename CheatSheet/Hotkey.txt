@@ -26,11 +26,7 @@
 * language, symbol, encoding.  Ctrl+B 匹配括号   F11全屏，Ctrl+PgUp
 
 ## SQL
-编辑： Ctrl+K+(KW CU DF XS) F2=sp_rename
-分析： F12+(三控制)   F8   Alt+F1   Ctrl+F5  
-光标： Shift+Alt+.;]  Alt+UpDn
-窗口： 数据窗格右键,全屏，Ctrl+Q Ctrl+- Alt+Z
-性能: F4 Ctrl+LM  Ctrl+Alt+P  sp_who2
+* 编辑： Ctrl+K+(KW CU DF XS) Alt+F1 Ctrl+F5 Ctrl+Q Ctrl+L
 
 ------------------
 
@@ -62,8 +58,7 @@ Search:"" *?
  
 ---------------------- 
 ## Win
-窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab
-中英符号:Ctrl+.   Ctrl+ XTNW
+窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab  中英符号:Ctrl+.
 
 ## Cmder
 Ctrl + rs, cz, tf
@@ -75,9 +70,7 @@ Ctrl+E,234, Alt+Up     MSG: Esc CR
 Ctrl+ ./ 10 TNEG
 
 ## OutLook
-Ctrl + NE 
-Nav: Ctrl+Tab Space Esc
-Alt+Q Today
+Ctrl + NE,  Ctrl+Tab Space Esc, Alt+Q Today
 
 
 

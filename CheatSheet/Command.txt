@@ -24,6 +24,9 @@ netstat -ano | findstr "80" (find app by port)
 net user,start,share helpmsg 64
 ping, tracert, pathping, telnet,ipconfig, nslookup
 
+netsh firewall show config
+netstat -ano | findstr -i SYN_SENT
+
 -------- System ------
 color title label
 chkdsk robocopy cipher, sc query, tasklist /svc

@@ -13,7 +13,7 @@ docker run -e MYSQLPWD=12345 -P mysql
 docker run --name myServer -p 8080:80  -v ~/path:path myApp:1.0
 
 docker exec -it some-mysql bash
-docker logs cp stop rm rmi (save/load镜像, export/import容器, pull tag -p -v)
+docker logs cp start stop rm rmi (save/load镜像, export/import容器, pull tag -p -v镜像)
 docker rm $(docker ps -aq)
 
 =======Docker WSL ==========
@@ -91,3 +91,28 @@ docker volume ls (--mount as service)
 docker volume create my-vol
 docker volume inspect my-vol
 docker volume prune
+
+=======================================================================================
+
+docker pull golang
+docker pull rabbitmq
+docker pull mongo
+docker pull redis
+docker pull alpine
+docker pull jenkins
+docker pull hello-world
+docker pull postgres
+docker pull nginx
+docker pull logstash
+
+https://hub.docker.com/_/microsoft-dotnet-core
+https://hub.docker.com/u/steeltoeoss
+
+docker pull mcr.microsoft.com/mssql/server
+docker pull mcr.microsoft.com/mssql-tools
+docker pull mcr.microsoft.com/mcr/hello-world
+docker pull mcr.microsoft.com/dotnet/framework/aspnet
+docker pull mcr.microsoft.com/windows/servercore/iis
+docker pull mcr.microsoft.com/windows/servercore
+docker pull mcr.microsoft.com/windows/nanoserver
+docker pull mcr.microsoft.com/windows/servercore

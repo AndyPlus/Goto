@@ -67,3 +67,5 @@ export default connect(mapStateToProps,mapDispatchToProps)(Counter)
 对比学习官方例子和自己例子：重点看connect部分。注意官方目录components 和 containers中文件的命名规范（有无状态）。actions中只是定义了一个actionCreator集合，reducer中只是定义了一个reducer集合。
 https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/todos
 https://gitlab.dev.activenetwork.com/JumpForward/JFUI/merge_requests/189/diffs
+
+

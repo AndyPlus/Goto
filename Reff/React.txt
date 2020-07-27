@@ -63,8 +63,8 @@ React 元素都是immutable 不可变的。所有的React组件必须像纯函�
 
 ## 高级：
 * 受控组件 和 非受控组件，受控组件要注意处理多个表单元素提交，还要解决ECHO问题，考虑使用非受控组件
-* 状态提升，自上到下的数据流，你可以使用 React 开发者工具来检查props属性
-* 组合由于继承(FaceBook几乎从来不用继承)，一些组件不能提前知道它们的子组件是什么，如Dialog: <div className={'dialog'}>{props.children}</div>
+* 状态提升，建议将共享状态提升到最近的共同父组件中去。 自上到下的数据流，你可以使用 React 开发者工具来检查props属性
+* 组合优于继承(FaceBook几乎从来不用继承)，一些组件不能提前知道它们的子组件是什么，如Dialog: <div className={'dialog'}>{props.children}</div>
 
 ## FAQ:
 https://www.reactjscn.com/docs/faq-structure.html
@@ -81,5 +81,54 @@ http://www.ruanyifeng.com/blog/2015/03/react.html
 
 
 
+==========================
+官网笔记第二次阅读：
+
+JSX符号： <>和{}  推荐用()罩住“React元素”
+高内聚： React 认为渲染逻辑本质上与其他 UI 逻辑内在耦合，所以用JSX。
+低耦合：用“组件”分割到不同文件内，实现了关注点分离。
+项目文件的结构不要过度思考，把经常需要一起修改的文件放一起即可。
+
+用“JSX扩展”语法定义“React元素”对象。 
+用“React元素”来构建“React组件”对象。
+组件是一个函数（或类），入参为props,返回一个"React元素"
+
+组件名称必须大写开头，因为小写为原生HTML
+组件属性必须camel格式，因为遵循js语法标准。
+
+state是组件内部，props连接组件外部。
+state是可异步更新setState()的，props是只读的。
+state只能在class组件中使用，不能在function组件里。
+
+state是“单向”的数据流。任何的 state 总是所属于特定的组件
+如果你把一个以组件构成的树想象成一个 props 的数据瀑布的话，那么每一个组件的 state 就像是在任意一点上给瀑布增加额外的水源，但是它只能向下流动。
+一个组件可以由无state的函数组件，逐渐进化成有state的，有生命周期的类组件。
+
+事件处理：
+使用 JSX 语法时你需要传入一个函数作为事件处理函数，而不是一个字符串。 因为遵循的是js标准啊。
+在handleClick(e)方法中阻止默认行为用  e.preventDefault();
+绑定事件最简单方法（稍有性能问题）： <button onClick={(e) => this.handleClick(id, e)}>
+
+条件渲染:
+bool && <>
+三目
+return null;
+
+map: <li key={index}>
+
+
+React 最棒的部分之一是引导我们思考如何构建一个应用。
+1.自顶向下拆分组件，用props向下传递数据。只需要render()方法定义静态组件。
+2.定义一个state的最小集合，为UI添加交互能力实现动态组件。
+3.根据需要把state提升到父级组件用props向下传递，最高提升到Redux的Store中。
+4.用回调函数实现反向数据流，因为React仅仅支持自上而下单向流动，且不支持双向绑定。	
+
+
+
+React.Component常用的生命周期方法：
+1. 挂载时： 当组件实例被创建并插入 DOM 中时。 依次为： constructor(仅用于内部初始化)  render(纯函数，监测props和state变化，返回element或fragments)  componentDidMount(ajax,添加订阅，浏览器交互)
+2. 更新时： 当组件的 props 或 state 发生变化时会触发更新。 依次为： render()  componentDidUpdate()	
+3. 卸载时： 当组件从 DOM 中移除时。 componentWillUnmount()
+	
 
 

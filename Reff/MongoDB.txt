@@ -13,6 +13,7 @@ db.getCollection('user').update({query},{update},{"multi" : true,"upsert" : true
 
 db.getCollection('ProspectiveStudentAthletes').find({"InstitutionId" : 1588, "SportId" : 3, "AcademicYears":{$elemMatch: {"AcademicYearId": 122, "UserId": 7100364}}})
 db.getCollection('ProspectiveStudentAthletes').distinct("SortCriteria.RecCoach",{"InstitutionId" : 1588,"SportId" : 3} )
+"Timestamp":{$gte:new Date('2019-11-10')}
 
 db.user.find(query, projection)
 db.user.find({name:/^古天乐$/})

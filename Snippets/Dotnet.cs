@@ -9,10 +9,10 @@ yo aspnet
 
 
 
+dotnet new run pack tool
 
 
-
-
+Newtonsoft.Json.JsonConvert.SerializeObject(someVariable)
 
 
 //======== EF Core =====
