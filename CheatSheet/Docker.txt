@@ -11,6 +11,7 @@ docker run -it ubuntu bash (bin/bash, env, echo "Hello")
 docker run --detach --publish 85:80 --name webserver nginx
 docker run -e MYSQLPWD=12345 -P mysql
 docker run --name myServer -p 8080:80  -v ~/path:path myApp:1.0
+docker run alpine/git
 
 docker exec -it some-mysql bash
 docker logs cp start stop rm rmi (save/load镜像, export/import容器, pull tag -p -v镜像)

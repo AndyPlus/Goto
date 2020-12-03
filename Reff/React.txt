@@ -76,9 +76,6 @@ https://www.reactjscn.com/docs/faq-state.html
 ## 设计理念: 
 https://www.reactjscn.com/docs/thinking-in-react.html
 https://www.reactjscn.com/docs/react-component.html
-https://www.reactjscn.com/community/debugging-tools.html
-http://www.ruanyifeng.com/blog/2015/03/react.html
-
 
 
 ==========================
@@ -131,4 +128,30 @@ React.Component常用的生命周期方法：
 3. 卸载时： 当组件从 DOM 中移除时。 componentWillUnmount()
 	
 
+==========================
+新版Hook：
 
+Hook 使你在非 class 的情况下可以使用更多的 React 特性。 从概念上讲，React 组件一直更像是函数。而 Hook 则拥抱了函数，同时也没有牺牲 React 的精神原则
+只能在React函数组件最外层调用 Hook。不要在循环、条件判断或者子函数中调用。
+
+useState 给组件添加一些内部state。
+useEffect 给函数组件增加了操作副作用的能力.
+useContext 让你不使用组件嵌套就可以订阅 React 的 Context。
+useReducer 可以让你通过 reducer 来管理组件本地的复杂 state。
+
+你之前可能已经在 React 组件中执行过数据获取、订阅或者手动修改过 DOM。我们统一把这些操作称为“副作用”，或者简称为“作用”。
+它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API。
+useEffect 可以在组件渲染后实现各种不同的副作用。有些副作用可能需要清除，所以需要返回一个函数.第二个传入参数用来判断仅在变化时执行Effect
+
+import React, {useState, useEffect,useContext, useReducer,useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useDrop } from 'react-dnd';
+
+const [count, setCount] = useState(0);
+const theme = useContext(ThemeContext);
+const [todos, dispatch] = useReducer(todosReducer);
+
+useEffect(() => {document.title = `Clicked ${count} times`; return () => {}}, [count])
+<button onClick={() => setCount(count + 1)} />
+
+https://reactjs.bootcss.com/docs/hooks-effect.html

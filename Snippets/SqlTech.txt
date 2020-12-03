@@ -1,21 +1,21 @@
-* Audit: and ct.CreateBy=10979270 and ct.CreateDt> '2015-04-08 16:00'  order by id desc
-* Find: select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME like 'CARAPracticeLog%' and COLUMN_NAME like '%Deadline%'
-* T-SQL: Merge Truncate Print,With cte as (...), If not exists(...), If object_id() is not null, begin end,  FOR JSON Auto
-* Select: Like Between,  a not in (b,c,null),  having count(*)>1,  %_[^] ESCAPE
-* Func: Row_Number() Max() CAST() CONVERT () STUFF COALESCE , ViewList from LeftPanel
-* Vars: Declare @var1 @table1(a,b,c),  set @var1=1, select @@rowcount
-* Perf: SET STATISTICS [TIME,IO,PROFILE] ON
+Audit: and ct.CreateBy=10979270 and ct.CreateDt> '2015-04-08 16:00'  order by id desc
+Find: select * from INFORMATION_SCHEMA.COLUMNS ,  select * from RollbackDB.sys.tables
+T-SQL: Merge Truncate Print,With cte as (...), If not exists(...), If object_id() is not null, begin end,
+Select: Like Between,  a not in (b,c,null),  having count(*)>1,  %_[^] ESCAPE
+Func: Row_Number() Max() CAST() CONVERT () STUFF() COALESCE() DateAdd() DatePart(), JSON_VALUE(TheJsonBLOB,'$[0].ItemDate')
+Vars: Declare @var1 @table1(a,b,c),  set @var1=1, select @@rowcount; create table #DatePoint(Id int IDENTITY(1,1) PRIMARY KEY);
+Perf: SET STATISTICS [TIME,IO,PROFILE] ON, set TRANSACTION ISOLATION LEVEL READ UNCOMMITTED, select from t1 with(nolock)
 
 Tran: Begin tran,  commit Tran, rollback Tran (if @@ error>0)
-IF: Case When, Then, Else End,
+Case: Case When, Then, Else End,
 Sub: select * from (select top(9) * from t1 order by id asc) t2
-Perf: select from t1 with(nolock)
 
 * select * into #t from t1
 * insert #t select from t1 where not exists(...)
 
 * set IDENTITY_INSERT InstitutionSettingType on
-* set TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+* SELECT * INTO RollbackDB.dbo.JF_15241
+* drop table #DatePoint,#DatePeriod,#CrossMatrix
 
 -------------------------------------------------------
 -- JF-10817 DESC Verify RollBack
