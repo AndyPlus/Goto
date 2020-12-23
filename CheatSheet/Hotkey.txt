@@ -10,16 +10,12 @@
 
 
 ## VS: 
-* 定位： Ctrl+;  Ctrl+, Ctrl+.  Ctrl+-  Ctrl+]   Ctrl+T   Ctrl+N
-* 结构： F12+(三控制)   Ctrl+K+T(结构分析) Ctrl+W+K（结构视图）  Ctrl+M+(ML)大纲显示
-* 搜中搜:  Ctrl+F F3 F8, Shift F8
-* Edit:   Ctrl+K(E)+  CDF(格式化)  ILP(提示)  XS（代码段）
-* 书签：   Ctrl+K(B) +KTNP
-* Window: Ctrl+W+  SCJ(右侧视图) TB,EO(下侧视图)  Ctrl+[+SOP(右侧Filter) Ctrl+F4
+* 定位： Ctrl+ .,;-]   Ctrl+QT  F3F8
+* 结构： F12+(三控制)   Ctrl+K+T(结构分析)  Ctrl+M+(ML)大纲显示
+* Edit:  Ctrl+K(E)+  CUDF(格式化) 
+* 书签：  Ctrl+K(B) +KTNP
+* Window: Ctrl+W+  SCJ(右侧视图) TBEO(下侧视图)  Ctrl+[+SOP(右侧Filter)
 * Debug:  Ctrl+D+BI, Ctrl+F10(+Shift)
-* Other:  Ctrl+Q = F1功能。两次Home键走到行首
-* 光标： Shift+Alt+.,;]  Alt+上下 Alt+8
-* 代码质量: F6 或 Alt+F11 然后从左下角选Filter到当前文档   类库浏览：Ctrl+W+J   看右键GitLab提交记录来学习。
 
 
 ## Notepad++

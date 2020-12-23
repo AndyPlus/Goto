@@ -21,7 +21,7 @@ git log -p HEAD..FETCH_HEAD
 git log --name-status -- *proj* (-- can ignored, Can use Tab or Glob)
 git log master..     (example:head, JF-9991, v2.5, remotes/origin/Sprint16) ...
 git log --author=Andy (--since, --until,--no-merges,--first-parent) gitk图形化高级筛选
-
+git log --since 12/12 (--merges  --no-merges  --reverse)
 
 ========== Revert =======================
 git reset --hard HEAD^  (#配合使用 git reflog 和 git log)
@@ -40,14 +40,14 @@ git checkout JF-9991 -- <filename>
 git checkout --theirs -- <filename>
 
 ---------- Grep --------------------
-git grep -n "hello" v2.5
+git grep -n "hello" v2.5      (inlevpPC3 --all-match)
 git grep solution -- :^Documentation
 git grep -e "str1" --and --not -e "str2"  (-v)
 git grep -l -P "(?<! <> )CommunicationStatusEnum.Ended"|xargs notepad++
 git grep -l -P CARAPracticeLogWeekUser|grep -P ".*(?<!.cs)$"|grep -P ".*(?<!.vb)$"
 git ls-files "*middleware*"
 
-git log --grep=JF-7813
+git log --grep=JF-7813       (-i  --all-match  --invert-grep)
 git log -Sword
 git log -Gword   (use regex search both message and content)
 git log -S "string" --source --all (search on all branch, -G regex)

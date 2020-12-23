@@ -50,7 +50,7 @@ $profile | gm
 数据结构：
 -------------------------------------------
 $var="abc"
-$var -like "*b*" 
+$var -like "*b*"   -lt -gt -eq
 
 $files = dir
 $files[3]
