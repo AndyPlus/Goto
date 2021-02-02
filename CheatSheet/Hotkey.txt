@@ -10,7 +10,7 @@
 
 
 ## VS: 
-* 定位： Ctrl+ .,;-]   Ctrl+QT  F3F8
+* 定位： Ctrl+ .,;-]   Ctrl+QT  F3F8    Alt+Shift+-,Contrl+Shift+V
 * 结构： F12+(三控制)   Ctrl+K+T(结构分析)  Ctrl+M+(ML)大纲显示
 * Edit:  Ctrl+K(E)+  CUDF(格式化) 
 * 书签：  Ctrl+K(B) +KTNP

@@ -3,19 +3,7 @@ Note: hotkey,config,bookmark,snippets,checklist
 基本命令：
 cmd pwsh bash
 gcm gal gdr
-
-gal: -d object*
-gcm: gcm |gm | ConvertTo-HTML > aliases.htm
-help gal -e -o
-
-gsv: Get-Service | Where-Object {$_.status -eq "stopped"} | select -First 5
-gps: ps|sort -p ws|select -last 5 -prop id,name,ws|ft
-gci: dir -r | ? { $_.LastWriteTime -ge (Get-Date).AddDays(-7) } | select -first 5
-
-grep: cat somefile.txt | where { $_ -match "expression"}   (| Select-String)
-sed:  cat somefile.txt | %{$_ -replace "expression","replace"} | Set-Content $file
-diff: diff $set1 $set2
-
+gmo gsv gps
 
 cd - ~ --
 cd \\servername\C$\Path\To\File
@@ -25,7 +13,7 @@ Get-Process <Tab>
 Get-Process –<Ctrl+Space>
 Get-Process i<Ctrl+Space>
 [System.Math]::<Ctrl+Space>
-3+?   Ctrl+LGSR   Shift+Enter  red “>” in prompt
+3+?   Ctrl+LSR   Shift+Enter  red “>” in prompt
 ========================
 
 管道：
@@ -50,7 +38,8 @@ $profile | gm
 数据结构：
 -------------------------------------------
 $var="abc"
-$var -like "*b*"   -lt -gt -eq
+$var -like "*b*"   -lt -gt -eq, -ne -ge -le, -in -is, -like -match -replace,  -first -last
+help about_operators
 
 $files = dir
 $files[3]

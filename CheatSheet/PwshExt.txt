@@ -1,7 +1,5 @@
 Get-Module -ListAvailable
 
-cmd pwsh bash
-cd - ~ --
 ===========================
 Install-Module posh-git
 Import-Module posh-git
@@ -42,16 +40,9 @@ New-JiraSession -Credential $cred
 
 Get-JiraIssue JF-6818
 
-Get-Help about_JiraPS
-Get-Command -Module JiraPS
-Get-Help Get-JiraIssue -Full
+help *jira*
+gcm  *jira*
 ======================================
-Install-module GitLab-API
-Add-GitLabToken -GitLabURI https://gitlab.dev.activenetwork.com -Token s9HC9uzWfSRotQ8sjbfP
-Get-GitLabProject -projectid 20
-help *gitlab*
-gcm  *gitlab*
-============================
 Install-Module Get-ChildItemColor
 Import-Module Get-ChildItemColor
 
@@ -63,33 +54,19 @@ ls Bug: use Tee-Object Fix
 Get-Module -ListAvailable
 Import-Module Get-ChildItemColor -Force
 
-----------
-Alter: ls --color=auto
-function Search-Text{& c:\Windows\system32\findstr.exe /A:F0 $Args}
-Set-Alias grep Search-Text
-
 ===================
-## VS code
-"powershell.powerShellExePath": "C:\Program Files\PowerShell\6\pwsh.exe"
-"files.autoGuessEncoding": true
-"files.encoding": "utf8bom"
 
 Powershell WASP Autoit.
 ============================
 ## Pipeline：
-* 传统管道传String:
 dir *.ps1|xargs notepad++
+Invoke-Expression("notepad++ " + (dir *.ps1) -join ' ')
 
-* PS管道传对象：  Method #1: Command substitution 命令替换
 notepad++ (dir *.ps1)
 &"notepad++" $(dir *.ps1)
 
-* PS管道编程：    Method #2: True piping 方法#2：真正的管道
 dir *.ps1|%{notepad++ $_}
-,@(dir *.ps1)|%{&"notepad++" $_}
-
-* PS转换字串处理法：
-Invoke-Expression("notepad++ " + (dir *.ps1) -join ' ')
+@(dir *.ps1)|%{&"notepad++" $_}
 
 * 管道的注意事项：传递的是对象，不是字串！ 圈子不同，不要强融。git管道还是适合用bash. Windows下适合用Pwsh.
 * 管道的操作思路：Get, Select, Change, Format, Out.

@@ -1,6 +1,6 @@
 ### Help
 gal g*
-gal -d object*
+gal -d *object
 
 gcm get*
 gcm |gm
@@ -9,12 +9,25 @@ help get*
 help gal -e -o
 
 ### Go
+cmd pwsh bash
 gcm gal gdr
+gmo gsv gps
 
+
+gcm: gcm |gm | ConvertTo-HTML > aliases.htm
 gcm: Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 gsv: Get-Service | Where-Object {$_.status -eq "stopped"} | select -First 5
 gps: ps|sort -p ws|select -last 5 -prop id,name,ws|ft
 gci: dir -r | ? { $_.LastWriteTime -ge (Get-Date).AddDays(-7) } | select -first 5
+
+
+grep: cat somefile.txt | where { $_ -match "expression"}   (| Select-String)
+sed:  cat somefile.txt | %{$_ -replace "expression","replace"} | Set-Content $file
+diff: diff $set1 $set2
+
+gi * = gci = dir = ls 
+dir -r  vs dir /s
+sls, ii, ?=where, %=foreach
 
 =====================================================================
 ### Setup
