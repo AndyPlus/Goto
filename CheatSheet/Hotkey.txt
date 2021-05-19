@@ -27,7 +27,7 @@
 ------------------
 
 ## Chrome
-* 常规：F3F6F11, Ctrl+THJLD9, Alt+方向, Ctrl+Shift+NTOB
+* 常规：F3F6F11, Ctrl+THJLD9, Alt+方向, Ctrl+Shift+NTOBA
 * F12 全局： F1, Esc, Ctrl+123， Alt+方向 ,Ctrl+Shift+P
 * F12 Elements：方向(看) H回车F2(改)  
 * F12 Debugger：Ctrl+B(&Shift), Ctrl+F8
@@ -54,10 +54,12 @@ Search:"" *?
  
 ---------------------- 
 ## Win
-窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab  中英符号:Ctrl+.
+窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab  中英符号:Ctrl+. Emoji:Win+.  剪贴板:Win+V
 
-## Cmder
-Ctrl + rs, cz, tf
+## Win Terminal
+* Ctrl+Shift+ PFW DTN3 滚轮
+* Pane: Alt+shift+ D,Arrow
+* F11 Ctrl+Alt+Num
 
 ## MS Teams:
 Ctrl+E,234, Alt+Up     MSG: Esc CR

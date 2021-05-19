@@ -13,7 +13,7 @@ Get-Process <Tab>
 Get-Process –<Ctrl+Space>
 Get-Process i<Ctrl+Space>
 [System.Math]::<Ctrl+Space>
-3+?   Ctrl+LSR   Shift+Enter  red “>” in prompt
+3+?   Ctrl+LGSR   Shift+Enter  red “>” in prompt
 ========================
 
 管道：

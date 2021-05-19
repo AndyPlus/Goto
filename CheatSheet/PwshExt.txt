@@ -1,9 +1,13 @@
 Get-Module -ListAvailable
+* notepad $PROFILE
+* $PSVersionTable
+* $env:PSModulePath
 
 ===========================
 Install-Module posh-git
 Import-Module posh-git
 Add-PoshGitToProfile
+Git Less: set LESSCHARSET=utf-8
 
 [{HEAD-name} S +A ~B -C !D | +E ~F -G !H W]
 remote, index, workDir, overall    
