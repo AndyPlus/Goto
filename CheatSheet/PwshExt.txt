@@ -102,3 +102,15 @@ Receive-Job $job -Wait
 * Test-Path works with variables, certificates, aliases, and functions. Check out this post from TechNet for more details (@MS_ITPro).
 * Debug-Process, Disable-PSBreakpoint, Get-Counter, Measure-Command, Measure-Object, Start-Sleep, Tee-Object, Trace-Command, Write-Debug, Write-Progress
 * Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
+
+
+=======================================
+# This row loads SharePoint Client dll from the execution folder (if it's packaged with the script!)
+$loaded = [System.Reflection.Assembly]::LoadFrom((Get-Location).Path+"\Microsoft.SharePoint.Client.dll")
+
+Add-Type -AssemblyName "C:\path\to\file.dll" -PassThru
+https://activedirectoryfaq.com/2016/01/use-net-code-c-and-dlls-in-powershell/
+
+Add-Type -AssemblyName .\JFDLLs\JumpForward.Helpers.dll
+[JumpForward.Helpers.Encryption]::SecuredEncryptTripleDES("29227,309,119")
+mxv722qswHS6nDBRn_2VLw

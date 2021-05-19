@@ -20,6 +20,20 @@ db.user.find({name:/^古天乐$/})
 db.user.find({$or:[{"addr":"ShenZhen"},{"age":{$gte:30}}]},{"_id":0})  .sort({age:1}).pretty()   //找深圳人或30岁以上人，不显示id，年龄排序，格式化。
 db.user.aggregate([{$group:{_id:{userAddr:'$addr'},totalCount:{$sum:1}}}])   //GroupBy 地址， 统计人数
 
+db.getCollection('ProspectiveStudentAthletes').aggregate([
+    {$unwind:'$SportStats'},
+    { $match: { 'InstitutionId': 365 }},
+    { $group: { _id: { id:"$RecruitId", sportStatId: "$SportStats.SportStatId" }, _count: { $sum: NumberInt("1") } }},
+    {
+       $match: { "_count": { $gte: 2 } }
+    }
+])
+
+* Topics
+https://docs.mongodb.com/manual/core/document/
+https://docs.mongodb.com/manual/reference/sql-comparison/
+BSON data types
+Query an Array 
 
 ## 分布式并行一致性特点：
 MongoDb 使用update()命令可以实现替换完成的文档（数据）或者一些指定的数据字段 。

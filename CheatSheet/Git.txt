@@ -23,6 +23,11 @@ git log master..     (example:head, JF-9991, v2.5, remotes/origin/Sprint16) ...
 git log --author=Andy (--since, --until,--no-merges,--first-parent) gitk图形化高级筛选
 git log --since 12/12 (--merges  --no-merges  --reverse)
 
+Analyse:
+git log --reverse --oneline -- JumpForward.NewApi
+git log --reverse --name-status --diff-filter=A
+git log --pretty=format:"%h %ad%x09%an: %x09%s" --date=short --reverse
+
 ========== Revert =======================
 git reset --hard HEAD^  (#配合使用 git reflog 和 git log)
 git reset origin/JF-9991

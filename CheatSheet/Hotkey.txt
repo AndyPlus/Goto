@@ -28,7 +28,7 @@
 
 ## Chrome
 * 常规：F3F6F11, Ctrl+THJLD9, Alt+方向, Ctrl+Shift+NTOB
-* F12 全局： F1, Esc, Ctrl+123， Alt+方向 
+* F12 全局： F1, Esc, Ctrl+123， Alt+方向 ,Ctrl+Shift+P
 * F12 Elements：方向(看) H回车F2(改)  
 * F12 Debugger：Ctrl+B(&Shift), Ctrl+F8
 
