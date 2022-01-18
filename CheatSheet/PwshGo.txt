@@ -72,3 +72,4 @@ select -unique -ExpandProperty FullName
 
 ==================================================
 
+https://www.cnblogs.com/feng-zhizi/p/9935874.html

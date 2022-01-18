@@ -78,6 +78,7 @@ dir *.ps1|%{notepad++ $_}
 * git branch --merged|xargs git branch -d 的两种PS方法：
 * git branch -d $(git branch --format "%(refname:short)" --merged)
 * (git branch --merged).replace( '*', ' ').trim()|%{echo git branch -d $_} 
+* git br --merged|%{git br -d $_.Trim()}
 
 * ConvertFrom-String   Out-String
 * ConvertFrom-StringData: Use ConvertFrom-StringData to convert a string containing one or more value pairs to a hash table. 

@@ -3,6 +3,7 @@
 * 导航： 方向+三控制键, Ctrl+D,  F1F3F7F8  书签：Ctrl+Alt+KLJ 	定位：Ctrl+TP ?#@:	
 * 文件： Ctrl+PgUp,Tab  	Ctrl+\,123,W    Ctrl+K+SUW回
 * 高级： F12+三控制键, Shift+Alt+F（格式）  Ctrl+.（重构）  Ctrl+K0 (折叠) Ctrl+Shift+\(括号)
+* Search: 上下方向切换搜索历史  F4切换搜索结果条目。
 
 * 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
 * 参数： code -hvd -gr --list-extensions  --add(multi-root workspace)
@@ -27,7 +28,7 @@
 ------------------
 
 ## Chrome
-* 常规：F3F6F11, Ctrl+THJLD9, Alt+方向, Ctrl+Shift+NTOBA
+* 常规：F3F6F11, Ctrl+THJLD9, Alt+方向, Ctrl+Shift+NTABO
 * F12 全局： F1, Esc, Ctrl+123， Alt+方向 ,Ctrl+Shift+P
 * F12 Elements：方向(看) H回车F2(改)  
 * F12 Debugger：Ctrl+B(&Shift), Ctrl+F8
@@ -36,7 +37,7 @@ URL complete: Input and go once, Shift+Del, 顺序会根据频次自动调整。
 
 
 ## GitLab
-FTS, g+(fcm)  MR: AREL
+ST, g+(fcm)  MR: AREL
 
 ## JIRA
 ?/,.		g+(DPIA)        jkE  
@@ -57,7 +58,7 @@ Search:"" *?
 窗口切换：Win+←/→ (Shift实屏，Ctrl虚屏D&F4) Tab  中英符号:Ctrl+. Emoji:Win+.  剪贴板:Win+V
 
 ## Win Terminal
-* Ctrl+Shift+ PFW DTN3 滚轮
+* Ctrl+Shift+ PFW DTN 滚轮
 * Pane: Alt+shift+ D,Arrow
 * F11 Ctrl+Alt+Num
 
@@ -69,6 +70,3 @@ Ctrl+ ./ 10 TNEG
 
 ## OutLook
 Ctrl + NE,  Ctrl+Tab Space Esc, Alt+Q Today
-
-
-

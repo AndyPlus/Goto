@@ -152,3 +152,30 @@ git worktree add ..\LinkWorkTree [<commit-ish>]
 git worktree list prune
 git commit --amend -m "New commit message"
 
+--
+Git alias:
+
+git config --global alias.ch checkout
+git config --global alias.br branch
+git config --global alias.co commit
+git config --global alias.st status
+git config --global alias.pu pull
+git config --global alias.di diff
+
+git config --global alias.mine 'log --no-merges --name-status --author=Andy --since=1.weeks'
+git config --global alias.last 'log -3'
+git config --global alias.done 'push -u origin HEAD'
+
+
+#提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf true  
+
+清理分支：
+git branch --merged | %{git branch -d $_.Trim()}
+
+合并Review:
+git log --grep=20608  --author=Vince --no-merges --reverse --format=format:%H
+git log --since 4/1 --until 4/25 --author=andy --reverse -- *jfui*
+git ch -b RF-20608 a00^
+git cherry-pick        $(), |%{$_}
+git diff master...

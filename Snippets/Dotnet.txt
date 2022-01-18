@@ -1,0 +1,27 @@
+go go go
+-------------------
+
+dotnet -h 
+dotnet --info 
+dotnet new console -o myApp
+del myApp (md, ni, del)
+
+
+
+--------------------
+dotnet new run pack tool
+dotnet tool list -g
+
+devenv code msbuild  nuget  dotnet ef
+curl -o .gitignore  https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore
+nuget sources Add -Name "MyDll" -Source C:\mydll
+
+https://aka.ms/dotnet-docs
+https://aka.ms/dotnet-cli
+https://docs.microsoft.com/en-us/dotnet/core/tools/
+
+
+//======== EF Core =====
+dotnet tool install --global dotnet-ef
+
+

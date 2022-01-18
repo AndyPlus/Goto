@@ -21,11 +21,11 @@ namespace DbgTest
         }
         static int Add(int x, int y)
         {
-            System.Diagnostics.Debugger.Break();
-            System.Diagnostics.Debug.WriteLine("This is log Debug");
-            System.Diagnostics.Trace.WriteLine("This is log Trace");
-            System.Diagnostics.Trace.Assert(true, "Must Assert true");
-            System.Diagnostics.Contracts.Contract.Ensures(true, "Must Ensure true");
+            Debugger.Break();
+            Debug.WriteLine("This is log Debug");
+            Trace.WriteLine("This is log Trace");
+            Trace.Assert(true, "Must Assert true");
+            Contracts.Contract.Ensures(true, "Must Ensure true");
             return x + y;
             throw new NotImplementedException("just a test");
         }
@@ -39,5 +39,12 @@ namespace DbgTest
             TimeSpan ts = stopWatch.Elapsed;
             Console.WriteLine("RunTime " + ts);
         }
+
+        static void Json(object someVariable)
+        {
+            Newtonsoft.Json.JsonConvert.SerializeObject(someVariable);
+            System.Text.Json.JsonSerializer.Serialize(someVariable);
+        }
+
     }
 }
