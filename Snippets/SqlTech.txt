@@ -32,3 +32,17 @@ DROP
 CARAPracticeLogWeekUserDesc,
 CONSTRAINT PK_CARAPracticeLogWeekUser,
 GO
+
+-----------------------------------------------
+-- Data Analysis:
+
+convert(date,re.EvaluationDate)
+cross apply openjson(w.JsonData, N'lax $.Nodes')  with (NodeFields nvarchar(max) as json)
+select FieldOption=(select ','+ Name from NewFormElementTypeOption where NewFormElementTypeID= field.NewFormElementTypeID FOR XML PATH('')), ...  ---Stuff()
+
+
+cross apply(outer apply) = join (left join)
+https://www.mssqltips.com/sqlservertip/1958/sql-server-cross-apply-and-outer-apply/
+https://docs.microsoft.com/en-us/sql/t-sql/functions/json-functions-transact-sql?view=sql-server-ver15
+https://docs.microsoft.com/en-us/sql/t-sql/functions/aggregate-functions-transact-sql?view=sql-server-ver15
+https://gitlab.dev.activenetwork.com/JumpForward/Release_Advise_Assets/-/merge_requests/1430/diffs?commit_id=f1b5a5019b9bdd10bf92c6227900650f461014df

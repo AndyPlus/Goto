@@ -63,25 +63,21 @@ Import-Module Get-ChildItemColor -Force
 Powershell WASP Autoit.
 ============================
 ## Pipeline：
-dir *.ps1|xargs notepad++
-Invoke-Expression("notepad++ " + (dir *.ps1) -join ' ')
-
-notepad++ (dir *.ps1)
-&"notepad++" $(dir *.ps1)
-
-dir *.ps1|%{notepad++ $_}
 @(dir *.ps1)|%{&"notepad++" $_}
+dir *.ps1|%{notepad++ $_}
+
+iex ("notepad++ " + (dir *.ps1) -join ' ')
+iex ("notepad++ " + (dir *.ps1))
+
+&"notepad++" $(dir *.ps1)
+notepad++ (dir *.ps1)
+
+git br -d $(git br --merged).trim()
+git br --merged|%{git br -d $_.Trim()}
 
 * 管道的注意事项：传递的是对象，不是字串！ 圈子不同，不要强融。git管道还是适合用bash. Windows下适合用Pwsh.
 * 管道的操作思路：Get, Select, Change, Format, Out.
 
-* git branch --merged|xargs git branch -d 的两种PS方法：
-* git branch -d $(git branch --format "%(refname:short)" --merged)
-* (git branch --merged).replace( '*', ' ').trim()|%{echo git branch -d $_} 
-* git br --merged|%{git br -d $_.Trim()}
-
-* ConvertFrom-String   Out-String
-* ConvertFrom-StringData: Use ConvertFrom-StringData to convert a string containing one or more value pairs to a hash table. 
 
 ## Object:
 $ourObject = New-Object -TypeName psobject
@@ -89,6 +85,9 @@ $ourObject | Add-Member -MemberType NoteProperty -Name ComputerName -Value $comp
 
 $PSCustomObject = [PSCustomObject]@{foo = 1}
 $PSCustomObject.Length
+
+ConvertFrom-String   Out-String
+ConvertFrom-StringData: Use ConvertFrom-StringData to convert a string containing one or more value pairs to a hash table. 
 
 
 ## ASync Job:
@@ -108,14 +107,6 @@ Receive-Job $job -Wait
 * Debug-Process, Disable-PSBreakpoint, Get-Counter, Measure-Command, Measure-Object, Start-Sleep, Tee-Object, Trace-Command, Write-Debug, Write-Progress
 * Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 
-
-=======================================
-# This row loads SharePoint Client dll from the execution folder (if it's packaged with the script!)
-$loaded = [System.Reflection.Assembly]::LoadFrom((Get-Location).Path+"\Microsoft.SharePoint.Client.dll")
-
-Add-Type -AssemblyName "C:\path\to\file.dll" -PassThru
-https://activedirectoryfaq.com/2016/01/use-net-code-c-and-dlls-in-powershell/
-
-Add-Type -AssemblyName .\JFDLLs\JumpForward.Helpers.dll
+* https://activedirectoryfaq.com/2016/01/use-net-code-c-and-dlls-in-powershell/
+Add-Type -AssemblyName .\JFDLLs\JumpForward.Helpers.dll -PassThru
 [JumpForward.Helpers.Encryption]::SecuredEncryptTripleDES("29227,309,119")
-mxv722qswHS6nDBRn_2VLw

@@ -1,6 +1,5 @@
 === Go Go Go ===
 Show: git status, branch -v,tag, stash list, config -l --global, show, gc, help
-Alias: alias glm=git log --no-merges --name-status --author=Andy, gl, gitk (--since, --until)
 
 ============ Show Diff Log =============
 git show master:JumpForward/Error.aspx
@@ -163,9 +162,9 @@ git config --global alias.pu pull
 git config --global alias.di diff
 
 git config --global alias.mine 'log --no-merges --name-status --author=Andy --since=1.weeks'
-git config --global alias.last 'log -3'
+git config --global alias.last 'log -3 --name-status'
 git config --global alias.done 'push -u origin HEAD'
-
+git config --list --show-origin
 
 #提交时转换为LF，检出时转换为CRLF
 git config --global core.autocrlf true  
@@ -179,3 +178,26 @@ git log --since 4/1 --until 4/25 --author=andy --reverse -- *jfui*
 git ch -b RF-20608 a00^
 git cherry-pick        $(), |%{$_}
 git diff master...
+
+------git path specs-----------------------------
+
+git ls-files *.json
+git ls-files '*.json'
+
+git add .      # add CWD (current working directory)
+git add src/   # add src/ directory
+git ls-files '*.mp?'
+
+git log '*.js' # logs all .js files in CWD and subdirectories
+git log '.*'   # logs all 'hidden' files and directories in CWD
+git log '*/.*' # logs all 'hidden' files and directories in subdirectories
+
+
+git ls-files '*.[tj]s'
+git ls-files '*.mp[[:digit:]]' # mp0, mp1, mp2, mp3, ..., mp9
+git ls-files '*[[:space:]]*' # matches any path containing a space
+git ls-files ':(icase)*.jpg'
+git ls-files ':(glob)src/components/**/*.jsx' # 'all' jsx components
+
+git grep 'foo' -- '*.js' ':!*.spec.js' .       # shorthand for the same
+git ls-files -- ':(top,icase,glob,attr:!vendored)src/components/*/*.jsx'

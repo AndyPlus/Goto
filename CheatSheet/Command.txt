@@ -57,3 +57,17 @@ tennis contains:gif
 tennis filetype:pdf
 tennis site:zhihu.com
 
+===========Copy Pwsh=========================
+git log -stat
+git mine
+touch ni md
+
+copy D:\JumpForward\JFUI\CARA\dist\assignworkflow JumpForward\scripts\JFFE -Recurse -Force
+but if single file: 
+cp C:\Users\aan1\Desktop\JF_22817*.sql $(ni 2022/ESI/JF-22817 -Type Directory)
+New-Item -Force $to Copy-Item -Force $from $to
+-Recurse -Force， 只用于目录对目录。 其它一般都需要单独显式创建路径
+
+New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
+
+=========== File =======

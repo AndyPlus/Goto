@@ -73,3 +73,5 @@ select -unique -ExpandProperty FullName
 ==================================================
 
 https://www.cnblogs.com/feng-zhizi/p/9935874.html
+
+摇号：for($i = 0; $i -lt 9; $i++){ Random -Max 100 }

@@ -5,10 +5,10 @@ gal -d *object
 gcm get*
 gcm |gm
 
-help get*
-help gal -e -o
+help *, help get*, help about_*
+help sls -e -o
 
-### Go
+### Go Go Go
 cmd pwsh bash
 gcm gal gdr
 gmo gsv gps
@@ -29,6 +29,19 @@ gi * = gci = dir = ls
 dir -r  vs dir /s
 sls, ii, ?=where, %=foreach
 
+
+### All pwsh alias:
+ii,ac,gc,cat,gin,gjb,pwd,sls
+kill,echo,diff,popd
+cp,mv,md,mi,ni
+cnsn,epcsv
+fl,ft,fw
+
+
+Split-Path
+dir -Depth 2
+dir -Directory -Recurse -Depth 1
+
 =====================================================================
 ### Setup
 pwsh -Version
@@ -42,11 +55,10 @@ $env:path += ";c:\posh"
 subst p: $env:programfiles
 New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\..."
 
-Set-Alias np c:\windows\notepad.exe
+Set-Alias np notepad++
 New-Alias vs "devenv.exe"
-function gj {pushd D:\JumpForward\codebase\}
+function go32 {pushd C:\Windows\System32\}
 function SayHello ($name){echo "hello $name"}
-
 
 
 ### 单行命令
@@ -145,4 +157,3 @@ dir -Name | ? {$_ -match "(?<num>.).*(\k<num>)"}
 $rssUrl = "http://blogs.msdn.com/powershell/feed" 
 $blog = [xml](new-object System.Net.WebClient).DownloadString($rssUrl)
 $blog.rss.channel.item | select title -first 8
-
