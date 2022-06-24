@@ -26,6 +26,21 @@ New-Alias vs "\IDE\devenv.exe"
 function gj {pushd D:\JumpForward\codebase\}  
 function ge {taskkill /f /im devenv.exe}  
 
+code $profile
+
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-PoshPrompt powerline
+
+Set-Alias l Get-ChildItemColor -option AllScope  #($profile)
+Set-Alias ls Get-ChildItemColorFormatWide -option AllScope  #(Format-Wide not support pipeline)
+
+Set-Alias np notepad++
+Set-Alias vs "devenv.exe"
+
+function go32 {pushd C:\Windows\System32\drivers\etc}
+
+
 #Cmder
 --------------------
 alias ge=taskkill /f /im devenv.exe  

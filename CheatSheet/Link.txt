@@ -85,3 +85,8 @@ https://github.com/dotnet/try
 http://converter.telerik.com/
 
 
+VS Ext:
+https://github.com/JosefPihrt/Roslynator
+https://marketplace.visualstudio.com/items?itemName=jsakamoto.CMethodsCodeSnippets
+https://marketplace.visualstudio.com/items?itemName=SharpDevelopTeam.CodeConverter
+https://marketplace.visualstudio.com/items?itemName=NikolayBalakin.Outputenhancer

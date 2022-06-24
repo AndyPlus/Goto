@@ -1,36 +1,14 @@
 ================  CMD: =================  
 
------Config -------
-path %PATH%;myPath;
-subst F: C:\Test 
-doskey note=notepad++ -n $1
-alias gj=pushd D:\JumpForward\codebase\  
-&& || 都包含短路逻辑
+path: path %PATH%;c:\myPath;  ,  subst F: C:\Test
+curl: curl  -Hiv X d, netsh firewall show config, netstat -ano | findstr "80" (find app by port)
+net: ping, tracert, pathping, telnet, ipconfig, nslookup, net share
+iis: appcmd list wp,request,site,trace
 
-npm config get prefix
-path %PATH%;C:\Users\aan1\AppData\Roaming\npm
-npm install -g tldr
-tldr tar
-C:\Users\aan1\AppData\Roaming\npm\node_modules\tldr\config.json
-"theme": "ocean"
-
---------Net-----
-Curl  -Hiv X d
-netsh http add urlacl ...
-netstat -ano | findstr "80" (find app by port)
-net user,start,share helpmsg 64
-ping, tracert, pathping, telnet,ipconfig, nslookup
-
-netsh firewall show config
-netstat -ano | findstr -i SYN_SENT
-
--------- System ------
-color title label
-chkdsk robocopy cipher, sc query, tasklist /svc
-quser, qwinsta, whoami /all
-appcmd list wp,request,site,trace
+sys: tasklist, quser, qwinsta, whoami
 mmc: perfmon netplwiz eventvwr compmgmt.msc appwiz.cpl
-
+dev: Procdump,inetsrv,inetmgr,inetcpl.cpl, MsVsMon, iisreset
+npm: npm config get, npm install -g tldr, tldr tar
 
 ====================Bash=====================
 bash,wsl
@@ -46,28 +24,24 @@ sudo mount --bind /mnt/c /c
 bash和sshd配置文件路径 (apt-get i openssh-server) (putty,winscp, xshell xftp)
 常用目录: /bin /sbin, /usr ~, /var/log /mnt/c /ect/configs
 
-=========Develop=======================
-Procdump  VsDevCmd.bat clrver -all
-
-inetsrv,inetmgr,inetcpl.cpl, MsVsMon, iisreset
-
 =========Bing Command=============
 - ""
 tennis contains:gif
 tennis filetype:pdf
 tennis site:zhihu.com
 
-===========Copy Pwsh=========================
-git log -stat
-git mine
+
+=========== File ================
+
+Test-Path
+dir -Recurse -Filter(Include) *ESI*
+Other Parameters: -Path -File -Force -Exclude -ErrorAction SilentlyContinue 
+Get-ChildItem -Rec | Where-Object { $_.DirectoryName -notmatch "Debug" }
+Get-ChildItem -Rec | ? DirectoryName -notmatch '[a-z].txt$'
+
 touch ni md
-
-copy D:\JumpForward\JFUI\CARA\dist\assignworkflow JumpForward\scripts\JFFE -Recurse -Force
-but if single file: 
-cp C:\Users\aan1\Desktop\JF_22817*.sql $(ni 2022/ESI/JF-22817 -Type Directory)
-New-Item -Force $to Copy-Item -Force $from $to
+cp C:\Folder1 C:\Folder2 -Recurse -Force
+cp C:\Folder1\File1 $(ni C:\Folder2 -Type Directory)
 -Recurse -Force， 只用于目录对目录。 其它一般都需要单独显式创建路径
-
+help cp -Parameter *Conf* , *Pass* , *What*
 New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
-
-=========== File =======

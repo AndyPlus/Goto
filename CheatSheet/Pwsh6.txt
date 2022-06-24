@@ -41,6 +41,7 @@ fl,ft,fw
 Split-Path
 dir -Depth 2
 dir -Directory -Recurse -Depth 1
+dir -Dir -Dep 1
 
 =====================================================================
 ### Setup
@@ -140,7 +141,7 @@ Get-CimInstance -ClassName Win32_Desktop
 vs Get-WmiObject
 
 
-Stop-Computer -WhatIf #run dry
+Stop-Computer -WhatIf # --dry-run
 cd .. -PassThru #VS Tee
 -lp alias for all -LiteralPath parameters
 
@@ -157,3 +158,25 @@ dir -Name | ? {$_ -match "(?<num>.).*(\k<num>)"}
 $rssUrl = "http://blogs.msdn.com/powershell/feed" 
 $blog = [xml](new-object System.Net.WebClient).DownloadString($rssUrl)
 $blog.rss.channel.item | select title -first 8
+
+
+https://docs.microsoft.com/zh-cn/powershell/
+https://docs.microsoft.com/zh-cn/powershell/module/
+https://github.com/janikvonrotz/awesome-powershell
+https://github.com/jdhitsolutions/PSScriptTools
+
+
+-----------------------------------------
+$profile:
+
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-PoshPrompt powerline
+
+Set-Alias l Get-ChildItemColor -option AllScope  #($profile)
+Set-Alias ls Get-ChildItemColorFormatWide -option AllScope  #(Format-Wide not support pipeline)
+
+Set-Alias np notepad++
+Set-Alias vs "devenv.exe"
+
+function go32 {pushd C:\Windows\System32\drivers\etc}
