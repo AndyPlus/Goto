@@ -8,6 +8,7 @@ gal |select -First 3 |fl *
 help about*
 Update-Help
 -WhatIf, -Confirm
+History: h r(alias)
 
 gcm get*
 gcm |gm
@@ -108,6 +109,29 @@ $stu=@{ Name = "小明";Age="12";sex="男";Books="三国演义","围城","哈姆
 $set1 = "A","B","C"
 $set2 = "C","D","E"
 Compare-Object $set1 $set2
+
+系统变量： $_ $?   $^ $$  $Args
+创建常量： Set-Var, 不可用&符号开头。
+注释符号： # ` ; Shift+Enter
+
+调用运算符: & 可用于调用脚本块或者命令/函数的名称  .   ::
+逻辑运算:   ! 不等于   not 非  and or
+
+比较运算符（可在运算符前加上 i 或者 c ，以指定是否区分大小写）  
+        -eq   等于   -ceq  区分大小写
+        -ne   不等于
+        -gt   大于
+        -ge   大于等于
+        -lt   小于
+        -le   小于等于
+        -contains  包含	 
+字符串运算符
+    +   连接两个字符串
+    *   按指定次数重复字符串
+    -f  设置字符串格式
+    -replace   替换运算符    用法："abcd" -replace "bc","TEST"   返回结果：aTESTd
+    -match     正则表达式匹配
+    -like      通配符匹配
 
 
 ### 静态方法：
