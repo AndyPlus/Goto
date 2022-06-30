@@ -11,13 +11,13 @@
 
 
 ## VS: 
-* 定位： Ctrl+ .,;-]   Ctrl+QT  F3F8    Alt+Shift+-,Contrl+Shift+V
+* 定位： Ctrl+ .,;-]   Ctrl+Tab,QT(1+FRSTM)  F3F8, Ctrl+Shift+V(Win+V) Ctrl+Shift+Back
+* 选取： Alt+Shift+   +-]   .,;
 * 结构： F12+(三控制)   Ctrl+K+T(结构分析)  Ctrl+M+(ML)大纲显示
 * Edit:  Ctrl+K(E)+  CUDF(格式化) 
 * 书签：  Ctrl+K(B) +KTNP
-* Window: Ctrl+W+  SCJ(右侧视图) TBEO(下侧视图)  Ctrl+[+SOP(右侧Filter)
-* Debug:  Ctrl+D+BI, Ctrl+F10(+Shift)
-
+* Window: Ctrl+W+  SCKDPJ(右侧视图) TBEO(下侧视图)  Ctrl+[+SOP(右侧Filter) Ctrl+0+GR
+* Debug:  Ctrl+D+BI, Ctrl+F10(+Shift) Alt+F2, ForceRun2Cursor
 
 ## Notepad++
 * language, symbol, encoding.  Ctrl+B 匹配括号   F11全屏，Ctrl+PgUp

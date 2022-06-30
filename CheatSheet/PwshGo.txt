@@ -31,8 +31,9 @@ param([Nullable[boolean]]$enable)
 
 版本：
 Set-PSDebug -Trace 0
+Get-Var
 $PSVersionTable
-$profile | gm 
+$profile
 
 
 数据结构：

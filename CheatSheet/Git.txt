@@ -72,6 +72,9 @@ git stash apply -h -m
 git stash list
 git stash apply stash@{0}
 
+git stash --include-untracked
+git stash --keep-index
+
 git checkout -b features/subFeature
 git checkout -- README.txt
 

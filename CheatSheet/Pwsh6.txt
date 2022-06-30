@@ -2,6 +2,13 @@
 gal g*
 gal -d *object
 
+gal |select -First 3 *
+gal |select -First 3 |fl *
+
+help about*
+Update-Help
+-WhatIf, -Confirm
+
 gcm get*
 gcm |gm
 

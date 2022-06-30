@@ -5,7 +5,7 @@ curl: curl  -Hiv X d, netsh firewall show config, netstat -ano | findstr "80" (f
 net: ping, tracert, pathping, telnet, ipconfig, nslookup, net share
 iis: appcmd list wp,request,site,trace
 
-sys: tasklist, quser, qwinsta, whoami
+sys: tasklist, quser, qwinsta, whoami, systeminfo
 mmc: perfmon netplwiz eventvwr compmgmt.msc appwiz.cpl
 dev: Procdump,inetsrv,inetmgr,inetcpl.cpl, MsVsMon, iisreset
 npm: npm config get, npm install -g tldr, tldr tar

@@ -17,6 +17,10 @@ https://github.com/dahlbyk/posh-git#git-status-summary-information
 Install-Module PSReadLine
 Import-Module PSReadLine
 
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -EditMode Windows
+
 Get-Process <Tab>
 Get-Process <Shift+Tab>
 
