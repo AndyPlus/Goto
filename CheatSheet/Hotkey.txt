@@ -5,18 +5,19 @@
 * 高级： F12+三控制键, Shift+Alt+F（格式）  Ctrl+.（重构）  Ctrl+K0 (折叠) Ctrl+Shift+\(括号)
 * Search: 上下方向切换搜索历史  F4切换搜索结果条目。
 
+C#
 * 断点： (Shift+F9) 	右键Logpoints只输出日志 	Debug菜单可以选择.net core attch
 * 参数： code -hvd -gr --list-extensions  --add(multi-root workspace)
 * C# Snippets: attribute exception indexer interface invoke iterator lock propg tryf
 
 
 ## VS: 
-* 定位： Ctrl+ .,;-]   Ctrl+Tab,QT(1+FRSTM)  F3F8, Ctrl+Shift+V(Win+V) Ctrl+Shift+Back
+* 定位： Ctrl+ ,;-] QTab    F3F4F8   Ctrl+Shift+(V,Back)
 * 选取： Alt+Shift+   +-]   .,;
 * 结构： F12+(三控制)   Ctrl+K+T(结构分析)  Ctrl+M+(ML)大纲显示
 * Edit:  Ctrl+K(E)+  CUDF(格式化) 
 * 书签：  Ctrl+K(B) +KTNP
-* Window: Ctrl+W+  SCKDPJ(右侧视图) TBEO(下侧视图)  Ctrl+[+SOP(右侧Filter) Ctrl+0+GR
+* Window: Ctrl+W+  CDJK(右侧视图) TBEO(下侧视图)  Ctrl+[+SOP(右侧Filter) Ctrl+0+GR
 * Debug:  Ctrl+D+BI, Ctrl+F10(+Shift) Alt+F2, ForceRun2Cursor
 
 ## Notepad++
