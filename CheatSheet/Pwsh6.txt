@@ -1,5 +1,5 @@
 ### Help
-gal g*
+gal get*
 gal -d *object
 
 gal |select -First 3 *

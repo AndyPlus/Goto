@@ -68,7 +68,7 @@ Command=Get-Command
 e.g. module, package, alias
 Get-Random -Mi 1 = Get-Random -Min 1
 
-Test-Connection,  Invoke-RestMethod, Invoke-WebRequest, Start-Sleep, Set-ItemProperty 
+Test-Connection,  Invoke-RestMethod, Invoke-WebRequest, Start-Sleep, Set-ItemProperty, start url
 select -unique -ExpandProperty FullName
 
 ==================================================
