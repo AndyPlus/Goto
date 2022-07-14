@@ -23,7 +23,8 @@ React组件：
 ================
 
 React API参考:
-https://www.reactjscn.com/docs/react-component.html
+https://zh-hans.reactjs.org/docs/react-component.html
+https://zh-hans.reactjs.org/docs/hooks-reference.html
 
 ##基本原理
 JSX js扩展语法，混合babel
@@ -67,15 +68,15 @@ React 元素都是immutable 不可变的。所有的React组件必须像纯函�
 * 组合优于继承(FaceBook几乎从来不用继承)，一些组件不能提前知道它们的子组件是什么，如Dialog: <div className={'dialog'}>{props.children}</div>
 
 ## FAQ:
-https://www.reactjscn.com/docs/faq-structure.html
-https://www.reactjscn.com/docs/faq-functions.html
-https://www.reactjscn.com/docs/faq-ajax.html
-https://www.reactjscn.com/docs/faq-state.html
+https://zh-hans.reactjs.org/docs/faq-structure.html
+https://zh-hans.reactjs.org/docs/faq-functions.html
+https://zh-hans.reactjs.org/docs/faq-ajax.html
+https://zh-hans.reactjs.org/docs/faq-state.html
 
 
 ## 设计理念: 
-https://www.reactjscn.com/docs/thinking-in-react.html
-https://www.reactjscn.com/docs/react-component.html
+https://zh-hans.reactjs.org/docs/thinking-in-react.html
+https://zh-hans.reactjs.org/docs/react-component.html
 
 
 ==========================
@@ -154,4 +155,4 @@ const [todos, dispatch] = useReducer(todosReducer);
 useEffect(() => {document.title = `Clicked ${count} times`; return () => {}}, [count])
 <button onClick={() => setCount(count + 1)} />
 
-https://reactjs.bootcss.com/docs/hooks-effect.html
+https://zh-hans.reactjs.org/docs/hooks-effect.html

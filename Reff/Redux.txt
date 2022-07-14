@@ -13,6 +13,10 @@ Redux:
 * store.dispatch()是 View 派发 Action 到store 的唯一方法。 注意，Dispatcher 只能有一个，而且是全局的。 Dispatcher 只用来派发 Action，不应该有其他逻辑
 * store.subscribe可以为state的变化而设置监听函数
 
+https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367
+The tradeoff that Redux offers is to add indirection to decouple “what happened” from “how things change”.
+Instead learn to think in React. Come back to Redux if you find a real need for it, or if you want to try something new.
+
 ---------------
 概念术语
 
