@@ -96,6 +96,7 @@ git help revisions
 
 git remote -v
 git remote set-url origin git://new.url.here
+git remote add myOrigin myUrl
 git remote show origin
 
 git update-index --skip-worktree
