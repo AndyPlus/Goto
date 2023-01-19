@@ -1,5 +1,7 @@
 REM code --list-extensions | xargs -L 1 echo code --install-extension > VsCodeExt.bat
 
+code --list-extensions --show-versions
+
 code --install-extension alefragnani.Bookmarks
 code --install-extension bierner.markdown-preview-github-styles
 code --install-extension christian-kohler.npm-intellisense
