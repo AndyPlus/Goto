@@ -29,8 +29,6 @@ function ge {taskkill /f /im devenv.exe}
 code $profile
 
 Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt powerline
 
 Set-Alias l Get-ChildItemColor -option AllScope  #($profile)
 Set-Alias ls Get-ChildItemColorFormatWide -option AllScope  #(Format-Wide not support pipeline)
@@ -41,24 +39,11 @@ Set-Alias vs "devenv.exe"
 function go32 {pushd C:\Windows\System32\drivers\etc}
 
 
-#Cmder
---------------------
-alias ge=taskkill /f /im devenv.exe  
-alias gj=pushd D:\JumpForward\codebase\  
-alias gjf=pushd D:\JumpForward\jfui\ $T ls  
-alias gt=pushd D:\Test\ $T ls  
-
-doskey note=notepad++ -n $1
-cmdkey /list
-
 ------------------
 * UserFolder: .ssh .gitconfig
-* SqlDev.lnk   "\Ssms.exe" -S xxx -U xxx -P xxx -d xxx
 * SqlTan.lnk   runas.exe /netonly /user:xxx\xxx "ssms -E -S xxxx"
-
 * VsCode: code --list-extensions | xargs -L 1 echo code --install-extension
 * Chrome: Bookmark, extensions: XML Tree,JSON Viewer,Bing New Tab,QR URL,Tab Search 
-* Vs2017: Extension Manager: Vs2017Ext.vsext
 
 
 #WSL
