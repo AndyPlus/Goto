@@ -3,8 +3,7 @@ Get-Module -ListAvailable
 * $PSVersionTable
 * $env:PSModulePath
 * upmo = Update-Module
-* Get-InstalledModule 7Zip4Powershell oh-my-posh posh-git PoshColor Terminal-Icons
-* https://ohmyposh.dev/docs/migrating
+* Get-InstalledModule 7Zip4Powershell posh-git PoshColor Terminal-Icons
 
 ===========================
 Install-Module posh-git
